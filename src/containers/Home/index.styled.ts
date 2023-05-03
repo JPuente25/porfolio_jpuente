@@ -12,7 +12,3 @@ export const Container = styled.main`
       text-align: center;
    }
 `;
-
-export const Carousel = styled.div`
-   width: 100%;
-`;

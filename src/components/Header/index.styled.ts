@@ -14,7 +14,7 @@ export const Container = styled.header`
       justify-content: space-evenly;
    }
 
-   a {
+   h4 {
       color:  ${({theme}) => theme.colors.text.white};
    }
 `;
