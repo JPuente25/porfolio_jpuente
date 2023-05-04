@@ -5,15 +5,15 @@ interface Props {
    children: React.ReactNode;
 }
 
-const theme = {
+export const theme = {
    colors: {
       primary: '#FFF',
       secondary: '#000',
       testHome: 'lightblue',
-      testAbout: 'lightred',
+      testAbout: 'orange',
       testSkills: 'lightgreen',
       testPortfolio: 'lightyellow',
-      testContact: 'lightorange',
+      testContact: 'cyan',
       testOther: 'lightpurple',
       text: {
          white: '#FFF'

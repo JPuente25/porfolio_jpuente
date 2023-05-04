@@ -3,12 +3,13 @@ import { Container } from './index.styled';
 
 interface Props {
    children: React.ReactNode;
+   bgColor: string;
 }
 
-const Layout = ({children}: Props) => {
+const Layout = ({children, bgColor}: Props) => {
 
    return (
-      <Container>
+      <Container style={{backgroundColor: bgColor}}>
          {children}
       </Container>
    );
