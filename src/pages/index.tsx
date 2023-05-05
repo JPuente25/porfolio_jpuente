@@ -3,54 +3,25 @@ import Contact from '@/containers/Contact';
 import Home from '@/containers/Home';
 import Projects from '@/containers/Projects';
 import Skills from '@/containers/Skills';
-import { Carousel, CarouselItem, Container } from './index.styled';
-import { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
-import scrollToSpeed from '@/utils/functions/scrollToSpeed';
+import { View } from '@/types';
+import views from '@/variables/views';
+import { Carousel, CarouselItem, Container, PassSlide } from './index.styled';
+import { TbTriangleFilled } from 'react-icons/tb';
+import Head from 'next/head';
 
 interface LayoutStates {
    currentView: View;
    setCurrentView: (currentView: string) => void;
 }
 
-type View = {
-   id: number;
-   path: string;
-   label: string;
-};
-
-const views: View[] = [
-   {
-      id: 0,
-      path: '/',
-      label: 'home'
-   },
-   {
-      id: 1,
-      path: '/#about',
-      label: 'about'
-   },
-   {
-      id: 2,
-      path: '/#skills',
-      label: 'skills'
-   },
-   {
-      id: 3,
-      path: '/#projects',
-      label: 'projects'
-   },
-   {
-      id: 4,
-      path: '/#contact',
-      label: 'contact'
-   },
-];
-
-const Layout = () => {
+const Main = () => {
    const router = useRouter();
    const [currentView, setCurrentView] = useState<LayoutStates['currentView']>(views[0]);
    const carouselContainer = useRef<HTMLDivElement>(null);
+   const previousView = currentView.id === 0 ? views[views.length - 1] : views[currentView.id - 1];
+   const nextView = currentView.id === views.length - 1 ? views[0] : views[currentView.id + 1];
 
    const handleView = ({ next, prev }: { next?: boolean; prev?: boolean }) => {
       let nextViewIndex = 0;
@@ -93,39 +64,56 @@ const Layout = () => {
    useEffect(() => {
       const width = window.innerWidth;
       const viewLabel = router.asPath.split('/#')[1] || 'home';
-      const view: View = views.find((item) => item.label === viewLabel) || views[0];
+      const view: View = views.find((item) => item.label.toLowerCase() === viewLabel) || views[0];
       const scrollAmmount = view.id * width;
 
       handleScroll({ scrollAmmount });
       setCurrentView(view);
+      window.scrollTo(0, 0);
    }, [router.asPath]);
 
    return (
-      <Container>
-         <Carousel ref={carouselContainer}>
-            <CarouselItem className={currentView.label === 'home' ? 'on-screen' : ''}>
-               <Home />
-            </CarouselItem>
-            <CarouselItem className={currentView.label === 'about' ? 'on-screen' : ''}>
-               <About />
-            </CarouselItem>
-            <CarouselItem className={currentView.label === 'skills' ? 'on-screen' : ''}>
-               <Skills />
-            </CarouselItem>
-            <CarouselItem className={currentView.label === 'projects' ? 'on-screen' : ''}>
-               <Projects />
-            </CarouselItem>
-            <CarouselItem className={currentView.label === 'contact' ? 'on-screen' : ''}>
-               <Contact />
-            </CarouselItem>
-         </Carousel>
+      <React.Fragment>
+         <Head>
+            <title>Jaime Puente - {currentView.label}</title>
+         </Head>
+         <Container>
+            <PassSlide
+               className='prev'
+               onClick={() => handleView({ prev: true })}>
+               <TbTriangleFilled />
+               <p>{previousView.label}</p>
+            </PassSlide>
 
-         <div className='buttons'>
-            <button onClick={() => handleView({ prev: true })}>Previous</button>
-            <button onClick={() => handleView({ next: true })}>Next</button>
-         </div>
-      </Container>
+            <Carousel
+               ref={carouselContainer}
+               current={currentView.label.toLowerCase()}>
+               <CarouselItem className={currentView.label === 'home' ? 'on-screen' : ''}>
+                  <Home />
+               </CarouselItem>
+               <CarouselItem className={currentView.label === 'about' ? 'on-screen' : ''}>
+                  <About />
+               </CarouselItem>
+               <CarouselItem className={currentView.label === 'skills' ? 'on-screen' : ''}>
+                  <Skills />
+               </CarouselItem>
+               <CarouselItem className={currentView.label === 'projects' ? 'on-screen' : ''}>
+                  <Projects />
+               </CarouselItem>
+               <CarouselItem className={currentView.label === 'contact' ? 'on-screen' : ''}>
+                  <Contact />
+               </CarouselItem>
+            </Carousel>
+
+            <PassSlide
+               className='next'
+               onClick={() => handleView({ next: true })}>
+               <TbTriangleFilled />
+               <p>{nextView.label}</p>
+            </PassSlide>
+         </Container>
+      </React.Fragment>
    );
 };
 
-export default Layout;
+export default Main;

@@ -8,7 +8,7 @@ interface ProjectsStates {}
 
 const Projects = () => {
    return (
-      <Layout  bgColor={theme.colors.testPortfolio}>
+      <Layout  bgColor={theme.palette.background.fourth} bgImage={theme.palette.gradient.fourth}>
          <h1>Projects</h1>
       </Layout>
    );

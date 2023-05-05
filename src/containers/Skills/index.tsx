@@ -8,7 +8,7 @@ interface SkillsStates {}
 
 const Skills = () => {
    return (
-      <Layout bgColor={theme.colors.testSkills}>
+      <Layout bgColor={theme.palette.background.third} bgImage={theme.palette.gradient.third}>
          <h1>Skills</h1>
       </Layout>
    );

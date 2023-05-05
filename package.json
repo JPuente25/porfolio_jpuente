@@ -21,6 +21,7 @@
   },
   "devDependencies": {
     "@types/styled-components": "^5.1.26",
+    "react-icons": "^4.8.0",
     "styled-components": "^5.3.10"
   }
 }

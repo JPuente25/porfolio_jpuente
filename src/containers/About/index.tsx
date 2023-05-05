@@ -13,7 +13,7 @@ interface AboutStates {
 const About = () => {
 
    return (
-      <Layout bgColor={theme.colors.testAbout}>
+      <Layout bgColor={theme.palette.background.second} bgImage={theme.palette.gradient.second}>
          <h1>About</h1>
       </Layout>
    );

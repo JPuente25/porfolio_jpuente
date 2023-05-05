@@ -9,18 +9,31 @@ const GlobalStyles = createGlobalStyle`
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  scrollbar-width: 0;
 }
 
-html,
-body {
-  padding: 0;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
+html, body, #__next, main{
+   width: 100%;
+   padding: 0;
+   margin: 0;
+
+  &:not(main) {
+    height: 100%;
+  }
 }
+
+::-webkit-scrollbar {
+   display: none;
+}
+
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+ul {
+   list-style: none;
 }
 `;
 
