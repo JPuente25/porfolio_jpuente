@@ -12,6 +12,40 @@ export const Container = styled.header`
    position: sticky;
    top: 0;
    z-index: 1;
+
+   ul.links-container {
+      display: none;
+   }
+
+   menu ul.links-container {
+      display: flex;
+   }
+
+   menu.menu-modal {
+      position: absolute;
+      top: 100%;
+      left: 0;
+   }
+
+   @media (min-width: 600px) {
+      padding: 0 40px;
+
+      ul.links-container {
+         display: flex;
+      }
+
+      menu.menu-modal {
+         display: none;
+      }
+
+      div.menu-modal-button {
+         display: none;
+      }
+   }
+
+   @media (min-width: 991px) {
+      padding: 0 60px;
+   }
 `;
 
 export const NameLink = styled(Link)`

@@ -10,7 +10,7 @@ const nextConfig = {
        protocol: 'https',
        hostname: 'i.gyazo.com',
        port: '',
-       pathname: '/**.png',
+       pathname: '/**.**',
      },
    ],
  },

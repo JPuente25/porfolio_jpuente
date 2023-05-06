@@ -1,59 +1,23 @@
-import styled, { keyframes } from "styled-components";
+import styled, { keyframes } from 'styled-components';
 
-
-const changeBarColor = (theme: any) => keyframes`
-   0%, 10%, 65%, 100% {
-      background-color: ${theme.palette.background.cyan};
-      background-image: ${theme.palette.gradient.cyan};
-   }
-   
-   15%, 55% {
-      background-color: ${theme.palette.background.gold};
-      background-image: ${theme.palette.gradient.gold};
-   }
-   
-   0%, 2.5%, 5%, 7.5%, 10%, 12.5%, 15%, 17.5%, 20%, 22.5%, 25%, 27.5%, 30%, 32.5%, 35%, 37.5%, 40%, 42.5%, 45%, 47.5%, 50%, 52.5%, 55%, 57.5%, 60%, 62.5%, 65%, 67.5%, 70%, 72.5%, 75%, 77.5%, 80%, 82.5%, 85%, 87.5%, 90%, 92.5%, 95%, 97.5%, 100%  {
-      opacity: 0;
-   }
-
-   1.25%, 3.75%, 6.25%, 8.75%, 11.25%, 13.75%, 16.25%, 18.75%, 21.25%, 23.75%, 26.25%, 28.75%, 31.25%, 33.75%, 36.25%, 38.75%, 41.25%, 43.75%, 46.25%, 48.75%, 51.25%, 53.75%, 56.25%, 58.75%, 61.25%, 63.75%, 66.25%, 68.75%, 71.25%, 73.75%, 76.25%, 78.75%, 81.25%, 83.75%, 86.25%, 88.75%, 91.25%, 93.75%, 96.25%, 98.75% {
-      opacity: 1;
-   }
-
-`;
-
-const shortingBox = keyframes`
-   0% {
-      width: 470px;
-   }
-
-   10%, 15% {
-      width: 0px;
-   }
-
-   25%, 50% {
-      width: 350px;
-   }
-
-   60%, 65% {
-      width: 0px;
-   }
-
-   75%, 100% { 
-      width: 470px;
-   }
-`;
-
-const switchText = keyframes`
-0%, 10% {
-   transform: translateY(0px);
+const titleChangeColor = (color1: string, color2: string) => keyframes`
+0%, 100% {
+   color: ${color1};
 }
 
-10.00001%, 60% {
-   transform: translateY(-39px);
+50% {
+   color: ${color2};
+}
+`;
+
+const transitionIn = keyframes`
+0% {
+   opacity: 0;
+   transform: translateY(20px);
 }
 
-60.000001%, 100% {
+100% {
+   opacity: 1;
    transform: translateY(0px);
 }
 `;
@@ -61,57 +25,160 @@ const switchText = keyframes`
 export const Container = styled.div`
    width: 100%;
    min-height: calc(100vh - 70px - 220px); //70 px header, 220 px footer
-   background-color: ${(props) => props.theme.palette.background.first};
-   background-image: ${(props) => props.theme.palette.gradient.first};
-
    color: ${(props) => props.theme.palette.text.primary};
-`;
+   padding: 15px 20px;
+   display: grid;
+   grid-template-rows: repeat(2, auto);
+   align-items: center;
 
-export const TypingSwitchBox = styled.ul`
-   width: 480px;
-   height: ${({ theme }) => `calc(${theme.font.size.xlg} + 10px)`};
-   padding-right: 10px;
-   position: relative;
-   overflow: hidden;
-   animation: ${shortingBox} 16s linear infinite 2s;
-
-   &:after {
-      content: '';
-      width: 12px;
-      height: 50px;
-      display: inline-block;
-      background-color: ${({theme}) => theme.palette.background.cyan};
-      background-image: ${({theme}) => theme.palette.gradient.cyan};
-      position: absolute;
-      right: 0px;
-      top: -10px;
-      animation: ${({ theme }) => changeBarColor(theme)} 16s linear infinite 2s;
+   div.typing-switch-box {
+      margin: 0 auto;
    }
 
-   li {
-      width: calc(100% - 5px);
-      overflow: hidden;
-      padding: 10px 0px;
-      display: flex;
-      gap: 10px;
-      flex-direction: column;
-      top: 0px;
-      animation: ${switchText} 16s linear infinite 2s;
+   @media (min-width: 768px) {
+      display: grid;
+      gap: 15px;
+      padding: 40px 80px;
+   }
+`;
+
+export const PersonalInformation = styled.article`
+   flex: 50%;
+   display: grid;
+   grid-template-rows: repeat(3, auto);
+   row-gap: 20px;
+   animation: ${transitionIn} 0.5s linear;
+
+   & > h1,
+   & > p,
+   & > img {
+      transition: all ease 1s;
+      opacity: 0;
+   }
+
+   & > p {
+      transform: translateX(40px);
+   }
+
+   & > h1 {
+      transform: translateY(-60px);
+   }
+
+   & > img {
+      transform: translateY(40px);
+   }
+
+   &.visible{
+      h1,
+      img,
+      p {
+         opacity: 1;
+         transform: translate(0px, 0px);
+      }
+   }
+
+   img {
+      width: 100%;
+      max-width: 600px;
+      height: auto;
+      filter: ${({ theme }) => theme.palette.shadow.primary};
+   }
+
+   h1 {
+      font-size: ${({ theme }) => theme.font.size.x2lg};
+      text-align: center;
+      padding: 40px 0;
+      animation: ${({ theme }) =>
+            titleChangeColor(theme.palette.text.gold, theme.palette.text.primary)}
+         10s linear infinite;
+   }
+
+   p {
+      font-size: ${({ theme }) => theme.font.size.sm2};
+      padding: 40px 10px;
+      text-align: justify;
+      line-height: 1.75;
+      background: #141e30;
+      background: ${({ theme }) => theme.palette.gradient.webkitTextBox};
+      background: ${({ theme }) => theme.palette.gradient.textBox};
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
+      height: min-content;
+
+      span {
+         font-weight: ${({ theme }) => theme.font.weight.bold};
+         color: ${({ theme }) => theme.palette.background.cyan};
+      }
+
+      a {
+         white-space: nowrap;
+         background-color: transparent;
+         padding: 2px 4px;
+         border-radius: 4px;
+         border: 1px solid ${({ theme }) => theme.palette.background.cyan};
+         transition: all ease 0.3s;
+
+         &:hover {
+            background-color: ${({ theme }) => theme.palette.background.cyan};
+         }
+      }
+   }
+
+   @media (min-width: 480px) {
+      h1 {
+         font-size: ${({ theme }) => theme.font.size.x3lg};
+      }
 
       p {
-         white-space: nowrap;
-         text-align: start;
-         font-size: ${({ theme }) => theme.font.size.xlg};
-         background: ${({ theme }) => theme.palette.gradient.gold};
-         -webkit-background-clip: text;
-         background-clip: text;
-         color: transparent;
+         font-size: ${({ theme }) => theme.font.size.md};
+      }
+   }
 
-         &.react-web-developer {
-            background: ${({ theme }) => theme.palette.gradient.cyan};
-            -webkit-background-clip: text;
-            background-clip: text;
-         }
+   @media (min-width: 600px) {
+      h1 {
+         font-size: ${({ theme }) => theme.font.size.x4lg};
+      }
+
+      p {
+         font-size: ${({ theme }) => theme.font.size.lg};
+      }
+   }
+
+   @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+
+      h1 {
+         grid-column: 1 / 2;
+         align-self: center;
+         font-size: ${({ theme }) => theme.font.size.x5lg};
+      }
+
+      img {
+         grid-column: 2 / 3;
+      }
+
+      p {
+         grid-column: 1 / 3;
+      }
+   }
+
+   @media (min-width: 991px) {
+      h1 {
+         font-size: ${({ theme }) => theme.font.size.x5lg};
+      }
+
+      img {
+         grid-row: 1 / 3;
+         grid-column: 2 / 3;
+         align-self: center;
+      }
+
+      p {
+         grid-column: 1 / 2;
+         padding: 20px;
+         border-radius: 8px;
+         box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
       }
    }
 `;

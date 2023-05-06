@@ -3,22 +3,19 @@ import Contact from '@/containers/Contact';
 import Home from '@/containers/Home';
 import Projects from '@/containers/Projects';
 import Skills from '@/containers/Skills';
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { View } from '@/types';
 import views from '@/variables/views';
 import { Carousel, CarouselItem, Container, PassSlide } from './index.styled';
 import { TbTriangleFilled } from 'react-icons/tb';
 import Head from 'next/head';
-
-interface LayoutStates {
-   currentView: View;
-   setCurrentView: (currentView: string) => void;
-}
+import backgrounds from '@/variables/backgrounds';
+import { Context } from '@/app/Provider';
 
 const Main = () => {
    const router = useRouter();
-   const [currentView, setCurrentView] = useState<LayoutStates['currentView']>(views[0]);
+   const {currentView, setCurrentView} = useContext(Context);
    const carouselContainer = useRef<HTMLDivElement>(null);
    const previousView = currentView.id === 0 ? views[views.length - 1] : views[currentView.id - 1];
    const nextView = currentView.id === views.length - 1 ? views[0] : views[currentView.id + 1];
@@ -70,6 +67,7 @@ const Main = () => {
       handleScroll({ scrollAmmount });
       setCurrentView(view);
       window.scrollTo(0, 0);
+   // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [router.asPath]);
 
    return (
@@ -87,7 +85,7 @@ const Main = () => {
 
             <Carousel
                ref={carouselContainer}
-               current={currentView.label.toLowerCase()}>
+               bg={backgrounds[currentView.label.toLowerCase() as keyof typeof backgrounds]}>
                <CarouselItem className={currentView.label === 'home' ? 'on-screen' : ''}>
                   <Home />
                </CarouselItem>

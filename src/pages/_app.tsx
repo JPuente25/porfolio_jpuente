@@ -1,17 +1,20 @@
-import Footer from '../components/Footer';
-import Header from '../components/Header';
+import { Provider } from '@/app/Provider';
 import Theme from '@/styles/Theme';
 import GlobalStyles from '@/styles/globalStyles';
+import backgrounds from '@/variables/backgrounds';
+import images from '@/variables/images';
 import type { AppProps } from 'next/app';
-import Head from 'next/head';
 import { Poppins } from 'next/font/google';
+import Head from 'next/head';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 export const font = Poppins({
-   weight: ["400", "700"],
-   style: "normal",
-   variable: "--font-poppins",
+   weight: ['400', '700'],
+   style: 'normal',
+   variable: '--font-poppins',
    subsets: ['latin'],
-})
+});
 
 export default function App({ Component, pageProps }: AppProps) {
    return (
@@ -30,15 +33,52 @@ export default function App({ Component, pageProps }: AppProps) {
                rel='icon'
                href='https://i.gyazo.com/484cc2ef8d62e2ef1b07836019cbf0ae.png'
             />
+            <link
+               rel='preload'
+               href={backgrounds.home}
+               as='image'
+            />
+            <link
+               rel='preload'
+               href={backgrounds.about}
+               as='image'
+            />
+            <link
+               rel='preload'
+               href={backgrounds.skills}
+               as='image'
+            />
+            <link
+               rel='preload'
+               href={backgrounds.projects}
+               as='image'
+            />
+            <link
+               rel='preload'
+               href={backgrounds.contact}
+               as='image'
+            />
+            <link
+               rel='preload'
+               href={images.logo}
+               as='image'
+            />
+            <link
+               rel='preload'
+               href={images.profilePicture}
+               as='image'
+            />
          </Head>
-         <Theme>
-            <GlobalStyles/>
-            <Header />
-            <main className={font.className}>
-               <Component {...pageProps} />
-            </main>
-            <Footer />
-         </Theme>
+         <Provider>
+            <Theme>
+               <GlobalStyles />
+               <Header />
+               <main className={font.className}>
+                  <Component {...pageProps} />
+               </main>
+               <Footer />
+            </Theme>
+         </Provider>
       </>
    );
 }

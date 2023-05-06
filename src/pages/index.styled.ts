@@ -15,14 +15,15 @@ export const Container = styled.section`
    }
 `;
 
-export const Carousel = styled.article<{current: string}>`
+export const Carousel = styled.article<{bg: string}>`
    width: 100%;
    height: 100%;
    display: flex;
    overflow-x: hidden;
    position: relative;
-   /* background: rgb(0, 0, 0); */
-   background-image: ${({ current, theme }) => theme.palette.gradient[current]};
+   background-color: #00000070;
+   background: ${({ bg }) => `url(${bg})`} center center no-repeat;
+   background-size: cover;
 `;
 
 export const CarouselItem = styled.div`

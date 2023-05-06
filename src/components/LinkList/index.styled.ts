@@ -5,6 +5,11 @@ export const LinkContainer = styled.ul`
    display: flex;
    align-items: center;
    justify-content: space-between;
+   
+   @media (min-width: 991px) {
+      width: auto;
+      gap: 40px;
+   }
 `;
 
 export const ListItem = styled.li`
@@ -21,5 +26,9 @@ export const ListItem = styled.li`
       color: transparent;
 
       border-bottom: 2px solid ${({ theme }) => theme.palette.background.gold};
+   }
+
+   @media (min-width: 991px) {
+      font-size: ${({ theme }) => theme.font.size.lg};
    }
 `;

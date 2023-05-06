@@ -13,9 +13,15 @@ export const theme = {
          hover: '#ffcc33',
          disabled: '#696969',
          background: 'A9A9A9',
+         hello: '#BA0021',
+         civilEngineer: '#ffac05',
+         react: '#2da7cf',
+         thanks: 'green',
+         gold: '#ffac05',
+         darkGold: '#858103',
       },
       background: {
-         primary: '2d3436',
+         primary: '#2d3436',
          header: '#13161b',
          footer: '#13161b',
          gold: 'rgb(163, 153, 39)',
@@ -29,22 +35,34 @@ export const theme = {
          contact: 'linear-gradient(315deg, #4c4177 0%, #130724 90%)',
          gold: 'linear-gradient(310deg,#f6f4de 0%,#f9d581 45%,#ffac05 82%)',
          cyan: 'linear-gradient(315deg, #1baada 0%, #80ced7 74%)',
+         goldAndCyan: 'linear-gradient(90deg,#1baada 0%, #ffac05 100%)',
+         imageFilter: 'linear-gradient(180deg, transparent 0%, transparent 80%, #000 100%)',
+         textBox: 'linear-gradient(to right, #243b55, #141e30)',
+         webkitTextBox:  '-webkit-linear-gradient(to right, #243b55, #141e30)',
       },
       transparency: {
          primary: 'rgba(255, 255, 255, 0.5)',
+      },
+      shadow: {
+         primary: 'drop-shadow(0px 0px 20px #FFFFFF60)',
+      },
+      boxShadow: {
+         primary: '0px 0px 12px #000',
       }
+
    },
    font: {
       size: {
          sm: '12px',
+         sm2: '14px',
          md: '16px',
          lg: '20px',
          xlg: '24px',
-         x2lg: '32px',
-         x3lg: '48px',
-         x4g: '60px',
-         x5g: '72px',
-         x6g: '90px',
+         x2lg: '30px',
+         x3lg: '42px',
+         x4lg: '56px',
+         x5lg: '70px',
+         x6lg: '84px',
       },
       weight: {
          thin: '100',
