@@ -5,6 +5,7 @@ import { Container, PersonalInformation } from './index.styled';
 import Link from 'next/link';
 import { useContext } from 'react';
 import { Context } from '@/app/Provider';
+import HomePicture from '@/components/HomePicture';
 
 const Home = () => {
    const {currentView} = useContext(Context);
@@ -15,6 +16,7 @@ const Home = () => {
 
          <PersonalInformation className={currentView.label === 'Home' ? 'visible' : ''}>
             <h1>Jaime J. Puente</h1>
+
             <Image
                src={images.profilePicture}
                alt='jaime puente'
@@ -31,6 +33,7 @@ const Home = () => {
                <span>Thank you</span> for taking the time to know more <Link href="/#about">about me</Link>
             </p>
          </PersonalInformation>
+            <HomePicture />
       </Container>
    );
 };

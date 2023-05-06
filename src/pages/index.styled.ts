@@ -6,7 +6,6 @@ export const Container = styled.section`
    align-items: center;
    justify-items: center;
    position: relative;
-   min-height: calc(100vh - 70px - 220px); // 70px - header, 220px - footer
 
    div.buttons {
       position: absolute;
@@ -18,8 +17,9 @@ export const Container = styled.section`
 export const Carousel = styled.article<{bg: string}>`
    width: 100%;
    height: 100%;
+   height: auto;
    display: flex;
-   overflow-x: hidden;
+   overflow: hidden;
    position: relative;
    background-color: #00000070;
    background: ${({ bg }) => `url(${bg})`} center center no-repeat;

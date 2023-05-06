@@ -24,7 +24,8 @@ const transitionIn = keyframes`
 
 export const Container = styled.div`
    width: 100%;
-   min-height: calc(100vh - 70px - 220px); //70 px header, 220 px footer
+   /* min-height: calc(100vh - 70px - 220px); //70 px header, 220 px footer */
+   height: auto;
    color: ${(props) => props.theme.palette.text.primary};
    padding: 15px 20px;
    display: grid;
@@ -51,7 +52,7 @@ export const PersonalInformation = styled.article`
 
    & > h1,
    & > p,
-   & > img {
+   & > img { //** */
       transition: all ease 1s;
       opacity: 0;
    }
@@ -64,20 +65,20 @@ export const PersonalInformation = styled.article`
       transform: translateY(-60px);
    }
 
-   & > img {
+   & > img { //** */
       transform: translateY(40px);
    }
 
    &.visible{
       h1,
-      img,
+      img, //** */
       p {
          opacity: 1;
          transform: translate(0px, 0px);
       }
    }
 
-   img {
+   img { //** */
       width: 100%;
       max-width: 600px;
       height: auto;
@@ -154,7 +155,7 @@ export const PersonalInformation = styled.article`
          font-size: ${({ theme }) => theme.font.size.x5lg};
       }
 
-      img {
+      img { //** */
          grid-column: 2 / 3;
       }
 
@@ -168,7 +169,7 @@ export const PersonalInformation = styled.article`
          font-size: ${({ theme }) => theme.font.size.x5lg};
       }
 
-      img {
+      img { //** */
          grid-row: 1 / 3;
          grid-column: 2 / 3;
          align-self: center;
