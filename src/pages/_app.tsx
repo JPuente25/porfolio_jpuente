@@ -31,7 +31,7 @@ export default function App({ Component, pageProps }: AppProps) {
             />
             <link
                rel='icon'
-               href='https://i.gyazo.com/484cc2ef8d62e2ef1b07836019cbf0ae.png'
+               href={images.logo}
             />
             <link
                rel='preload'

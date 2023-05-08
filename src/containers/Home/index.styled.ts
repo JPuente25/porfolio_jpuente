@@ -1,15 +1,5 @@
 import styled, { keyframes } from 'styled-components';
 
-const titleChangeColor = (color1: string, color2: string) => keyframes`
-0%, 100% {
-   color: ${color1};
-}
-
-50% {
-   color: ${color2};
-}
-`;
-
 const transitionIn = keyframes`
 0% {
    opacity: 0;
@@ -54,7 +44,7 @@ export const PersonalInformation = styled.article`
    row-gap: 20px;
    animation: ${transitionIn} 0.5s linear;
 
-   & > h1,
+   & > div.title,
    & > p,
    & > picture {
       transition: all ease 1s;
@@ -65,7 +55,7 @@ export const PersonalInformation = styled.article`
       transform: translateX(40px);
    }
 
-   & > h1 {
+   & > div.title {
       transform: translateY(-60px);
    }
 
@@ -74,7 +64,7 @@ export const PersonalInformation = styled.article`
    }
 
    &.visible {
-      h1,
+      div.title,
       picture,
       p {
          opacity: 1;
@@ -92,9 +82,7 @@ export const PersonalInformation = styled.article`
    div.title {
       font-size: ${({ theme }) => theme.font.size.x2lg};
       padding: 20px 0;
-      animation: ${({ theme }) =>
-            titleChangeColor(theme.palette.text.gold, theme.palette.text.primary)}
-         10s linear infinite;
+      text-shadow: 0px 0px 5px ${({ theme }) => theme.palette.text.tertiary};
 
       h1 {
          color: ${({ theme }) => theme.palette.text.gold};
@@ -187,6 +175,7 @@ export const PersonalInformation = styled.article`
 
 
    @media (min-width: 991px) {
+      column-gap: 30px;
 
       div.title {
          grid-column: 1 / 3;
@@ -211,6 +200,10 @@ export const PersonalInformation = styled.article`
       div.title {
          display: flex;
          gap: 20px;
+      }
+
+      p {
+         font-size: ${({ theme }) => theme.font.size.xlg};
       }
    }
 `;
