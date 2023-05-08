@@ -1,5 +1,5 @@
 import React from 'react';
-import { BuildingImg, CloudOneImg, CloudTwoImg, Picture, Sun } from './index.styled';
+import { AboutMe, BuildingImg, CloudOneImg, CloudTwoImg, Picture, Sun } from './index.styled';
 
 const BuildingPicture = () => {
    return (
@@ -8,6 +8,11 @@ const BuildingPicture = () => {
             src='https://i.gyazo.com/4b6239879d8f63a3d3f780435091d70b.webp'
             alt='building'
          />
+
+         <AboutMe href="/#about">
+            <div className='filter'></div>
+            <h3>About me</h3>
+         </AboutMe>
 
          <CloudOneImg
             className='cloud-1-1'

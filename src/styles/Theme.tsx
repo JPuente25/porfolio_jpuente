@@ -11,6 +11,7 @@ export const theme = {
          primary: '#FFF',
          secondary: '#daa520',
          tertiary: '#ccd6f6',
+         opposite: '#000',
          hover: '#ffcc33',
          disabled: '#696969',
          background: 'A9A9A9',

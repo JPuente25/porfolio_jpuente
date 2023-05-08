@@ -1,17 +1,17 @@
+import { Context } from '@/app/Provider';
 import About from '@/containers/About';
 import Contact from '@/containers/Contact';
 import Home from '@/containers/Home';
 import Projects from '@/containers/Projects';
 import Skills from '@/containers/Skills';
-import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/router';
 import { View } from '@/types';
-import views from '@/variables/views';
-import { Carousel, CarouselItem, Container, PassSlide } from './index.styled';
-import { TbTriangleFilled } from 'react-icons/tb';
-import Head from 'next/head';
 import backgrounds from '@/variables/backgrounds';
-import { Context } from '@/app/Provider';
+import views from '@/variables/views';
+import Head from 'next/head';
+import { useRouter } from 'next/router';
+import React, { useCallback, useContext, useEffect, useRef } from 'react';
+import { TbTriangleFilled } from 'react-icons/tb';
+import { Carousel, CarouselItem, Container, PassSlide } from './index.styled';
 
 const Main = () => {
    const router = useRouter();
@@ -96,7 +96,6 @@ const Main = () => {
                className='prev'
                onClick={() => handleView({ prev: true })}>
                <TbTriangleFilled />
-               {/* <p>{previousView.label}</p> */}
             </PassSlide>
 
             <Carousel
@@ -123,7 +122,6 @@ const Main = () => {
                className='next'
                onClick={() => handleView({ next: true })}>
                <TbTriangleFilled />
-               {/* <p>{nextView.label}</p> */}
             </PassSlide>
          </Container>
       </React.Fragment>

@@ -79,131 +79,160 @@ export const PersonalInformation = styled.article`
       filter: ${({ theme }) => theme.palette.shadow.primary};
    }
 
-   div.title {
-      font-size: ${({ theme }) => theme.font.size.x2lg};
-      padding: 20px 0;
-      text-shadow: 0px 0px 5px ${({ theme }) => theme.palette.text.tertiary};
+   @media (min-width: 768px) {
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
 
-      h1 {
-         color: ${({ theme }) => theme.palette.text.gold};
-         &:nth-child(1) {
-            color: ${({ theme }) => theme.palette.text.tertiary};
-         }
-      }
-
-      span {
-         color: ${({ theme }) => theme.palette.text.cyan};
+      picture {
+         grid-column: 2 / 3;
+         grid-row: 1 / 3;
       }
    }
 
-   p {
-      font-size: ${({ theme }) => theme.font.size.sm2};
-      padding: 40px 10px;
-      text-align: justify;
-      line-height: 1.75;
-      background: #141e30;
-      background: ${({ theme }) => theme.palette.gradient.webkitTextBox};
-      background: ${({ theme }) => theme.palette.gradient.textBox};
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
-      height: min-content;
+   @media (min-width: 991px) {
+      column-gap: 30px;
 
-      span {
-         font-weight: ${({ theme }) => theme.font.weight.bold};
-         color: ${({ theme }) => theme.palette.background.cyan};
+      picture {
+         align-self: center;
       }
+   }
+`;
 
-      a {
-         white-space: nowrap;
-         background-color: transparent;
-         padding: 2px 4px;
-         border-radius: 4px;
-         border: 1px solid ${({ theme }) => theme.palette.background.cyan};
-         transition: all ease 0.3s;
+export const Title = styled.div`
+   font-size: ${({ theme }) => theme.font.size.x2lg};
+   padding: 20px 0;
+   text-shadow: 0px 0px 5px ${({ theme }) => theme.palette.text.tertiary};
 
-         &:hover {
-            background-color: ${({ theme }) => theme.palette.background.cyan};
-         }
+   h1 {
+      color: ${({ theme }) => theme.palette.text.gold};
+      &:nth-child(1) {
+         color: ${({ theme }) => theme.palette.text.tertiary};
+      }
+   }
+
+   h1.i-am span {
+      color: ${({ theme }) => theme.palette.text.cyan};
+   }
+
+   @media (min-width: 480px) {
+      font-size: ${({ theme }) => theme.font.size.x3lg};
+   }
+
+   @media (min-width: 600px) {
+      font-size: ${({ theme }) => theme.font.size.x4lg};
+   }
+
+   @media (min-width: 768px) {
+      grid-column: 1 / 2;
+      align-self: center;
+      font-size: ${({ theme }) => theme.font.size.x3lg};
+      text-shadow: 0px 0px 10px ${({ theme }) => theme.palette.text.opposite};
+   }
+
+   @media (min-width: 880px) {
+      font-size: 48px;
+   }
+
+   @media (min-width: 991px) {
+      font-size: ${({ theme }) => theme.font.size.x4lg};
+      padding-top: 40px;
+   }
+
+   @media (min-width: 1200px) {
+      font-size: ${({ theme }) => theme.font.size.x5lg};
+   }
+`;
+
+export const Introduction = styled.div`
+   width: 100%;
+   display: flex;
+   gap: 10px;
+   align-items: center;
+   justify-content: space-between;
+   border: 1px solid ${({ theme }) => theme.palette.text.gold};
+   border-radius: 4px;
+   padding: 10px 12px;
+   box-shadow: 0px 0px 5px ${({ theme }) => theme.palette.text.tertiary};
+   backdrop-filter: blur(4px);
+   cursor: pointer;
+
+   p {
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      font-size: ${({ theme }) => theme.font.size.md};
+      margin: 0 auto;
+      text-shadow: 0px 0px 5px ${({ theme }) => theme.palette.text.opposite};
+   }
+
+   svg {
+      flex-shrink: 0;
+      width: 30px;
+      height: 30px;
+      color: ${({ theme }) => theme.palette.text.gold};
+
+      &.arrow-left {
+         display: none;
+      }
+   }
+
+   &:hover {
+      & + picture div.filter {
+         opacity: 0;
       }
    }
 
    @media (min-width: 480px) {
-      div.title {
-         font-size: ${({ theme }) => theme.font.size.x3lg};
-      }
-
-      p {
-         font-size: ${({ theme }) => theme.font.size.md};
-      }
-   }
-
-   @media (min-width: 600px) {
-      div.title {
-         font-size: ${({ theme }) => theme.font.size.x4lg};
-      }
-
       p {
          font-size: ${({ theme }) => theme.font.size.lg};
       }
    }
 
+   @media (min-width: 600px) {
+      padding: 20px 12px;
+      svg {
+         width: 40px;
+         height: 40px;
+      }
+   }
+
    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 20px;
+      box-shadow: 0px 0px 10px ${({ theme }) => theme.palette.text.tertiary};
+      border: 2px solid ${({ theme }) => theme.palette.text.gold};
+      box-shadow: 0px 0px 15px ${({ theme }) => theme.palette.text.tertiary};
 
-      div.title {
-         grid-column: 1 / 2;
-         align-self: center;
-         font-size: ${({ theme }) => theme.font.size.x3lg};
-      }
+      svg {
+         transform: rotate(-90deg);
 
-      picture {
-         grid-column: 2 / 3;
-      }
-
-      p {
-         grid-column: 1 / 3;
+         &:first-child {
+            display: none;
+         }
       }
    }
-
-   @media (min-width: 880px) { 
-      div.title {
-         font-size: 48px;
-      }
-   }
-
 
    @media (min-width: 991px) {
-      column-gap: 30px;
-
-      div.title {
-         grid-column: 1 / 3;
-         font-size: ${({ theme }) => theme.font.size.x5lg};
-         padding-top: 40px;
-      }
-
-      picture {
-         align-self: center;
-      }
-
       p {
-         grid-column: 1 / 2;
-         grid-row: 2 / 3;
-         padding: 20px;
-         border-radius: 8px;
-         box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
+         font-size: ${({ theme }) => theme.font.size.lg};
       }
    }
 
-   @media (min-width: 1200px) { 
-      div.title {
-         display: flex;
-         gap: 20px;
+   @media (min-width: 991px) {
+      svg {
+         width: 50px;
+         height: 50px;
       }
-
       p {
          font-size: ${({ theme }) => theme.font.size.xlg};
+      }
+   }
+
+   @media (min-width: 1200px) {
+      svg {
+         width: 50px;
+         height: 50px;
+      }
+      p {
+         font-size: ${({ theme }) => theme.font.size.x2lg};
       }
    }
 `;
