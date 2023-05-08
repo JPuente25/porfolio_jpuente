@@ -10,6 +10,7 @@ export const theme = {
       text: {
          primary: '#FFF',
          secondary: '#daa520',
+         tertiary: '#ccd6f6',
          hover: '#ffcc33',
          disabled: '#696969',
          background: 'A9A9A9',
@@ -17,8 +18,9 @@ export const theme = {
          civilEngineer: '#ffac05',
          react: '#2da7cf',
          thanks: 'green',
-         gold: '#ffac05',
+         gold: '#FFD700',
          darkGold: '#858103',
+         cyan: '#43cffd',
       },
       background: {
          primary: '#2d3436',

@@ -24,7 +24,6 @@ const transitionIn = keyframes`
 
 export const Container = styled.div`
    width: 100%;
-   /* min-height: calc(100vh - 70px - 220px); //70 px header, 220 px footer */
    height: auto;
    color: ${(props) => props.theme.palette.text.primary};
    padding: 15px 20px;
@@ -39,6 +38,10 @@ export const Container = styled.div`
    @media (min-width: 768px) {
       display: grid;
       gap: 15px;
+      padding: 40px 60px;
+   }
+
+   @media (min-width: 991px) {
       padding: 40px 80px;
    }
 `;
@@ -47,12 +50,13 @@ export const PersonalInformation = styled.article`
    flex: 50%;
    display: grid;
    grid-template-rows: repeat(3, auto);
+   place-items: center;
    row-gap: 20px;
    animation: ${transitionIn} 0.5s linear;
 
    & > h1,
    & > p,
-   & > img { //** */
+   & > picture {
       transition: all ease 1s;
       opacity: 0;
    }
@@ -65,33 +69,43 @@ export const PersonalInformation = styled.article`
       transform: translateY(-60px);
    }
 
-   & > img { //** */
+   & > picture {
       transform: translateY(40px);
    }
 
-   &.visible{
+   &.visible {
       h1,
-      img, //** */
+      picture,
       p {
          opacity: 1;
          transform: translate(0px, 0px);
       }
    }
 
-   img { //** */
+   picture {
       width: 100%;
       max-width: 600px;
       height: auto;
       filter: ${({ theme }) => theme.palette.shadow.primary};
    }
 
-   h1 {
+   div.title {
       font-size: ${({ theme }) => theme.font.size.x2lg};
-      text-align: center;
-      padding: 40px 0;
+      padding: 20px 0;
       animation: ${({ theme }) =>
             titleChangeColor(theme.palette.text.gold, theme.palette.text.primary)}
          10s linear infinite;
+
+      h1 {
+         color: ${({ theme }) => theme.palette.text.gold};
+         &:nth-child(1) {
+            color: ${({ theme }) => theme.palette.text.tertiary};
+         }
+      }
+
+      span {
+         color: ${({ theme }) => theme.palette.text.cyan};
+      }
    }
 
    p {
@@ -127,7 +141,7 @@ export const PersonalInformation = styled.article`
    }
 
    @media (min-width: 480px) {
-      h1 {
+      div.title {
          font-size: ${({ theme }) => theme.font.size.x3lg};
       }
 
@@ -137,7 +151,7 @@ export const PersonalInformation = styled.article`
    }
 
    @media (min-width: 600px) {
-      h1 {
+      div.title {
          font-size: ${({ theme }) => theme.font.size.x4lg};
       }
 
@@ -148,14 +162,15 @@ export const PersonalInformation = styled.article`
 
    @media (min-width: 768px) {
       grid-template-columns: repeat(2, 1fr);
+      column-gap: 20px;
 
-      h1 {
+      div.title {
          grid-column: 1 / 2;
          align-self: center;
-         font-size: ${({ theme }) => theme.font.size.x5lg};
+         font-size: ${({ theme }) => theme.font.size.x3lg};
       }
 
-      img { //** */
+      picture {
          grid-column: 2 / 3;
       }
 
@@ -164,22 +179,38 @@ export const PersonalInformation = styled.article`
       }
    }
 
+   @media (min-width: 880px) { 
+      div.title {
+         font-size: 48px;
+      }
+   }
+
+
    @media (min-width: 991px) {
-      h1 {
+
+      div.title {
+         grid-column: 1 / 3;
          font-size: ${({ theme }) => theme.font.size.x5lg};
+         padding-top: 40px;
       }
 
-      img { //** */
-         grid-row: 1 / 3;
-         grid-column: 2 / 3;
+      picture {
          align-self: center;
       }
 
       p {
          grid-column: 1 / 2;
+         grid-row: 2 / 3;
          padding: 20px;
          border-radius: 8px;
          box-shadow: ${({ theme }) => theme.palette.boxShadow.primary};
+      }
+   }
+
+   @media (min-width: 1200px) { 
+      div.title {
+         display: flex;
+         gap: 20px;
       }
    }
 `;
