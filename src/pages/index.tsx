@@ -3,7 +3,7 @@ import Contact from '@/containers/Contact';
 import Home from '@/containers/Home';
 import Projects from '@/containers/Projects';
 import Skills from '@/containers/Skills';
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useRef, useState } from 'react';
 import { useRouter } from 'next/router';
 import { View } from '@/types';
 import views from '@/variables/views';
@@ -15,12 +15,10 @@ import { Context } from '@/app/Provider';
 
 const Main = () => {
    const router = useRouter();
-   const {currentView, setCurrentView} = useContext(Context);
+   const { currentView, setCurrentView } = useContext(Context);
    const carouselContainer = useRef<HTMLDivElement>(null);
-   const previousView = currentView.id === 0 ? views[views.length - 1] : views[currentView.id - 1];
-   const nextView = currentView.id === views.length - 1 ? views[0] : views[currentView.id + 1];
 
-   const handleView = ({ next, prev }: { next?: boolean; prev?: boolean }) => {
+   const handleView = useCallback(({ next, prev }: { next?: boolean; prev?: boolean }) => {
       let nextViewIndex = 0;
       if (next) {
          if (currentView.id === views.length - 1) {
@@ -37,9 +35,10 @@ const Main = () => {
       }
 
       router.push(views[nextViewIndex].path);
-   };
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [currentView]);
 
-   const handleScroll = ({
+   const automaticScroll = useCallback(({
       next,
       prev,
       scrollAmmount,
@@ -56,7 +55,16 @@ const Main = () => {
          left: next ? actualScroll + width : prev ? actualScroll - width : scrollAmmount,
          behavior: 'smooth',
       });
-   };
+   }, []);
+
+   const arrowSlide = useCallback((e: KeyboardEvent) => {
+      if (e.key === 'ArrowRight') {
+         handleView({ next: true });
+      } else if (e.key === 'ArrowLeft') {
+         handleView({ prev: true });
+      }
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [currentView]);
 
    useEffect(() => {
       const width = window.innerWidth;
@@ -64,11 +72,19 @@ const Main = () => {
       const view: View = views.find((item) => item.label.toLowerCase() === viewLabel) || views[0];
       const scrollAmmount = view.id * width;
 
-      handleScroll({ scrollAmmount });
+      automaticScroll({ scrollAmmount });
       setCurrentView(view);
       window.scrollTo(0, 0);
-   // eslint-disable-next-line react-hooks/exhaustive-deps
+      // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [router.asPath]);
+
+   useEffect(() => {
+      window.addEventListener('keyup', arrowSlide);
+      return () => {
+         window.removeEventListener('keyup', arrowSlide);
+      };
+      // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [currentView]);
 
    return (
       <React.Fragment>
@@ -80,7 +96,7 @@ const Main = () => {
                className='prev'
                onClick={() => handleView({ prev: true })}>
                <TbTriangleFilled />
-               <p>{previousView.label}</p>
+               {/* <p>{previousView.label}</p> */}
             </PassSlide>
 
             <Carousel
@@ -107,7 +123,7 @@ const Main = () => {
                className='next'
                onClick={() => handleView({ next: true })}>
                <TbTriangleFilled />
-               <p>{nextView.label}</p>
+               {/* <p>{nextView.label}</p> */}
             </PassSlide>
          </Container>
       </React.Fragment>
