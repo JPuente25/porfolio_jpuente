@@ -1,3 +1,5 @@
+import Container from '@/components/Container';
+import backgrounds from '@/variables/backgrounds';
 import styled, { keyframes } from 'styled-components';
 
 const transitionIn = keyframes`
@@ -12,24 +14,14 @@ const transitionIn = keyframes`
 }
 `;
 
-export const Container = styled.div`
-   width: 100%;
+export const StyledContainer = styled(Container)`
    color: ${(props) => props.theme.palette.text.primary};
-   padding: 15px 20px;
-   display: flex;
+   padding-top: 85px; //+70px on top because of Header height
    flex-direction: column;
-   /* display: grid; */
-   /* grid-template-rows: repeat(2, auto); */
-   align-items: center;
-   justify-content: space-between;
-
-   div.typing-switch-box {
-      margin: 0 auto;
-   }
 
    @media (min-width: 768px) {
       gap: 15px;
-      padding: 40px 60px;
+      padding: 110px 60px 40px; //+70px on top because of Header height
    }
 `;
 
@@ -42,13 +34,13 @@ export const SectionContainer = styled.article`
    animation: ${transitionIn} 0.5s linear;
 
    & > div.title,
-   & > p,
+   & > div.introduction,
    & > picture {
       transition: all ease 1s;
       opacity: 0;
    }
 
-   & > p {
+   & > div.introduction {
       transform: translateX(40px);
    }
 
@@ -63,7 +55,7 @@ export const SectionContainer = styled.article`
    &.visible {
       div.title,
       picture,
-      p {
+      div.introduction {
          opacity: 1;
          transform: translate(0px, 0px);
       }

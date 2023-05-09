@@ -60,6 +60,7 @@ const switchText = (fontSize: string) => keyframes`
 export const Container = styled.div`
    padding-top: 20px;
    width: 280px;
+   margin: 0 auto;
 
    @media (min-width: 380px) {
       width: 340px;

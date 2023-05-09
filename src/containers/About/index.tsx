@@ -1,18 +1,30 @@
 import SocialMedia from '@/components/SocialMedia';
-import Layout from '@/containers/Layout';
-import { theme } from '@/styles/Theme';
-import React from 'react';
-import { Container, PersonalInformation, Profile, TextAboutMe } from './index.styled';
-import Image from 'next/image';
 import images from '@/variables/images';
+import Image from 'next/image';
+import { PersonalInformation, Profile, StyledContainer, TextAboutMe } from './index.styled';
+import { useContext, useEffect } from 'react';
+import { Context } from '@/app/Provider';
+import {useInView} from 'react-intersection-observer'
+import views from '@/variables/views';
+
 
 interface Props {}
 
 interface AboutStates {}
 
 const About = () => {
+   const {setCurrentView} = useContext(Context);
+   const { ref, inView } = useInView({
+      threshold: 0.5,
+   });
+
+   useEffect(() => {
+      inView && setCurrentView(views.about)
+   // eslint-disable-next-line react-hooks/exhaustive-deps
+   }, [inView]);
+
    return (
-      <Container>
+      <StyledContainer props={{ref, inView, view: views.about.label}}>
          <PersonalInformation>
             <TextAboutMe>
                <h2>Hi all, my name is Jaime Puente</h2>
@@ -66,7 +78,7 @@ const About = () => {
             </div>
             <SocialMedia />
          </Profile>
-      </Container>
+      </StyledContainer>
    );
 };
 

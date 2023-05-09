@@ -1,15 +1,11 @@
+import Container from '@/components/Container';
 import styled from 'styled-components';
 
-export const Container = styled.section`
-   width: 100%;
+export const StyledContainer = styled(Container)`
    color: ${(props) => props.theme.palette.text.primary};
-   padding: 15px 20px;
-   display: flex;
-   position: relative;
 
    @media (min-width: 768px) {
       gap: 15px;
-      padding: 40px 60px;
    }
 `;
 

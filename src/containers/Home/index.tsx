@@ -1,18 +1,20 @@
-import { Context } from '@/app/Provider';
 import BuildingPicture from '@/components/BuildingPicture';
 import TypingSwitchBox from '@/components/TypingSwitchBox';
-import { useContext } from 'react';
-import { BsArrowDownCircle, BsArrowRightCircle } from 'react-icons/bs';
-import { Container, Introduction, SectionContainer, Title } from './index.styled';
+import { BsArrowDownCircle } from 'react-icons/bs';
+import { useInView } from 'react-intersection-observer';
+import views from '@/variables/views';
+import { Introduction, SectionContainer, StyledContainer, Title } from './index.styled';
 
 const Home = () => {
-   const { currentView } = useContext(Context);
+   const { ref, inView } = useInView({
+      threshold: 0.5,
+   });
 
    return (
-      <Container>
+      <StyledContainer props={{ ref, inView, view: views.home.label }}>
          <TypingSwitchBox />
 
-         <SectionContainer className={currentView.label === 'Home' ? 'visible' : ''}>
+         <SectionContainer className={inView ? 'visible' : ''}>
             <Title className='title'>
                <h1 className='i-am'>
                   <span>I&apos;m</span> Jaime and{' '}
@@ -24,20 +26,20 @@ const Home = () => {
                </h1>
             </Title>
 
-            <Introduction>
-               <BsArrowDownCircle/>
+            <Introduction className='introduction'>
+               <BsArrowDownCircle />
                <p>
                   <span>You wanna know more about me? </span>
                   <span>
                      <strong>Click on that screen</strong>
                   </span>
                </p>
-               <BsArrowDownCircle/>
+               <BsArrowDownCircle />
             </Introduction>
 
             <BuildingPicture />
          </SectionContainer>
-      </Container>
+      </StyledContainer>
    );
 };
 

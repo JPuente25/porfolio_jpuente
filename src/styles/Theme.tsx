@@ -31,6 +31,7 @@ export const theme = {
          footer: '#13161b',
          gold: 'rgb(163, 153, 39)',
          cyan: '#2da7cf',
+         default: '#484848'
       },
       gradient: {
          home: 'linear-gradient(315deg, #2d3436 0%, #000000 90%)',

@@ -3,3 +3,11 @@ export type View = {
    path: string;
    label: string;
 };
+
+export type ViewList = {
+   home: View;
+   about: View;
+   skills: View;
+   projects: View;
+   contact: View;
+}

@@ -1,31 +1,31 @@
-import { View } from "@/types";
+import { ViewList } from "@/types";
 
-const views: View[] = [
-   {
+const views: ViewList = {
+   home:   {
       id: 0,
       path: '/',
-      label: 'Home'
+      label: 'home'
    },
-   {
+   about: {
       id: 1,
       path: '/#about',
-      label: 'About'
+      label: 'about'
    },
-   {
+   skills: {
       id: 2,
       path: '/#skills',
-      label: 'Skills'
+      label: 'skills'
    },
-   {
+   projects: {
       id: 3,
       path: '/#projects',
-      label: 'Projects'
+      label: 'projects'
    },
-   {
+   contact: {
       id: 4,
       path: '/#contact',
-      label: 'Contact'
-   },
-];
+      label: 'contact'
+   }
+};
 
 export default views;

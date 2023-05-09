@@ -22,14 +22,13 @@ const Context = React.createContext<ContextProps>({} as ContextProps);
 
 const Provider = (props: ProviderProps) => {
    const [showMenu, setShowMenu] = useState<ProviderStates['showMenu']>(false);
-   const [currentView, setCurrentView] = useState<ProviderStates['currentView']>(views[0]);
-
+   const [currentView, setCurrentView] = useState<ProviderStates['currentView']>(views['home']);
 
    return (
-      <Context.Provider value={{showMenu, setShowMenu, currentView, setCurrentView}}>
+      <Context.Provider value={{ showMenu, setShowMenu, currentView, setCurrentView }}>
          {props.children}
       </Context.Provider>
    );
-}
+};
 
 export { Context, Provider };

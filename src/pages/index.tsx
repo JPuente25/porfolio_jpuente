@@ -4,125 +4,86 @@ import Contact from '@/containers/Contact';
 import Home from '@/containers/Home';
 import Projects from '@/containers/Projects';
 import Skills from '@/containers/Skills';
-import { View } from '@/types';
-import backgrounds from '@/variables/backgrounds';
 import views from '@/variables/views';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useCallback, useContext, useEffect, useRef } from 'react';
-// import { TbTriangleFilled } from 'react-icons/tb';
-import { Carousel, CarouselItem, Container, PassSlide } from './index.styled';
+import React, { useContext, useEffect, useRef } from 'react';
+import { CarouselItem, Container } from './index.styled';
+import getFirstLetterUppercase from '@/utils/functions/getFirstLetterUppercase';
 
 const Main = () => {
    const router = useRouter();
    const { currentView, setCurrentView } = useContext(Context);
    const carouselContainer = useRef<HTMLDivElement>(null);
+   const homeRef = useRef<HTMLDivElement>(null);
+   const aboutRef = useRef<HTMLDivElement>(null);
+   const skillsRef = useRef<HTMLDivElement>(null);
+   const projectsRef = useRef<HTMLDivElement>(null);
+   const contactRef = useRef<HTMLDivElement>(null);
 
-   const handleView = useCallback(({ next, prev }: { next?: boolean; prev?: boolean }) => {
-      let nextViewIndex = 0;
-      if (next) {
-         if (currentView.id === views.length - 1) {
-            nextViewIndex = 0;
-         } else {
-            nextViewIndex = currentView.id + 1;
-         }
-      } else if (prev) {
-         if (currentView.id === 0) {
-            nextViewIndex = views.length - 1;
-         } else {
-            nextViewIndex = currentView.id - 1;
-         }
-      }
+   const automaticScroll = (view: string) => {
+      //Gets Location in Document of the Section selected based in 
+      //the asPath from the router
+      const scrollAmmount = 
+         view === views.contact.label         
+            ? contactRef.current!.offsetTop
+            : view === views.about.label       
+            ? aboutRef.current!.offsetTop
+            : view === views.skills.label      
+            ? skillsRef.current!.offsetTop
+            : view === views.projects.label      
+            ? projectsRef.current!.offsetTop
+            : homeRef.current!.offsetTop;         
 
-      router.push(views[nextViewIndex].path);
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [currentView]);
-
-   const automaticScroll = useCallback(({
-      next,
-      prev,
-      scrollAmmount,
-   }: {
-      next?: boolean;
-      prev?: boolean;
-      scrollAmmount?: number;
-   }) => {
-      const width = window.innerWidth;
-      const element = carouselContainer.current!;
-      const actualScroll = element.scrollLeft;
-
-      element.scrollTo({
-         left: next ? actualScroll + width : prev ? actualScroll - width : scrollAmmount,
+      window.scrollTo({
+         top: scrollAmmount - 70,
          behavior: 'smooth',
       });
-   }, []);
-
-   const arrowSlide = useCallback((e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight') {
-         handleView({ next: true });
-      } else if (e.key === 'ArrowLeft') {
-         handleView({ prev: true });
-      }
-   // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [currentView]);
+   };
 
    useEffect(() => {
-      const width = window.innerWidth;
+      //Automatic Scrolling
       const viewLabel = router.asPath.split('/#')[1] || 'home';
-      const view: View = views.find((item) => item.label.toLowerCase() === viewLabel) || views[0];
-      const scrollAmmount = view.id * width;
+      automaticScroll(viewLabel);
 
-      automaticScroll({ scrollAmmount });
-      setCurrentView(view);
-      window.scrollTo(0, 0);
+      //Setting Current View
+      setCurrentView(views[viewLabel as keyof typeof views]);
+
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [router.asPath]);
-
-   useEffect(() => {
-      window.addEventListener('keyup', arrowSlide);
-      return () => {
-         window.removeEventListener('keyup', arrowSlide);
-      };
-      // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [currentView]);
 
    return (
       <React.Fragment>
          <Head>
-            <title>Jaime Puente - {currentView.label}</title>
+            <title>Jaime Puente - {getFirstLetterUppercase(currentView.label)}</title>
          </Head>
-         <Container>
-            {/* <PassSlide
-               className='prev'
-               onClick={() => handleView({ prev: true })}>
-               <TbTriangleFilled />
-            </PassSlide> */}
 
-            <Carousel
-               ref={carouselContainer}
-               bg={backgrounds[currentView.label.toLowerCase() as keyof typeof backgrounds]}>
-               <CarouselItem className={currentView.label === 'home' ? 'on-screen' : ''}>
-                  <Home />
-               </CarouselItem>
-               <CarouselItem className={currentView.label === 'about' ? 'on-screen' : ''}>
-                  <About />
-               </CarouselItem>
-               <CarouselItem className={currentView.label === 'skills' ? 'on-screen' : ''}>
-                  <Skills />
-               </CarouselItem>
-               <CarouselItem className={currentView.label === 'projects' ? 'on-screen' : ''}>
-                  <Projects />
-               </CarouselItem>
-               <CarouselItem className={currentView.label === 'contact' ? 'on-screen' : ''}>
-                  <Contact />
-               </CarouselItem>
-            </Carousel>
-
-            {/* <PassSlide
-               className='next'
-               onClick={() => handleView({ next: true })}>
-               <TbTriangleFilled />
-            </PassSlide> */}
+         <Container ref={carouselContainer}>
+            <CarouselItem
+               className={currentView.label === 'home' ? 'on-screen' : ''}
+               ref={homeRef}>
+               <Home />
+            </CarouselItem>
+            <CarouselItem
+               className={currentView.label === 'about' ? 'on-screen' : ''}
+               ref={aboutRef}>
+               <About />
+            </CarouselItem>
+            <CarouselItem
+               className={currentView.label === 'skills' ? 'on-screen' : ''}
+               ref={skillsRef}>
+               <Skills />
+            </CarouselItem>
+            <CarouselItem
+               className={currentView.label === 'projects' ? 'on-screen' : ''}
+               ref={projectsRef}>
+               <Projects />
+            </CarouselItem>
+            <CarouselItem
+               className={currentView.label === 'contact' ? 'on-screen' : ''}
+               ref={contactRef}>
+               <Contact />
+            </CarouselItem>
          </Container>
       </React.Fragment>
    );

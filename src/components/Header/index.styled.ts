@@ -4,12 +4,13 @@ import styled from 'styled-components';
 export const Container = styled.header`
    background-color: ${({ theme }) => theme.palette.background.header};
    height: 70px;
+   width: 100%;
    display: flex;
    align-items: center;
    justify-content: space-between;
    padding: 0 20px;
    color: ${({ theme }) => theme.palette.text.primary};
-   position: sticky;
+   position: fixed;
    top: 0;
    z-index: 1;
 
