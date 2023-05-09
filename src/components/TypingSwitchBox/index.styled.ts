@@ -212,10 +212,10 @@ export const List = styled.ul`
    }
 
    @media (min-width: 1200px) {
-      width: 1060px;
+      width: 1080px;
       height: ${({ theme }) => `calc(${theme.font.size.x4lg} + 10px)`};
-      animation: ${() => shortingBox('1060px', '800px')} 16s linear infinite 2s;
-      padding-right: 10px;
+      animation: ${() => shortingBox('1080px', '800px')} 16s linear infinite 2s;
+      /* padding-right: 15px; */
 
       &:after {
          width: 16px;

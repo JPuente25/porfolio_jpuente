@@ -10,7 +10,7 @@ import views from '@/variables/views';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useCallback, useContext, useEffect, useRef } from 'react';
-import { TbTriangleFilled } from 'react-icons/tb';
+// import { TbTriangleFilled } from 'react-icons/tb';
 import { Carousel, CarouselItem, Container, PassSlide } from './index.styled';
 
 const Main = () => {
@@ -92,11 +92,11 @@ const Main = () => {
             <title>Jaime Puente - {currentView.label}</title>
          </Head>
          <Container>
-            <PassSlide
+            {/* <PassSlide
                className='prev'
                onClick={() => handleView({ prev: true })}>
                <TbTriangleFilled />
-            </PassSlide>
+            </PassSlide> */}
 
             <Carousel
                ref={carouselContainer}
@@ -118,11 +118,11 @@ const Main = () => {
                </CarouselItem>
             </Carousel>
 
-            <PassSlide
+            {/* <PassSlide
                className='next'
                onClick={() => handleView({ next: true })}>
                <TbTriangleFilled />
-            </PassSlide>
+            </PassSlide> */}
          </Container>
       </React.Fragment>
    );

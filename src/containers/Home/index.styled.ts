@@ -14,29 +14,26 @@ const transitionIn = keyframes`
 
 export const Container = styled.div`
    width: 100%;
-   height: auto;
    color: ${(props) => props.theme.palette.text.primary};
    padding: 15px 20px;
-   display: grid;
-   grid-template-rows: repeat(2, auto);
+   display: flex;
+   flex-direction: column;
+   /* display: grid; */
+   /* grid-template-rows: repeat(2, auto); */
    align-items: center;
+   justify-content: space-between;
 
    div.typing-switch-box {
       margin: 0 auto;
    }
 
    @media (min-width: 768px) {
-      display: grid;
       gap: 15px;
       padding: 40px 60px;
    }
-
-   @media (min-width: 991px) {
-      padding: 40px 80px;
-   }
 `;
 
-export const PersonalInformation = styled.article`
+export const SectionContainer = styled.article`
    flex: 50%;
    display: grid;
    grid-template-rows: repeat(3, auto);
