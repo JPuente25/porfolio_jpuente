@@ -3,18 +3,20 @@ import TypingSwitchBox from '@/components/TypingSwitchBox';
 import { BsArrowDownCircle } from 'react-icons/bs';
 import { useInView } from 'react-intersection-observer';
 import views from '@/variables/views';
-import { Introduction, SectionContainer, StyledContainer, Title } from './index.styled';
+import { SeeAboutMe, SectionContainer, StyledContainer, Title } from './index.styled';
+import { useContext, useEffect } from 'react';
+import { Context } from '@/app/Provider';
 
 const Home = () => {
    const { ref, inView } = useInView({
-      threshold: 0.5,
+      threshold: 0.3,
    });
 
    return (
       <StyledContainer props={{ ref, inView, view: views.home.label }}>
          <TypingSwitchBox />
 
-         <SectionContainer className={inView ? 'visible' : ''}>
+         <SectionContainer>
             <Title className='title'>
                <h1 className='i-am'>
                   <span>I&apos;m</span> Jaime and{' '}
@@ -26,16 +28,14 @@ const Home = () => {
                </h1>
             </Title>
 
-            <Introduction className='introduction'>
+            <SeeAboutMe className='see-about-me'>
                <BsArrowDownCircle />
                <p>
                   <span>You wanna know more about me? </span>
-                  <span>
-                     <strong>Click on that screen</strong>
-                  </span>
+                  <span>Click on that screen</span>
                </p>
                <BsArrowDownCircle />
-            </Introduction>
+            </SeeAboutMe>
 
             <BuildingPicture />
          </SectionContainer>

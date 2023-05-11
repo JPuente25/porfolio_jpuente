@@ -12,7 +12,7 @@ export const Container = styled.header`
    color: ${({ theme }) => theme.palette.text.primary};
    position: fixed;
    top: 0;
-   z-index: 1;
+   z-index: 20;
 
    ul.links-container {
       display: none;

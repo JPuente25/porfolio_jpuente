@@ -1,9 +1,8 @@
-import React, { useContext, useEffect } from 'react';
 import { Context } from '@/app/Provider';
-import { useInView } from 'react-intersection-observer';
-import views from '@/variables/views';
 import backgrounds from '@/variables/backgrounds';
-import { StyledContainer } from './index.styled';
+import views from '@/variables/views';
+import React, { useContext, useEffect } from 'react';
+import { BackgroundFilter, StyledContainer } from './index.styled';
 
 interface Props {
    children: React.ReactNode;
@@ -24,11 +23,19 @@ const Container = ({ children, props, className }: Props) => {
    }, [props.inView]);
 
    return (
-      <StyledContainer
+      <StyledContainer //ONLY FOR BACKGROUNDS TO FILL SCREEN
          ref={props.ref}
          bg={backgrounds[props.view as keyof typeof backgrounds]}
          className={className}>
-         {children}
+         <BackgroundFilter className='top' />
+         <BackgroundFilter className='bottom' />
+
+         <div  //REAL CONTAINER
+            className={`${props.inView ? 'visible' : ''} container`}
+            style={{ width: '100%', maxWidth: '1440px',  margin: '0 auto' }}>
+            {children}
+         </div>
+
       </StyledContainer>
    );
 };

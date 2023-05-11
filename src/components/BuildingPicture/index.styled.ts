@@ -2,6 +2,17 @@ import backgrounds from '@/variables/backgrounds';
 import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 
+export const handPointer = keyframes`
+   0% {
+      opacity: 0.6;
+   }
+
+   50% {
+      opacity: 0;
+      box-shadow: 0px 0px 4px 30px white;
+   }
+`;
+
 const cloudMovement = (x: string, y: string) => keyframes`
    0%, 100% {
       transform: translate(0, 0);
@@ -78,12 +89,14 @@ export const AboutMe = styled(Link)`
       width: 100%;
       height: 100%;
       background-color: #000;
-      opacity: 0.4;
+      opacity: 0.6;
       transition: all 0.3s;
 
       &:hover {
          opacity: 0;
+         animation: ${handPointer} 2s 1;
       }
+      
    }
 
    @media (min-width: 600px) {

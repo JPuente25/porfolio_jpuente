@@ -1,29 +1,50 @@
 import Container from '@/components/Container';
-import backgrounds from '@/variables/backgrounds';
 import styled, { keyframes } from 'styled-components';
 
-const transitionIn = keyframes`
-0% {
-   opacity: 0;
-   transform: translateY(20px);
-}
-
-100% {
-   opacity: 1;
-   transform: translateY(0px);
-}
-`;
+/////////////////////////////////////////////////////////////////////////////
 
 export const StyledContainer = styled(Container)`
-   color: ${(props) => props.theme.palette.text.primary};
-   padding-top: 85px; //+70px on top because of Header height
-   flex-direction: column;
+   div.container {
+      color: ${(props) => props.theme.palette.text.primary};
+      padding-top: 85px !important; //+70px on top because of Header height
+      flex-direction: column;
 
-   @media (min-width: 768px) {
-      gap: 15px;
-      padding: 110px 60px 40px; //+70px on top because of Header height
+      div.title,
+      div.see-about-me,
+      picture {
+         transition: all ease 1s;
+         opacity: 0;
+      }
+
+      div.see-about-me {
+         transform: translateX(40px);
+      }
+
+      div.title {
+         transform: translateY(-60px);
+      }
+
+      picture {
+         transform: translateY(40px);
+      }
+
+      &.visible {
+         div.title,
+         picture,
+         div.see-about-me {
+            opacity: 1;
+            transform: translate(0px, 0px);
+         }
+      }
+
+      @media (min-width: 768px) {
+         gap: 15px;
+         padding: 110px 60px 40px !important; //+70px on top because of Header height
+      }
    }
 `;
+
+/////////////////////////////////////////////////////////////////////////////
 
 export const SectionContainer = styled.article`
    flex: 50%;
@@ -31,35 +52,6 @@ export const SectionContainer = styled.article`
    grid-template-rows: repeat(3, auto);
    place-items: center;
    row-gap: 20px;
-   animation: ${transitionIn} 0.5s linear;
-
-   & > div.title,
-   & > div.introduction,
-   & > picture {
-      transition: all ease 1s;
-      opacity: 0;
-   }
-
-   & > div.introduction {
-      transform: translateX(40px);
-   }
-
-   & > div.title {
-      transform: translateY(-60px);
-   }
-
-   & > picture {
-      transform: translateY(40px);
-   }
-
-   &.visible {
-      div.title,
-      picture,
-      div.introduction {
-         opacity: 1;
-         transform: translate(0px, 0px);
-      }
-   }
 
    picture {
       width: 100%;
@@ -86,6 +78,8 @@ export const SectionContainer = styled.article`
       }
    }
 `;
+
+/////////////////////////////////////////////////////////////////////////////
 
 export const Title = styled.div`
    font-size: ${({ theme }) => theme.font.size.x2lg};
@@ -132,7 +126,9 @@ export const Title = styled.div`
    }
 `;
 
-export const Introduction = styled.div`
+/////////////////////////////////////////////////////////////////////////////
+
+export const SeeAboutMe = styled.div`
    width: 100%;
    display: flex;
    gap: 10px;
@@ -141,9 +137,11 @@ export const Introduction = styled.div`
    border: 1px solid ${({ theme }) => theme.palette.text.gold};
    border-radius: 4px;
    padding: 10px 12px;
-   box-shadow: 0px 0px 5px ${({ theme }) => theme.palette.text.tertiary};
+   background-color: ${({ theme }) => theme.palette.transparency.green2};
    backdrop-filter: blur(4px);
+   font-weight: ${({ theme }) => theme.font.weight.bold};
    cursor: pointer;
+   box-shadow: ${({ theme }) => theme.palette.shadow.box};
 
    p {
       display: flex;
@@ -186,9 +184,7 @@ export const Introduction = styled.div`
    }
 
    @media (min-width: 768px) {
-      box-shadow: 0px 0px 10px ${({ theme }) => theme.palette.text.tertiary};
       border: 2px solid ${({ theme }) => theme.palette.text.gold};
-      box-shadow: 0px 0px 15px ${({ theme }) => theme.palette.text.tertiary};
 
       svg {
          transform: rotate(-90deg);

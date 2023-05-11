@@ -15,15 +15,11 @@ export const theme = {
          hover: '#ffcc33',
          disabled: '#696969',
          background: 'A9A9A9',
-         hello: '#BA0021',
-         civilEngineer: '#ffac05',
-         react: '#2da7cf',
-         thanks: 'green',
          gold: '#FFD700',
          darkGold: '#858103',
          cyan: '#43cffd',
          cyan2: '#5defff',
-         cyan3: '#114a61'
+         cyan3: '#114a61',
       },
       background: {
          primary: '#2d3436',
@@ -31,7 +27,12 @@ export const theme = {
          footer: '#13161b',
          gold: 'rgb(163, 153, 39)',
          cyan: '#2da7cf',
-         default: '#484848'
+         default: '#484848',
+         cardBar: '#3b3c36',
+         cardLabel: '#100c08',
+         cardBg: '#A9A9A9',
+         tooltip: '#282828',
+         tooltip2: '#d4d4d4',
       },
       gradient: {
          home: 'linear-gradient(315deg, #2d3436 0%, #000000 90%)',
@@ -47,13 +48,21 @@ export const theme = {
          imageFilter: 'linear-gradient(180deg, transparent 0%, transparent 80%, #000 100%)',
          textBox: 'linear-gradient(to right, #243b55, #141e30)',
          webkitTextBox:  '-webkit-linear-gradient(to right, #243b55, #141e30)',
+         darkBlue: 'linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%)',
+         red: 'linear-gradient(90.3deg, rgb(255, 255, 255) 3%, rgb(235, 158, 98) 34.6%, rgb(177, 10, 10) 63.7%, rgb(0, 0, 0) 102%)',
+         green: 'linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%);'
       },
       transparency: {
          primary: 'rgba(255, 255, 255, 0.5)',
-         secondary: 'rgba(255, 255, 255, 0.7)',
+         secondary: 'rgba(255, 255, 255, 0.3)',
+         tertiary: 'rgba(0, 0, 0, 0.5)',
+         green: 'rgba(37, 96, 37, 0.5)',
+         green2: 'rgba(54, 164, 178, 0.5)',
+         blue: 'rgba(0, 0, 255, 0.25)'
       },
       shadow: {
          primary: 'drop-shadow(0px 0px 20px #FFFFFF60)',
+         box: '4px 4px 4px rgb(0, 0, 0, 0.75)',
       },
       boxShadow: {
          primary: '0px 0px 12px #000',
