@@ -8,6 +8,15 @@ export const Card = styled.article<{ bgColor: string }>`
    height: min-content;
    box-shadow: ${({ theme }) => theme.palette.shadow.box};
    transition: all ease 0.5s;
+   cursor: crosshair;
+
+   &:hover {
+      transform: scale(1.05);
+
+      div.recursive-children {
+         transform: scale(calc(1 / 1.05));
+      }
+   }
 `;
 
 export const MainTechnology = styled.div`
@@ -114,6 +123,10 @@ export const TechProgress = styled.div<{}>`
    justify-content: center;
    border-radius: 0px 8px 8px 0px;
    outline: 1px solid ${({ theme }) => theme.palette.text.opposite};
+
+   &:hover > div > div.filler > div.progress-tooltip {
+      visibility: visible;
+   }
 `;
 
 export const ProgressBar = styled.div<{ progress: number; color: string }>`
@@ -134,11 +147,6 @@ export const ProgressBar = styled.div<{ progress: number; color: string }>`
       left: 0;
       box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.palette.text.primary};
       z-index: 0;
-      cursor: pointer;
-
-      &:hover div.progress-tooltip {
-         visibility: visible;
-      }
    }
 
    @media (min-width: 480px) {
@@ -158,6 +166,7 @@ export const RecursiveChildren = styled.div`
    align-items: center;
    justify-content: flex-start;
    gap: 10px;
+   transition: all ease 0.5s;
 
    @media (min-width: 480px) {
       padding: 20px 10px 20px 40px;

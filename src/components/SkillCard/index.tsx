@@ -40,7 +40,7 @@ const SkillCard = ({ tech: { label, icon: Icon, progress, color, bgColor, childr
          </MainTechnology>
 
          {children && (
-            <RecursiveChildren>
+            <RecursiveChildren className='recursive-children'>
                {children.map((childTech) => (
                   <SkillCard
                      tech={childTech}
