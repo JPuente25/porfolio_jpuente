@@ -38,6 +38,7 @@ export const SkillsScreen = styled(Link)`
    justify-content: center;
    white-space: nowrap;
    cursor: pointer;
+   z-index: 1;
 
    h3 {
       font-size: 18px;

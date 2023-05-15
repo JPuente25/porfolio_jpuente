@@ -7,18 +7,6 @@ export const Container = styled.section`
    align-items: center;
 `;
 
-// export const Carousel = styled.article<{bg: string}>`
-//    width: 100%;
-//    height: 100%;
-//    height: auto;
-//    display: flex;
-//    overflow: hidden;
-//    position: relative;
-//    background-color: #00000070;
-//    background: ${({ bg }) => `url(${bg})`} center center no-repeat;
-//    background-size: cover;
-// `;
-
 export const CarouselItem = styled.div`
    width: 100%;
    height: 100%;

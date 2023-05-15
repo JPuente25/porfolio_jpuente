@@ -33,6 +33,9 @@ export const theme = {
          cardBg: '#A9A9A9',
          tooltip: '#282828',
          tooltip2: '#d4d4d4',
+         darkBlue: '#04152d',
+         green: '#B0FC38',
+         orange: 'orange',
       },
       gradient: {
          home: 'linear-gradient(315deg, #2d3436 0%, #000000 90%)',
@@ -58,7 +61,7 @@ export const theme = {
          tertiary: 'rgba(0, 0, 0, 0.5)',
          green: 'rgba(37, 96, 37, 0.5)',
          green2: 'rgba(54, 164, 178, 0.5)',
-         blue: 'rgba(0, 0, 255, 0.25)'
+         blue: 'rgba(0, 0, 255, 0.25)',
       },
       shadow: {
          primary: 'drop-shadow(0px 0px 20px #FFFFFF60)',

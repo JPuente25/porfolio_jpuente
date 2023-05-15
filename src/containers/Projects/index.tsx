@@ -1,24 +1,34 @@
-import { theme } from '@/styles/Theme';
-import React from 'react';
-import { useContext, useEffect } from 'react';
-import { Context } from '@/app/Provider';
-import { useInView } from 'react-intersection-observer';
-import views from '@/variables/views';
 import Container from '@/components/Container';
-
-interface Props {}
-
-interface ProjectsStates {}
+import ProjectCard from '@/components/ProjectCard';
+import projects from '@/variables/projects';
+import views from '@/variables/views';
+import { useInView } from 'react-intersection-observer';
+import { v4 as uuidv4 } from 'uuid';
+import { StyledContainer, Title } from './index.styled';
 
 const Projects = () => {
    const { ref, inView } = useInView({
       threshold: 0.3,
    });
-   
+
    return (
-      <Container props={{ref, inView, view: views.projects.label}}>
-         <h1>Projects</h1>
-      </Container>
+      <StyledContainer
+         props={{ ref, inView, view: views.projects.label }}
+         className={inView ? 'visible' : 'hidden'}>
+         <Title>
+            La crème de la crème: <br /> <span>My projects</span>
+         </Title>
+
+         <div className='projects-container'>
+            {projects.map((project, i) => (
+               <ProjectCard
+                  project={project}
+                  index={i}
+                  key={uuidv4()}
+               />
+            ))}
+         </div>
+      </StyledContainer>
    );
 };
 

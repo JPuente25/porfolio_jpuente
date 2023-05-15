@@ -8,7 +8,7 @@ import views from '@/variables/views';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useRef } from 'react';
-import { CarouselItem, Container } from './index.styled';
+import { CarouselItem, Container } from '../styles/index.styled';
 import getFirstLetterUppercase from '@/utils/functions/getFirstLetterUppercase';
 
 const Main = () => {

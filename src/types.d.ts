@@ -22,3 +22,18 @@ export type Skill = {
    bgColor: string;
    children: Tech[] | null;
 };
+
+export type Project = {
+   name: string;
+   description: string;
+   status: 'finished' | 'in-progress' | 'not-started';
+   site_url: string;
+   repo_url: string;
+   background_color: string;
+   text_color: string;
+   images: {
+      desktop: string[];
+      mobile: string[];
+   };
+   key: 'movix' | 'kingsLeague' | 'platziShop';
+}
