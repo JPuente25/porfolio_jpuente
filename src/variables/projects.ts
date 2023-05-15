@@ -27,7 +27,7 @@ const projects: Project[] = [
    {
       name: 'Kings League',
       description:
-         "Kings league is a clone web app created for educational-purpouses. Since Kings League web doesn't have a public API, all the information was obtained by web scrapping and stored in a fake database. It showcases games, players, and team information from the Kings League played in Spain as of March 3rd. The app is built on React Typescript V18.2, with main libraries like Axios, Redux Toolkit and Styled Components.",
+         "Kings league is a clone web app created for educational-purposes. Since Kings League web doesn't have a public API, all the information was obtained by web scrapping and stored in a fake database. It showcases games, players, and team information from the Kings League played in Spain as of March 3rd. The app is built on React Typescript V18.2, with main libraries like Axios, Redux Toolkit and Styled Components.",
       status: 'finished',
       site_url: 'https://jpuente25.github.io/cloned-kings-league/',
       repo_url: 'https://github.com/JPuente25/cloned-kings-league/',

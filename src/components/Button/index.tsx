@@ -7,7 +7,7 @@ interface Props {
    Icon: IconType;
 }
 
-const ProjectButton = ({ content, Icon }: Props) => {
+const Button = ({ content, Icon }: Props) => {
    return (
       <Container className='project-button'>
          <div className='content'>
@@ -20,4 +20,4 @@ const ProjectButton = ({ content, Icon }: Props) => {
    );
 };
 
-export default ProjectButton;
+export default Button;

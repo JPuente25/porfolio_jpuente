@@ -22,6 +22,7 @@ export const StyledContainer = styled(Container)`
 
 export const Title = styled.h1`
    width: min-content;
+   width: 100%;
    text-align: center;
    color: ${({ theme }) => theme.palette.text.primary};
    position: relative;
@@ -29,19 +30,15 @@ export const Title = styled.h1`
    white-space: nowrap;
    margin: 20px auto;
    font-size: ${({ theme }) => theme.font.size.x1lg};
-
-   span {
-      text-shadow: 0px 0px 5px ${({ theme }) => theme.palette.text.opposite};
-   }
+   text-shadow: 0px 0px 5px ${({ theme }) => theme.palette.text.opposite};
 
    &:after {
       content: '';
       display: block;
       width: 100%;
-      height: 50%;
+      height: 100%;
       position: absolute;
       bottom: 0;
-      /* opacity: 0.8; */
       z-index: -1;
       border-radius: 0 20px 0 20px;
       background: ${({ theme }) => theme.palette.gradient.gold};

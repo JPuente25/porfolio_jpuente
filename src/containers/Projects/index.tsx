@@ -15,9 +15,7 @@ const Projects = () => {
       <StyledContainer
          props={{ ref, inView, view: views.projects.label }}
          className={inView ? 'visible' : 'hidden'}>
-         <Title>
-            La crème de la crème: <br /> <span>My projects</span>
-         </Title>
+         <Title>My Best Projects</Title>
 
          <div className='projects-container'>
             {projects.map((project, i) => (

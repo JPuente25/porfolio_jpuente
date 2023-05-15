@@ -53,7 +53,9 @@ export const theme = {
          webkitTextBox:  '-webkit-linear-gradient(to right, #243b55, #141e30)',
          darkBlue: 'linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%)',
          red: 'linear-gradient(90.3deg, rgb(255, 255, 255) 3%, rgb(235, 158, 98) 34.6%, rgb(177, 10, 10) 63.7%, rgb(0, 0, 0) 102%)',
-         green: 'linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%);'
+         green: 'linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%)',
+         green2: 'linear-gradient(to bottom, transparent 0%,  #39F3BB 30%, #000000 100%)',
+         green3: 'linear-gradient(to right, transparent 0%,  #39F3BB 30%, #000000 100%)',
       },
       transparency: {
          primary: 'rgba(255, 255, 255, 0.5)',

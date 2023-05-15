@@ -48,6 +48,7 @@ export const Container = styled.div`
    img.project {
       width: 78%;
       height: auto;
+      min-height: 100%;
       position: absolute;
       left: 10%;
       top: 3%;
