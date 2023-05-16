@@ -10,6 +10,7 @@ import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useRef } from 'react';
 import { CarouselItem, Container } from '../styles/index.styled';
 import getFirstLetterUppercase from '@/utils/functions/getFirstLetterUppercase';
+import FirstLoader from '@/components/FirstLoader';
 
 const Main = () => {
    const router = useRouter();
@@ -57,6 +58,8 @@ const Main = () => {
          <Head>
             <title>Jaime Puente - {getFirstLetterUppercase(currentView.label)}</title>
          </Head>
+
+         <FirstLoader />
 
          <Container ref={carouselContainer}>
             <CarouselItem

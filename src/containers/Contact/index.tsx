@@ -1,8 +1,6 @@
-import { useContext, useEffect } from 'react';
-import { Context } from '@/app/Provider';
-import { useInView } from 'react-intersection-observer';
-import views from '@/variables/views';
 import Container from '@/components/Container';
+import views from '@/variables/views';
+import { useInView } from 'react-intersection-observer';
 
 interface Props {}
 
@@ -15,7 +13,8 @@ const Contact = () => {
 
    return (
       <Container props={{ref, inView, view: views.contact.label}}>
-         <h1>Contact</h1>
+
+
       </Container>
    );
 };

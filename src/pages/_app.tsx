@@ -35,6 +35,11 @@ export default function App({ Component, pageProps }: AppProps) {
             />
             <link
                rel='preload'
+               href={'https://i.gyazo.com/24167cf916456a9f951915cacd858ed0.png'}
+               as='image'
+            />
+            <link
+               rel='preload'
                href={backgrounds.home}
                as='image'
             />
