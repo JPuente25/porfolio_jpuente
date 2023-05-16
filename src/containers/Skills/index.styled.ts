@@ -7,17 +7,6 @@ export const StyledContainer = styled(Container)`
       flex-direction: column;
       align-items: center;
       gap: 60px;
-
-      & > section {
-         transition: all ease 1s;
-         opacity: 0;
-         transform: translateX(40px);
-      }
-
-      &.visible > section {
-         opacity: 1;
-         transform: translate(0);
-      }
    }
 
    h1 {

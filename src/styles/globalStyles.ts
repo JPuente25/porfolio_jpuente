@@ -16,6 +16,8 @@ html, body, #__next, main{
    width: 100%;
    padding: 0;
    margin: 0;
+   color: white;
+   /* overflow-x: hidden; */
 
   &:not(main) {
     height: 100%;

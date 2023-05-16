@@ -2,19 +2,12 @@ import Container from '@/components/Container';
 import ProjectCard from '@/components/ProjectCard';
 import projects from '@/variables/projects';
 import views from '@/variables/views';
-import { useInView } from 'react-intersection-observer';
 import { v4 as uuidv4 } from 'uuid';
-import { StyledContainer, Title } from './index.styled';
+import { Title } from './index.styled';
 
 const Projects = () => {
-   const { ref, inView } = useInView({
-      threshold: 0.3,
-   });
-
    return (
-      <StyledContainer
-         props={{ ref, inView, view: views.projects.label }}
-         className={inView ? 'visible' : 'hidden'}>
+      <Container view={views.projects.label}>
          <Title>My Best Projects</Title>
 
          <div className='projects-container'>
@@ -26,7 +19,7 @@ const Projects = () => {
                />
             ))}
          </div>
-      </StyledContainer>
+      </Container>
    );
 };
 

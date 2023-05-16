@@ -5,41 +5,14 @@ import styled, { keyframes } from 'styled-components';
 
 export const StyledContainer = styled(Container)`
    div.container {
-      color: ${(props) => props.theme.palette.text.primary};
-      padding-top: 85px !important; //+70px on top because of Header height
-      flex-direction: column;
-
-      div.title,
-      div.see-about-me,
-      picture {
-         transition: all ease 1s;
-         opacity: 0;
-      }
-
-      div.see-about-me {
-         transform: translateX(40px);
-      }
-
-      div.title {
-         transform: translateY(-60px);
-      }
-
-      picture {
-         transform: translateY(40px);
-      }
-
-      &.visible {
-         div.title,
-         picture,
-         div.see-about-me {
-            opacity: 1;
-            transform: translate(0px, 0px);
-         }
-      }
+      height: calc(100vh - 60px);
+      padding-top: 55px;
+      display: grid;
+      grid-template-rows: repeat(2, auto);
 
       @media (min-width: 768px) {
-         gap: 15px;
-         padding: 110px 60px 40px !important; //+70px on top because of Header height
+         height: calc(100vh - 120px);
+         padding-top: 0;
       }
    }
 `;
@@ -47,35 +20,18 @@ export const StyledContainer = styled(Container)`
 /////////////////////////////////////////////////////////////////////////////
 
 export const SectionContainer = styled.article`
-   flex: 50%;
    display: grid;
    grid-template-rows: repeat(3, auto);
    place-items: center;
-   row-gap: 20px;
+   max-height: 100%;
 
-   picture {
-      width: 100%;
-      max-width: 600px;
-      height: auto;
-      filter: ${({ theme }) => theme.palette.shadow.primary};
+   @media (min-width: 600px) {
+      grid-template-rows: repeat(2, auto);
+      grid-template-columns: 1fr 2fr;
    }
 
    @media (min-width: 768px) {
-      grid-template-columns: repeat(2, 1fr);
-      column-gap: 20px;
-
-      picture {
-         grid-column: 2 / 3;
-         grid-row: 1 / 3;
-      }
-   }
-
-   @media (min-width: 991px) {
-      column-gap: 30px;
-
-      picture {
-         align-self: center;
-      }
+      grid-template-columns: 2fr 3fr;
    }
 `;
 
@@ -102,34 +58,19 @@ export const Title = styled.div`
    }
 
    @media (min-width: 600px) {
-      font-size: ${({ theme }) => theme.font.size.x4lg};
-   }
-
-   @media (min-width: 768px) {
-      grid-column: 1 / 2;
-      align-self: center;
-      font-size: ${({ theme }) => theme.font.size.x3lg};
       text-shadow: 0px 0px 10px ${({ theme }) => theme.palette.text.opposite};
-   }
-
-   @media (min-width: 880px) {
-      font-size: 48px;
    }
 
    @media (min-width: 991px) {
       font-size: ${({ theme }) => theme.font.size.x4lg};
-      padding-top: 40px;
-   }
-
-   @media (min-width: 1200px) {
-      font-size: ${({ theme }) => theme.font.size.x5lg};
    }
 `;
 
 /////////////////////////////////////////////////////////////////////////////
 
-export const SeeAboutMe = styled.div`
+export const Welcome = styled.div`
    width: 100%;
+   max-width: 900px;
    display: flex;
    gap: 10px;
    align-items: center;
@@ -163,12 +104,6 @@ export const SeeAboutMe = styled.div`
       }
    }
 
-   &:hover {
-      & + picture div.filter {
-         opacity: 0;
-      }
-   }
-
    @media (min-width: 480px) {
       p {
          font-size: ${({ theme }) => theme.font.size.lg};
@@ -177,6 +112,7 @@ export const SeeAboutMe = styled.div`
 
    @media (min-width: 600px) {
       padding: 20px 12px;
+      grid-column: 1 / 3;
       svg {
          width: 40px;
          height: 40px;
@@ -185,14 +121,6 @@ export const SeeAboutMe = styled.div`
 
    @media (min-width: 768px) {
       border: 2px solid ${({ theme }) => theme.palette.text.gold};
-
-      svg {
-         transform: rotate(-90deg);
-
-         &:first-child {
-            display: none;
-         }
-      }
    }
 
    @media (min-width: 991px) {
@@ -212,10 +140,6 @@ export const SeeAboutMe = styled.div`
    }
 
    @media (min-width: 1200px) {
-      svg {
-         width: 50px;
-         height: 50px;
-      }
       p {
          font-size: ${({ theme }) => theme.font.size.x2lg};
       }

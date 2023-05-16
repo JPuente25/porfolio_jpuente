@@ -12,15 +12,15 @@ import {
 } from './index.styled';
 import { useInView } from 'react-intersection-observer';
 
-
 interface Props {
    tech: Skill;
 }
 
-const SkillCard = ({ tech: { label, icon: Icon, progress, color, bgColor, children }}: Props) => {
-
+const SkillCard = ({ tech: { label, icon: Icon, progress, color, bgColor, children } }: Props) => {
    return (
-      <Card bgColor={bgColor} className="skill-card">
+      <Card
+         bgColor={bgColor}
+         className='skill-card'>
          <MainTechnology>
             <TechLabel color={color}>
                <Icon />

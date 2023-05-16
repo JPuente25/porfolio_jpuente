@@ -1,24 +1,4 @@
-import Container from '@/components/Container';
 import styled from 'styled-components';
-
-export const StyledContainer = styled(Container)`
-   h1,
-   div.projects-container {
-      opacity: 0;
-      transform: translateX(40px);
-      transition: all ease 1s;
-   }
-
-   div.projects-container {
-      transform: translateX(-40px);
-   }
-
-   &.visible h1,
-   &.visible div.projects-container {
-      opacity: 1;
-      transform: translateX(0px);
-   }
-`;
 
 export const Title = styled.h1`
    width: min-content;

@@ -1,5 +1,5 @@
 import Container from '@/components/Container';
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 ///////////////////////////////////////////////////////////////////////////////////
 
@@ -12,34 +12,6 @@ export const StyledContainer = styled(Container)`
       box-shadow: ${({ theme }) => theme.palette.shadow.box};
       border-radius: 20px;
       contain: content;
-
-      & > div.text-about-me,
-      & > div.see-my-skills,
-      & > div.profile {
-         transition: all ease 1s;
-         opacity: 0;
-      }
-
-      & > div.text-about-me {
-         transform: translateX(-40px);
-      }
-
-      & > div.see-my-skills {
-         transform: translateY(40px);
-      }
-
-      & > div.profile {
-         transform: translateX(40px);
-      }
-
-      &.visible {
-         div.text-about-me,
-         div.see-my-skills,
-         div.profile {
-            opacity: 1;
-            transform: translate(0px, 0px);
-         }
-      }
 
       @media (min-width: 768px) {
          grid-template-columns: 2fr 1fr;
@@ -91,13 +63,15 @@ export const TextAboutMe = styled.div`
       padding: 30px;
    }
 
+   @media (min-width: 991px) {
+      p {
+         font-size: ${(props) => props.theme.font.size.lg};
+      }
+   }
+
    @media (min-width: 1200px) {
       h2 {
          font-size: ${(props) => props.theme.font.size.x3lg};
-      }
-
-      p {
-         font-size: ${(props) => props.theme.font.size.lg};
       }
    }
 `;
@@ -126,11 +100,9 @@ export const Profile = styled.div`
    }
 
    button {
-      background-image: linear-gradient(to right, #606c88 0%, #3f4c6b  51%, #606c88  100%);
+      background-image: linear-gradient(to right, #606c88 0%, #3f4c6b 51%, #606c88 100%);
       box-shadow: ${({ theme }) => theme.palette.shadow.box};
-   }     
-   
-   
+   }
 
    @media (min-width: 480px) {
       grid-template-columns: repeat(2, 1fr);
@@ -153,6 +125,20 @@ export const Profile = styled.div`
             height: 40px;
          }
       }
+
+      button {         
+         &, div {
+            height: 40px;
+         }
+
+         p {
+            font-size: ${({theme}) => theme.font.size.lg};
+         }
+
+         svg {
+            font-size: ${({theme}) => theme.font.size.x2lg};
+         }
+      }
    }
 
    @media (min-width: 768px) {
@@ -160,7 +146,6 @@ export const Profile = styled.div`
       grid-template-rows: repeat(3, auto);
       background-image: ${({ theme }) => theme.palette.gradient.green3};
       padding: 30px;
-
 
       &:before {
          height: 30%;

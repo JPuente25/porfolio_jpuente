@@ -217,6 +217,7 @@ export const ProgressTooltip = styled(LabelTooltip)`
    top: -40px;
    right: -15px;
    background-color: ${({ theme }) => theme.palette.background.tooltip2};
+   color: ${({ theme }) => theme.palette.text.opposite};
 
    &:after {
       background-color: ${({ theme }) => theme.palette.background.tooltip2};

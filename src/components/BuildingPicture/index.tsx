@@ -9,11 +9,6 @@ const BuildingPicture = () => {
             alt='building'
          />
 
-         <AboutMe href="/#about">
-            <div className='filter'></div>
-            <h3>About me</h3>
-         </AboutMe>
-
          <CloudOneImg
             className='cloud-1-1'
             src='https://i.gyazo.com/e004080406bd019e361f33b7a1051768.webp'

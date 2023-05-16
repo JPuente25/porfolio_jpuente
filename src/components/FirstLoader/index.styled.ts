@@ -23,15 +23,10 @@ const rotate360 = keyframes`
 const closeUp =  keyframes`
    0% {
       opacity: 1;
-      /* transform: scale(1);
-      border-radius: 50%; */
    }
 
    100% {
       opacity: 0;
-
-      /* transform: scale(0);
-      border-radius: 50%; */
    }
 `;
 

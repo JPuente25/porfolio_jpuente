@@ -1,19 +1,12 @@
 import BuildingPicture from '@/components/BuildingPicture';
 import TypingSwitchBox from '@/components/TypingSwitchBox';
-import { BsArrowDownCircle } from 'react-icons/bs';
-import { useInView } from 'react-intersection-observer';
 import views from '@/variables/views';
-import { SeeAboutMe, SectionContainer, StyledContainer, Title } from './index.styled';
-import { useContext, useEffect } from 'react';
-import { Context } from '@/app/Provider';
+import { BsArrowDownCircle } from 'react-icons/bs';
+import { SectionContainer, StyledContainer, Title, Welcome } from './index.styled';
 
 const Home = () => {
-   const { ref, inView } = useInView({
-      threshold: 0.3,
-   });
-
    return (
-      <StyledContainer props={{ ref, inView, view: views.home.label }}>
+      <StyledContainer view={views.home.label}>
          <TypingSwitchBox />
 
          <SectionContainer>
@@ -28,16 +21,16 @@ const Home = () => {
                </h1>
             </Title>
 
-            <SeeAboutMe className='see-about-me'>
+            <BuildingPicture />
+
+            <Welcome>
                <BsArrowDownCircle />
                <p>
-                  <span>You wanna know more about me? </span>
-                  <span>Click on that screen</span>
+                  <span>Welcome to my portfolio!</span>
                </p>
                <BsArrowDownCircle />
-            </SeeAboutMe>
+            </Welcome>
 
-            <BuildingPicture />
          </SectionContainer>
       </StyledContainer>
    );

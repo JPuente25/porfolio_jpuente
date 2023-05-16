@@ -4,16 +4,11 @@ import images from '@/variables/images';
 import views from '@/variables/views';
 import Image from 'next/image';
 import { FiDownload } from 'react-icons/fi';
-import { useInView } from 'react-intersection-observer';
 import { PictureFrame, Profile, StyledContainer, TextAboutMe } from './index.styled';
 
 const About = () => {
-   const { ref, inView } = useInView({
-      threshold: 0.3,
-   });
-
    return (
-      <StyledContainer props={{ ref, inView, view: views.about.label }}>
+      <StyledContainer view={views.about.label}>
          <TextAboutMe className='text-about-me'>
             <h2>Hi all, my name is Jaime Puente</h2>
             <p>

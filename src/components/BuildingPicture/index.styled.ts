@@ -36,13 +36,30 @@ const sunEffect = keyframes`
 `;
 
 export const Picture = styled.picture`
-   width: 100%;
+   width: auto;
+   max-height: 300px;
    position: relative;
    flex-shrink: 0;
+
+   @media (min-width: 600px) {
+      width: 100%;
+      max-height: 100%;
+      height: auto;
+      max-width: 500px;
+   }
 `;
 
 export const BuildingImg = styled.img`
-   width: 100%;
+   width: auto;
+   max-height: 300px;
+   max-width: 100%;
+
+   @media (min-width: 600px) {
+      width: 100%;
+      max-height: 100%;
+      height: auto;
+      max-width: 500px;
+   }
 `;
 
 export const AboutMe = styled(Link)`
@@ -96,7 +113,6 @@ export const AboutMe = styled(Link)`
          opacity: 0;
          animation: ${handPointer} 2s 1;
       }
-      
    }
 
    @media (min-width: 600px) {
