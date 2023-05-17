@@ -67,7 +67,7 @@ export const Container = styled.div`
 
       &.openLetter {
          div.content div.form {
-            bottom: 35%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: 33%; ////variable segun altura de la carta y ancho de contenedor
          }
       }
    }
@@ -153,15 +153,6 @@ export const Container = styled.div`
    }
 `;
 
-export const Background = styled.div`
-   position: absolute;
-   right: 0;
-   bottom: 0;
-   width: 100%;
-   aspect-ratio: 3 / 2;
-   background: #701e16;
-`;
-
 export const Content = styled.div`
    width: 95%;
    margin: 0 auto;
@@ -169,9 +160,10 @@ export const Content = styled.div`
 
    div.form-ghost {
       width: 100%;
-      height: 600px; // 1.5 times form height
+      height: 570px; // 1.5 times form height
       z-index: 0;
-      visibility: hidden;
+      /* visibility: hidden; */
+      background-color: lightgreen;
    }
 
    div.form {
@@ -238,7 +230,7 @@ export const Content = styled.div`
 export const UpperTab = styled.div`
    position: absolute;
    left: 14.5%;
-   bottom: 14.6%; //variable segun altura de la carta y ancho de contenedor
+   bottom: 15.4%; //variable segun altura de la carta y ancho de contenedor
    width: 70.5%;
    aspect-ratio: 1 / 1;
    background-color: white;
@@ -282,15 +274,25 @@ export const LeftTab = styled.div`
    width: 100%;
    aspect-ratio: 3 / 2;
    background: rgb(231, 76, 60);
-   background: linear-gradient(
+   /* background: linear-gradient(
       33.7deg,
       rgba(231, 76, 60, 1) 0%,
       rgba(231, 76, 60, 1) 49.999999%,
       rgba(113, 37, 29, 1) 50%,
       transparent 50.000001%,
       transparent 100%
-   );
+   ); */
    border-radius: 0 100% 0 0;
+`;
+
+
+export const Background = styled.div`
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   width: 100%;
+   aspect-ratio: 3 / 2;
+   background: #701e16;
 `;
 
 export const RightTab = styled.div`
@@ -300,13 +302,13 @@ export const RightTab = styled.div`
    width: 100%;
    aspect-ratio: 3 / 2;
    background: rgb(231, 76, 60);
-   background: linear-gradient(
+   /* background: linear-gradient(
       -33.7deg,
       rgba(192, 57, 43, 1) 0%,
       rgba(192, 57, 43, 1) 49.999999%,
       rgba(192, 57, 43, 1) 50%,
       transparent 50.000001%,
       transparent 100%
-   );
+   ); */
    border-radius: 100% 0 0 0;
 `;
