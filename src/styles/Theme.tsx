@@ -26,6 +26,7 @@ export const theme = {
          header: '#13161b',
          footer: '#13161b',
          gold: 'rgb(163, 153, 39)',
+         gold2: '#ffca30',
          cyan: '#2da7cf',
          default: '#484848',
          cardBar: '#3b3c36',

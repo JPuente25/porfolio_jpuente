@@ -1,5 +1,6 @@
-import Container from '@/components/Container';
+import Letter from '@/components/Letter';
 import views from '@/variables/views';
+import { StyledContainer } from './index.styled';
 
 interface Props {}
 
@@ -7,10 +8,10 @@ interface ContactStates {}
 
 const Contact = () => {
    return (
-      <Container view={views.contact.label}>
-
-
-      </Container>
+      <StyledContainer view={views.contact.label}>
+         <div className='social'></div>
+         <Letter />
+      </StyledContainer>
    );
 };
 

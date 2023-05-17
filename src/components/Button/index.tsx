@@ -5,11 +5,12 @@ import { IconType } from 'react-icons/lib';
 interface Props {
    content: string;
    Icon: IconType;
+   type?: 'button' | 'submit' | 'reset';
 }
 
-const Button = ({ content, Icon }: Props) => {
+const Button = ({ content, Icon, type = 'button' }: Props) => {
    return (
-      <Container className='project-button'>
+      <Container className='project-button' type={type}>
          <div className='content'>
             <p>{content}</p>
          </div>

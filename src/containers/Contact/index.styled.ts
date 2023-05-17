@@ -1,10 +1,17 @@
-import backgrounds from '@/variables/backgrounds';
+import Container from '@/components/Container';
 import styled from 'styled-components';
 
-export const Container = styled.section`
-   height: 100vh;
+export const StyledContainer = styled(Container)`
+   div.container {
+      width: 100%;
+      place-content: center;
+      display: grid;
+      grid-template-rows: repeat(2, auto);
 
-   background-color: ${(props) => props.theme.palette.background.default};
-   background: url(${backgrounds.contact}) center center no-repeat;
-   background-size: cover;
+      @media (min-width: 768px) {
+         grid-template-rows: 1fr;
+         grid-template-columns: 1fr 1fr;
+         gap: 20px;
+      }
+   }
 `;
