@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const Container = styled.div`
    width: 280px;
    height: auto;
-   aspect-ratio: 3 / 2;
    position: relative;
    contain: content;
    z-index: 1;
@@ -77,13 +76,21 @@ export const Container = styled.div`
 
       &.saveLetter {
          div.content div.form {
-            bottom: -13%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: -40%; ////variable segun altura de la carta y ancho de contenedor
+         }
+
+         div.up {
+            transform: rotate3d(1, -0.414, 0, 180deg) skew(-15deg, -15deg);
          }
       }
 
       &.openLetter {
          div.content div.form {
-            bottom: 37%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: 27%; ////variable segun altura de la carta y ancho de contenedor
+         }
+
+         div.up {
+            transform: rotateZ(45deg) skew(-15deg, -15deg);
          }
       }
    }
@@ -93,13 +100,13 @@ export const Container = styled.div`
 
       &.saveLetter {
          div.content div.form {
-            bottom: -43%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: -63%; ////variable segun altura de la carta y ancho de contenedor
          }
       }
 
       &.openLetter {
          div.content div.form {
-            bottom: 25%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: 16%; ////variable segun altura de la carta y ancho de contenedor
          }
       }
    }
@@ -109,13 +116,13 @@ export const Container = styled.div`
 
       &.saveLetter {
          div.content div.form {
-            bottom: -30%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: -53%; ////variable segun altura de la carta y ancho de contenedor
          }
       }
 
       &.openLetter {
          div.content div.form {
-            bottom: 30%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: 22%; ////variable segun altura de la carta y ancho de contenedor
          }
       }
    }
@@ -141,17 +148,20 @@ export const Container = styled.div`
 
       &.saveLetter {
          div.content div.form {
-            bottom: -30%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: -50%; ////variable segun altura de la carta y ancho de contenedor
          }
       }
 
       &.openLetter {
          div.content div.form {
-            bottom: 32%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: 24%; ////variable segun altura de la carta y ancho de contenedor
          }
       }
    }
 `;
+
+
+///////////////////////////////////////////////////////////////////////////////////////
 
 export const Content = styled.div`
    width: 95%;
@@ -162,8 +172,7 @@ export const Content = styled.div`
       width: 100%;
       height: 570px; // 1.5 times form height
       z-index: 0;
-      /* visibility: hidden; */
-      background-color: lightgreen;
+      visibility: hidden;
    }
 
    div.form {
@@ -186,7 +195,7 @@ export const Content = styled.div`
 
    @media (min-width: 640px) {
       div.form-ghost {
-         height: 900px; // 1.5 times form height
+         height: 700px; // 1.5 times form height
       }
 
       div.form {
@@ -196,7 +205,7 @@ export const Content = styled.div`
 
    @media (min-width: 768px) {
       div.form-ghost {
-         height: 700px; // 1.5 times form height
+         height: 600px; // 1.5 times form height
       }
 
       div.form {
@@ -206,7 +215,7 @@ export const Content = styled.div`
 
    @media (min-width: 991px) {
       div.form-ghost {
-         height: 800px; // 1.5 times form height
+         height: 650px; // 1.5 times form height
       }
 
       div.form {
@@ -215,17 +224,19 @@ export const Content = styled.div`
    }
 
    @media (min-width: 1200px) {
-      width: 540px;
-
       div.form-ghost {
-         height: 950px; // 1.5 times form height
+         height: 720px; // 1.5 times form height
       }
 
       div.form {
-         height: 600px; //altura variable
+         height: 550px; //altura variable
       }
    }
 `;
+
+
+///////////////////////////////////////////////////////////////////////////////////////
+
 
 export const UpperTab = styled.div`
    position: absolute;
@@ -234,7 +245,7 @@ export const UpperTab = styled.div`
    width: 70.5%;
    aspect-ratio: 1 / 1;
    background-color: white;
-   transform: rotateZ(45deg);
+   background-color: rgb(150, 30, 40);
    background: linear-gradient(
       135deg,
       rgba(150, 30, 40, 1) 0%,
@@ -251,19 +262,22 @@ export const UpperTab = styled.div`
    }
 
    @media (min-width: 640px) {
-      bottom: 20.8%;
+      left: 22%;
+      bottom: 10.3%;
+      width: 56%;
+      border-radius: 8% 0 0 0;
    }
 
    @media (min-width: 768px) {
-      bottom: 14.5%;
+      bottom: 6.4%;
    }
 
    @media (min-width: 991px) {
-      bottom: 17.3%;
+      bottom: 8.1%;
    }
 
    @media (min-width: 1200px) {
-      bottom: 17.8%;
+      bottom: 9%;
    }
 `;
 
@@ -274,25 +288,27 @@ export const LeftTab = styled.div`
    width: 100%;
    aspect-ratio: 3 / 2;
    background: rgb(231, 76, 60);
-   /* background: linear-gradient(
+   background: linear-gradient(
       33.7deg,
       rgba(231, 76, 60, 1) 0%,
       rgba(231, 76, 60, 1) 49.999999%,
       rgba(113, 37, 29, 1) 50%,
       transparent 50.000001%,
       transparent 100%
-   ); */
+   );
    border-radius: 0 100% 0 0;
-`;
 
-
-export const Background = styled.div`
-   position: absolute;
-   right: 0;
-   bottom: 0;
-   width: 100%;
-   aspect-ratio: 3 / 2;
-   background: #701e16;
+   @media (min-width: 640px) {
+      aspect-ratio: 2.5 / 1;
+      background: linear-gradient(
+         21.7deg,
+         rgba(231, 76, 60, 1) 0%,
+         rgba(231, 76, 60, 1) 49.999999%,
+         rgba(113, 37, 29, 1) 50%,
+         transparent 50.000001%,
+         transparent 100%
+      );
+   }
 `;
 
 export const RightTab = styled.div`
@@ -302,13 +318,38 @@ export const RightTab = styled.div`
    width: 100%;
    aspect-ratio: 3 / 2;
    background: rgb(231, 76, 60);
-   /* background: linear-gradient(
+   background: linear-gradient(
       -33.7deg,
       rgba(192, 57, 43, 1) 0%,
       rgba(192, 57, 43, 1) 49.999999%,
       rgba(192, 57, 43, 1) 50%,
       transparent 50.000001%,
       transparent 100%
-   ); */
+   );
    border-radius: 100% 0 0 0;
+
+   @media (min-width: 640px) {
+      aspect-ratio: 2.5 / 1;
+      background: linear-gradient(
+         -21.7deg,
+         rgba(192, 57, 43, 1) 0%,
+         rgba(192, 57, 43, 1) 49.999999%,
+         rgba(192, 57, 43, 1) 50%,
+         transparent 50.000001%,
+         transparent 100%
+      );
+   }
+`;
+
+export const Background = styled.div`
+   position: absolute;
+   right: 0;
+   bottom: 0;
+   width: 100%;
+   aspect-ratio: 3 / 2;
+   background: #701e16;
+
+   @media (min-width: 640px) {
+      aspect-ratio: 2.5 / 1;
+   }
 `;
