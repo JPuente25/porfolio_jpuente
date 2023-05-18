@@ -11,7 +11,7 @@ export const Container = styled.div`
    &.saveLetter {
       div.content div.form {
          transition: all ease-in-out 2s;
-         bottom: -38%; ////variable segun altura de la carta y ancho de contenedor
+         bottom: -38%; 
          z-index: 0;
       }
       div.up {
@@ -29,12 +29,18 @@ export const Container = styled.div`
          transition: z-index 100ms 2s;
          z-index: 1;
       }
+
+      div.openButton {
+         transition: all ease 1s 4.5s, z-index 100ms 4.5s, background-color 0.5s ease;
+         opacity: 1;
+         z-index: 4;
+      }
    }
 
    &.openLetter {
       div.content div.form {
          transition: all ease-in-out 2s 2.5s;
-         bottom: 27%; ////variable segun altura de la carta y ancho de contenedor
+         bottom: 27%; 
          z-index: 1;
       }
 
@@ -53,6 +59,12 @@ export const Container = styled.div`
          transition: z-index 100ms 2s;
          z-index: 2;
       }
+
+      div.openButton {
+         transition: all ease 1s, z-index 100ms 1s, background-color 0.5s ease;
+         opacity: 0;
+         z-index: 0;
+      }
    }
 
    @media (min-width: 440px) {
@@ -60,13 +72,13 @@ export const Container = styled.div`
 
       &.saveLetter {
          div.content div.form {
-            bottom: -30%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: -30%; 
          }
       }
 
       &.openLetter {
          div.content div.form {
-            bottom: 33%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: 33%; 
          }
       }
    }
@@ -76,7 +88,7 @@ export const Container = styled.div`
 
       &.saveLetter {
          div.content div.form {
-            bottom: -40%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: -40%; 
          }
 
          div.up {
@@ -86,7 +98,7 @@ export const Container = styled.div`
 
       &.openLetter {
          div.content div.form {
-            bottom: 27%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: 27%; 
          }
 
          div.up {
@@ -100,13 +112,13 @@ export const Container = styled.div`
 
       &.saveLetter {
          div.content div.form {
-            bottom: -63%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: -63%; 
          }
       }
 
       &.openLetter {
          div.content div.form {
-            bottom: 16%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: 16%; 
          }
       }
    }
@@ -116,13 +128,13 @@ export const Container = styled.div`
 
       &.saveLetter {
          div.content div.form {
-            bottom: -53%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: -53%; 
          }
       }
 
       &.openLetter {
          div.content div.form {
-            bottom: 22%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: 22%; 
          }
       }
    }
@@ -132,34 +144,17 @@ export const Container = styled.div`
 
       &.saveLetter {
          div.content div.form {
-            bottom: -30%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: -50%; 
          }
       }
 
       &.openLetter {
          div.content div.form {
-            bottom: 30%; ////variable segun altura de la carta y ancho de contenedor
-         }
-      }
-   }
-
-   @media (min-width: 1200px) {
-      width: 540px;
-
-      &.saveLetter {
-         div.content div.form {
-            bottom: -50%; ////variable segun altura de la carta y ancho de contenedor
-         }
-      }
-
-      &.openLetter {
-         div.content div.form {
-            bottom: 24%; ////variable segun altura de la carta y ancho de contenedor
+            bottom: 24%; 
          }
       }
    }
 `;
-
 
 ///////////////////////////////////////////////////////////////////////////////////////
 
@@ -170,14 +165,14 @@ export const Content = styled.div`
 
    div.form-ghost {
       width: 100%;
-      height: 570px; // 1.5 times form height
+      height: 570px; 
       z-index: 0;
       visibility: hidden;
    }
 
    div.form {
       width: 100%;
-      height: 400px; //altura variable
+      height: 400px; 
       transition: 2s;
       position: absolute;
       z-index: 1;
@@ -185,58 +180,56 @@ export const Content = styled.div`
 
    @media (min-width: 440px) {
       div.form-ghost {
-         height: 675px; // 1.5 times form height
+         height: 675px; 
       }
 
       div.form {
-         height: 450px; //altura variable
+         height: 450px; 
       }
    }
 
    @media (min-width: 640px) {
       div.form-ghost {
-         height: 700px; // 1.5 times form height
+         height: 700px; 
       }
 
       div.form {
-         height: 500px; //altura variable
+         height: 500px; 
       }
    }
 
    @media (min-width: 768px) {
       div.form-ghost {
-         height: 600px; // 1.5 times form height
+         height: 600px; 
       }
 
       div.form {
-         height: 500px; //altura variable
+         height: 500px; 
       }
    }
 
    @media (min-width: 991px) {
       div.form-ghost {
-         height: 650px; // 1.5 times form height
+         height: 650px; 
       }
 
       div.form {
-         height: 500px; //altura variable
+         height: 500px; 
       }
    }
 
    @media (min-width: 1200px) {
       div.form-ghost {
-         height: 720px; // 1.5 times form height
+         height: 720px; 
       }
 
       div.form {
-         height: 550px; //altura variable
+         height: 550px; 
       }
    }
 `;
 
-
 ///////////////////////////////////////////////////////////////////////////////////////
-
 
 export const UpperTab = styled.div`
    position: absolute;
@@ -351,5 +344,72 @@ export const Background = styled.div`
 
    @media (min-width: 640px) {
       aspect-ratio: 2.5 / 1;
+   }
+`;
+
+export const OpenButton = styled.div`
+   position: absolute;
+   bottom: 8%;
+   left: calc(50% - 26px);
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   background: ${({ theme }) => theme.palette.background.primary};
+   display: grid;
+   place-content: center;
+   cursor: pointer;
+   border: 2px solid ${({ theme }) => theme.palette.text.primary};
+
+   svg {
+      font-size: ${({ theme }) => theme.font.size.xlg};
+   }
+
+   &:hover {
+      background: ${({ theme }) => theme.palette.background.gold2};
+
+      svg {
+         color: ${({ theme }) => theme.palette.text.opposite};
+      }
+   }
+
+   @media (min-width: 440px) {
+      bottom: 10%;
+   }
+
+   @media (min-width: 640px) {
+      bottom: 8%;
+      left: calc(50% - 30px);
+      width: 60px;
+      height: 60px;
+
+      svg {
+         font-size: ${({ theme }) => theme.font.size.x2lg};
+      }
+   }
+
+   @media (min-width: 768px) {
+      bottom: 4%;
+      left: calc(50% - 26px);
+      width: 50px;
+      height: 50px;
+
+      svg {
+         font-size: ${({ theme }) => theme.font.size.xlg};
+      }
+   }
+
+   @media (min-width: 991px) {
+      bottom: 4%;
+   }
+
+   @media (min-width: 1200px) {
+      bottom: 6%;
+      left: calc(50% - 30px);
+      width: 60px;
+      height: 60px;
+
+      svg {
+         font-size: ${({ theme }) => theme.font.size.x2lg};
+      }
    }
 `;

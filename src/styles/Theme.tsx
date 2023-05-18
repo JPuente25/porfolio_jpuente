@@ -20,6 +20,7 @@ export const theme = {
          cyan: '#43cffd',
          cyan2: '#5defff',
          cyan3: '#114a61',
+         red: 'red',
       },
       background: {
          primary: '#2d3436',
@@ -37,6 +38,8 @@ export const theme = {
          darkBlue: '#04152d',
          green: '#B0FC38',
          orange: 'orange',
+         successGreen: '#63f763',
+         errorRed: '#961e28',
       },
       gradient: {
          home: 'linear-gradient(315deg, #2d3436 0%, #000000 90%)',

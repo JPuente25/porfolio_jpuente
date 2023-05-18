@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Button from '../Button';
 
 export const Container = styled.article`
    width: 100%;
@@ -95,13 +96,13 @@ export const Container = styled.article`
    @media (min-width: 1200px) {
       &:after {
          width: 500%; //varies
-         top: -441%; //varies
+         top: -455%; //varies
          left: -200%; //varies
       }
 
       &:before {
          width: 500%; //varies
-         top: -436%; //varies
+         top: -450%; //varies
          left: -200%; //varies
       }
    }
@@ -178,6 +179,19 @@ export const Formulary = styled.form`
       font-weight: ${({ theme }) => theme.font.weight.bold};
       font-size: ${({ theme }) => theme.font.size.sm2};
       color: ${({ theme }) => theme.palette.text.cyan};
+
+      span {
+         color: ${({ theme }) => theme.palette.text.red};
+         font-size: ${({ theme }) => theme.font.size.sm};
+         margin-left: 4px;
+         display: none;
+      }
+   }
+
+   div.error {
+      span {
+         display: inline-block;
+      }
    }
 
    input,
@@ -194,20 +208,12 @@ export const Formulary = styled.form`
       height: 60px !important;
    }
 
-   button {
-      width: 100px;
-      align-self: center;
-      background-image: linear-gradient(to right, #ff512f 0%, #f09819 51%, #ff512f 100%);
-
-      div.content p,
-      div.icon svg {
-         margin: auto 0%;
-      }
-   }
-
    @media (min-width: 640px) {
       label {
          font-size: ${({ theme }) => theme.font.size.md};
+         span {
+            font-size: ${({ theme }) => theme.font.size.sm2};
+         }
       }
 
       input,
@@ -219,43 +225,60 @@ export const Formulary = styled.form`
       textarea {
          height: 100px !important;
       }
+   }
+`;
 
-      button {
-         width: 150px;
+export const SubmitButton = styled(Button)`
+   width: 100px;
+   height: 30px;
+   background-image: linear-gradient(to right, #ff512f 0%, #f09819 51%, #ff512f 100%);
+   align-self: center;
+
+   div {
+      p {
+         font-size: ${({ theme }) => theme.font.size.md};
+         margin: auto 0%;
+      }
+
+      svg {
+         font-size: ${({ theme }) => theme.font.size.lg};
+         margin: auto 0%;
+      }
+   }
+
+   &.disabled:hover {
+      background-position: initial;
+
+      div {
+         transform: translateY(0%);
+      }
+   }
+
+   @media (min-width: 440px) {
+      width: 150px;
+      height: 40px;
+
+      div.content,
+      div.icon {
          height: 40px;
-
-         div.content,
-         div.icon {
-            height: 40px;
-         }
-
-         div.content p {
-            font-size: ${({ theme }) => theme.font.size.md};
-         }
-
-         div.icon svg {
-            font-size: ${({ theme }) => theme.font.size.lg};
-         }
       }
    }
 
    @media (min-width: 1200px) {
-      button {
-         width: 175px;
+      width: 175px;
+      height: 50px;
+
+      div.content,
+      div.icon {
          height: 50px;
+      }
 
-         div.content,
-         div.icon {
-            height: 50px;
-         }
+      div.content p {
+         font-size: ${({ theme }) => theme.font.size.lg};
+      }
 
-         div.content p {
-            font-size: ${({ theme }) => theme.font.size.lg};
-         }
-
-         div.icon svg {
-            font-size: ${({ theme }) => theme.font.size.x2lg};
-         }
+      div.icon svg {
+         font-size: ${({ theme }) => theme.font.size.x2lg};
       }
    }
 `;

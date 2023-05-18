@@ -6,11 +6,25 @@ interface Props {
    content: string;
    Icon: IconType;
    type?: 'button' | 'submit' | 'reset';
+   handleClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
+   disabled?: boolean;
+   className?: string;
 }
 
-const Button = ({ content, Icon, type = 'button' }: Props) => {
+const Button = ({
+   content,
+   Icon,
+   type = 'button',
+   handleClick = () => {},
+   disabled = false,
+   className,
+}: Props) => {
    return (
-      <Container className='project-button' type={type}>
+      <Container
+         type={type}
+         onClick={handleClick}
+         className={`${className} project-button ${disabled && 'disabled'}`}
+         disabled={disabled}>
          <div className='content'>
             <p>{content}</p>
          </div>

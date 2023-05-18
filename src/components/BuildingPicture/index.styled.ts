@@ -174,7 +174,7 @@ export const CloudTwoImg = styled.img`
 export const Sun = styled.div`
    position: absolute;
    top: 0;
-   right: 0;
+   left: 15%;
    margin: auto;
    width: 15%;
    aspect-ratio: 1 / 1;
