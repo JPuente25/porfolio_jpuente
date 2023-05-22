@@ -15,7 +15,10 @@ export type ViewList = {
 }
 
 export type Skill = {
-   label: string;
+   label: {
+      en: string;
+      es: string;
+   };
    icon: IconType;
    progress: number;
    color: string;
@@ -25,7 +28,10 @@ export type Skill = {
 
 export type Project = {
    name: string;
-   description: string;
+   description: {
+      es: string;
+      en: string;
+   };
    status: 'finished' | 'in-progress' | 'not-started';
    site_url: string;
    repo_url: string;

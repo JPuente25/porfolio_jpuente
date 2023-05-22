@@ -1,6 +1,7 @@
 import React from 'react';
-import { Container, List } from './index.styled';
+import { Container, SwitchBox, SwitchItem } from './index.styled';
 import { Press_Start_2P } from 'next/font/google';
+import { useI18N } from '@/app/i18n';
 
 const fontPressStart = Press_Start_2P({
    weight: '400',
@@ -9,14 +10,19 @@ const fontPressStart = Press_Start_2P({
 });
 
 const TypingSwitchBox = () => {
+   const { t } = useI18N();
+
    return (
-      <Container className='typing-switch-box'>
-         <List className={fontPressStart.className}>
-            <li>
-               <p className='react-web-developer'>React Web Developer</p>
-               <p className='civil-engineer'>Civil Engineer</p>
-            </li>
-         </List>
+      <Container className={`${fontPressStart.className} typing-switch-box`}>
+            <SwitchBox>
+               <SwitchItem>
+                  <p className='react-web-developer'>{t('REACT_WEB_DEVELOPER')}</p>
+               </SwitchItem>
+               
+               <SwitchItem>
+                  <p className='civil-engineer'>{t('CIVIL_ENGINEER')}</p>
+               </SwitchItem>
+            </SwitchBox>
       </Container>
    );
 };

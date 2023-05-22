@@ -2,10 +2,11 @@ import { font } from '@/pages/_app';
 import { CiLocationOn } from 'react-icons/ci';
 import SocialMedia from '../SocialMedia';
 import { Container, Copyright, Location } from './index.styled';
-
-
+import { contactInformation } from '@/variables/contactInformation';
+import { useI18N } from '@/app/i18n';
 
 const Footer = () => {
+   const {t} = useI18N();
    const date = new Date();
    const year = date.getFullYear();
 
@@ -15,12 +16,12 @@ const Footer = () => {
 
          <Location>
             <CiLocationOn />
-            <p>Maracaibo, Zulia. Venezuela.</p>
+            <p>{contactInformation.address}</p>
          </Location>
 
          <Copyright>
             <p>
-               <strong>Jaime Puente {year}</strong>. All rights reserved
+               <strong>Jaime Puente {year}</strong>. {t('ALL_RIGHTS_RESERVED')}
             </p>
          </Copyright>
       </Container>

@@ -3,9 +3,17 @@ import styled from 'styled-components';
 export const Container = styled.menu`
    background-color: ${({ theme }) => theme.palette.background.header};
    width: 100%;
-   height: 0;
+   max-height: 0;
    overflow: hidden;
-   transition: all linear 0.3s;
+   transition: all ease-in-out 0.75s;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   div.language {
+      display: flex;
+      padding-bottom: 20px;
+   }
 
    ul.links-container {
       width: 100%;
@@ -16,7 +24,7 @@ export const Container = styled.menu`
 
    &.active {
       display: flex;
-      height: 221.78px;
-      padding: 20px 0;
+      max-height: 500px;
+      padding-bottom: 20px;
    }
 `;

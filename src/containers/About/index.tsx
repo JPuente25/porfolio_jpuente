@@ -5,34 +5,41 @@ import views from '@/variables/views';
 import Image from 'next/image';
 import { FiDownload } from 'react-icons/fi';
 import { PictureFrame, Profile, StyledContainer, TextAboutMe } from './index.styled';
+import { useI18N } from '@/app/i18n';
 
 const About = () => {
+   const { t } = useI18N();
    return (
       <StyledContainer view={views.about.label}>
          <TextAboutMe className='text-about-me'>
-            <h2>Hi all, my name is Jaime Puente</h2>
+            <h2>{t('ABOUT_TITLE')}</h2>
             <p>
-               I&apos;m a <strong>Civil Engineer</strong> and a <strong>React Web Developer</strong>{' '}
-               based in Maracaibo, Venezuela.
+               {t('ABOUT_DESCRIPTION_1')}
+               <strong>{t('ABOUT_DESCRIPTION_2')}</strong>
+               {t('ABOUT_DESCRIPTION_3')}
+               <strong>{t('ABOUT_DESCRIPTION_4')}</strong>
+               {t('ABOUT_DESCRIPTION_5')}
             </p>
             <p>
-               I have passion for <strong>building</strong> clean, user-friendly interfaces using
-               modern web technologies, and I&apos;m always looking to <strong>learn more</strong>{' '}
-               and stay on top of the latest trends.
+               {t('ABOUT_DESCRIPTION_6')}
+               <strong>{t('ABOUT_DESCRIPTION_7')}</strong>
+               {t('ABOUT_DESCRIPTION_8')}
+               <strong>{t('ABOUT_DESCRIPTION_9')}</strong>
+               {t('ABOUT_DESCRIPTION_10')}
             </p>
             <p>
-               I&apos;ve worked on a variety of <strong>projects</strong> for educational-purpose,
-               from simple pages to <strong>complex web applications</strong>, and I&apos;m skilled
-               in using a range of technologies.
+               {t('ABOUT_DESCRIPTION_11')}
+               <strong>{t('ABOUT_DESCRIPTION_12')}</strong>
+               {t('ABOUT_DESCRIPTION_13')}
+               <strong>{t('ABOUT_DESCRIPTION_14')}</strong>
+               {t('ABOUT_DESCRIPTION_15')}
             </p>
             <p>
-               I consider myself as a <strong>great mind for logical thinking</strong>, and a great
-               team partner.
+               {t('ABOUT_DESCRIPTION_16')}
+               <strong>{t('ABOUT_DESCRIPTION_17')}</strong>
+               {t('ABOUT_DESCRIPTION_18')}
             </p>
-            <p>
-               When I&apos;m not coding, you can usually find me doing some workout, attending some
-               customers, or catching up on the latest tech news.
-            </p>
+            <p>{t('ABOUT_DESCRIPTION_19')}</p>
          </TextAboutMe>
 
          <Profile className='profile'>
@@ -46,7 +53,7 @@ const About = () => {
             </PictureFrame>
             <SocialMedia />
             <Button
-               content='My resume'
+               content={t('MY_RESUME')}
                Icon={FiDownload}
             />
          </Profile>

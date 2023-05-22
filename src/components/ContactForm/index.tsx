@@ -4,6 +4,7 @@ import { textIsValid } from '@/utils/functions/textIsValid';
 import React, { useContext, useEffect, useState } from 'react';
 import { FaRegPaperPlane } from 'react-icons/fa';
 import { Container, FormHeader, Formulary, SubmitButton } from './index.styled';
+import { useI18N } from '@/app/i18n';
 interface ContactFormStates {
    inputValues: {
       name: string;
@@ -32,6 +33,7 @@ interface ContactFormStates {
 }
 
 const ContactForm = () => {
+   //Initial Values
    const initialInputValues = {
       name: '',
       email: '',
@@ -53,12 +55,17 @@ const ContactForm = () => {
       },
    };
 
+   //Contexts
    const { setActiveLetter, submitStatus, setSubmitStatus } = useContext(Context);
+   const { t } = useI18N();
+
+   //States
    const [inputValues, setInputValues] =
       useState<ContactFormStates['inputValues']>(initialInputValues);
    const [data, setData] = useState<ContactFormStates['data']>(initialData);
    const [sending, setSending] = useState<ContactFormStates['sending']>(false);
 
+   //Functions
    const handleClick = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
       e.preventDefault();
       let noErrorInValidation = true;
@@ -124,6 +131,7 @@ const ContactForm = () => {
       });
    };
 
+   //Effects
    useEffect(() => {
       setTimeout(() => {
          if (submitStatus.sent || submitStatus.error) {
@@ -142,15 +150,14 @@ const ContactForm = () => {
             <div className='icon-box'>
                <FaRegPaperPlane />
             </div>
-            <h2>Contact me</h2>
-            <p>Please fill this form</p>
+            <h2>{t('CONTACT_ME')}</h2>
+            <p>{t('PLEASE_FILL_THIS_FORM')}</p>
          </FormHeader>
 
          <Formulary>
             <div className={data.name.error ? 'error' : ''}>
                <label htmlFor='name'>
-                  Name*
-                  <span> Required</span>
+                  {t('NAME')}*<span> {t('REQUIRED')}</span>
                </label>
                <input
                   onChange={(e) => handleChange({ key: 'name', value: e.target.value })}
@@ -165,7 +172,7 @@ const ContactForm = () => {
 
             <div className={data.email.error ? 'error' : ''}>
                <label htmlFor='email'>
-                  E-Mail*<span> Must be a valid email</span>
+                  {t('EMAIL')}*<span> {t('VALID_EMAIL_TEXT')}</span>
                </label>
                <input
                   onChange={(e) => handleChange({ key: 'email', value: e.target.value })}
@@ -173,27 +180,27 @@ const ContactForm = () => {
                   name='email'
                   id='email'
                   type='email'
-                  placeholder='example@gmail.com'
+                  placeholder={t('EMAIL_EXAMPLE')}
                   required
                />
             </div>
 
             <div className={data.msg.error ? 'error' : ''}>
                <label htmlFor='msg'>
-                  Message*<span> Required</span>
+                  {t('MESSAGE')}*<span> {t('REQUIRED')}</span>
                </label>
                <textarea
                   onChange={(e) => handleChange({ key: 'msg', value: e.target.value })}
                   value={inputValues.msg}
                   id='msg'
-                  placeholder='Write me a message'
+                  placeholder={t('MESSAGE_EXAMPLE')}
                   name='msg'></textarea>
             </div>
 
             <SubmitButton
                type='submit'
                handleClick={handleClick}
-               content={sending ? 'Sending...' : 'Send'}
+               content={sending ? t('SENDING') : t('SEND')}
                Icon={FaRegPaperPlane}
                disabled={sending}
             />

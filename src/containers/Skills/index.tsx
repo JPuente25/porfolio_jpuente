@@ -6,12 +6,14 @@ import views from '@/variables/views';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { v4 as uuidv4 } from 'uuid';
 import { PersonalSkills, SkillsContainer, StyledContainer, Technologies } from './index.styled';
+import { useI18N } from '@/app/i18n';
 
 const Skills = () => {
+   const {t} = useI18N();
    return (
       <StyledContainer view={views.skills.label}>
          <Technologies>
-            <h1>Technologies I know</h1>
+            <h1>{t('TECHNOLOGIES_I_KNOW')}</h1>
 
             <ResponsiveMasonry
                columnsCountBreakPoints={{ 0: 1, 991: 2 }}
@@ -28,7 +30,7 @@ const Skills = () => {
          </Technologies>
 
          <PersonalSkills>
-            <h1>Personal Skills</h1>
+            <h1>{t('PERSONAL_SKILLS')}</h1>
 
             <SkillsContainer>
                {personalSkills.map((skill: Skill) => (

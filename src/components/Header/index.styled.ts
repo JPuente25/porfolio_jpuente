@@ -28,7 +28,11 @@ export const Container = styled.header`
       left: 0;
    }
 
-   @media (min-width: 600px) {
+   div.language {
+      display: none;
+   }
+
+   @media (min-width: 900px) {
       padding: 0 40px;
 
       ul.links-container {
@@ -42,10 +46,10 @@ export const Container = styled.header`
       div.menu-modal-button {
          display: none;
       }
-   }
 
-   @media (min-width: 991px) {
-      padding: 0 60px;
+      div.language {
+         display: flex;
+      }
    }
 `;
 
@@ -62,7 +66,7 @@ export const NameLink = styled(Link)`
       height: 60px;
    }
 
-   div {
+   div.name {
       display: flex;
       flex-direction: column;
    }

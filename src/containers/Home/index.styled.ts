@@ -1,4 +1,5 @@
 import Container from '@/components/Container';
+import Link from 'next/link';
 import styled, { keyframes } from 'styled-components';
 
 /////////////////////////////////////////////////////////////////////////////
@@ -43,14 +44,18 @@ export const Title = styled.div`
    text-shadow: 0px 0px 5px ${({ theme }) => theme.palette.text.tertiary};
 
    h1 {
-      color: ${({ theme }) => theme.palette.text.gold};
-      &:nth-child(1) {
-         color: ${({ theme }) => theme.palette.text.tertiary};
-      }
-   }
+      color: ${({ theme }) => theme.palette.text.tertiary};
+      text-align: center;
 
-   h1.i-am span {
-      color: ${({ theme }) => theme.palette.text.cyan};
+      span {
+         &:nth-child(1) {
+            color: ${({ theme }) => theme.palette.text.cyan};
+         }
+
+         &:nth-child(2) {
+            color: ${({ theme }) => theme.palette.text.gold};
+         }
+      }
    }
 
    @media (min-width: 480px) {
@@ -59,6 +64,9 @@ export const Title = styled.div`
 
    @media (min-width: 600px) {
       text-shadow: 0px 0px 10px ${({ theme }) => theme.palette.text.opposite};
+      h1 {
+         text-align: start;
+      }
    }
 
    @media (min-width: 991px) {
@@ -68,7 +76,7 @@ export const Title = styled.div`
 
 /////////////////////////////////////////////////////////////////////////////
 
-export const Welcome = styled.div`
+export const Welcome = styled(Link)`
    width: 100%;
    max-width: 900px;
    display: flex;

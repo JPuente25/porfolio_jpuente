@@ -6,6 +6,8 @@ import { ButtonContainer, Container, DevicesView, Information, Title } from './i
 import Button from '../Button';
 import { MdWeb } from 'react-icons/md';
 import { AiFillGithub } from 'react-icons/ai';
+import { useI18N } from '@/app/i18n';
+import { useRouter } from 'next/router';
 
 interface Props {
    project: Project;
@@ -13,6 +15,9 @@ interface Props {
 }
 
 const ProjectCard = ({ project, index }: Props) => {
+   const {t} = useI18N();
+   const {locale} = useRouter();
+
    return (
       <Container app={project.key} className={`project-card ${index % 2 === 0 ? 'right' : 'left'}`}>
          <DevicesView className='devices-view'>
@@ -26,20 +31,20 @@ const ProjectCard = ({ project, index }: Props) => {
 
             <p className={`status ${project.status}`}>
                {project.status === 'finished'
-                  ? 'Finished'
+                  ? t('FINISHED')
                   : project.status === 'in-progress'
-                  ? 'In Progress'
-                  : 'Not started'}
+                  ? t('IN_PROGRESS')
+                  : t('NOT_STARTED')}
             </p>
 
-            <p>{project.description}</p>
+            <p>{project.description[locale as keyof typeof project.description]}</p>
 
             <ButtonContainer>
                <Link
                   href={project.site_url}
                   target='_blank'>
                   <Button
-                     content='Go to Website'
+                     content={t('GO_TO_WEBSITE')}
                      Icon={MdWeb}
                   />
                </Link>
@@ -48,7 +53,7 @@ const ProjectCard = ({ project, index }: Props) => {
                   href={project.repo_url}
                   target='_blank'>
                   <Button
-                     content='Github Repo'
+                     content={t('GITHUB_REPO')}
                      Icon={AiFillGithub}
                   />
                </Link>

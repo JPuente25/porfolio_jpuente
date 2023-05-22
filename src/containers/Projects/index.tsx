@@ -4,11 +4,13 @@ import projects from '@/variables/projects';
 import views from '@/variables/views';
 import { v4 as uuidv4 } from 'uuid';
 import { Title } from './index.styled';
+import { useI18N } from '@/app/i18n';
 
 const Projects = () => {
+   const {t} = useI18N();
    return (
       <Container view={views.projects.label}>
-         <Title>My Best Projects</Title>
+         <Title>{t('MY_BEST_PROJECTS')}</Title>
 
          <div className='projects-container'>
             {projects.map((project, i) => (

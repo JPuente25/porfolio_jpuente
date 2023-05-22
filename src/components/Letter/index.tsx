@@ -1,4 +1,6 @@
-import React, { useContext } from 'react';
+import { Context } from '@/app/Provider';
+import { useContext } from 'react';
+import { FaRegPaperPlane } from 'react-icons/fa';
 import ContactForm from '../ContactForm';
 import {
    Background,
@@ -9,8 +11,6 @@ import {
    RightTab,
    UpperTab,
 } from './index.styled';
-import { Context } from '@/app/Provider';
-import { FaRegPaperPlane } from 'react-icons/fa';
 
 interface Props {}
 

@@ -11,12 +11,15 @@ import {
    TechProgress,
 } from './index.styled';
 import { useInView } from 'react-intersection-observer';
+import { useRouter } from 'next/router';
 
 interface Props {
    tech: Skill;
 }
 
 const SkillCard = ({ tech: { label, icon: Icon, progress, color, bgColor, children } }: Props) => {
+   const {locale} = useRouter();
+
    return (
       <Card
          bgColor={bgColor}
@@ -24,8 +27,8 @@ const SkillCard = ({ tech: { label, icon: Icon, progress, color, bgColor, childr
          <MainTechnology>
             <TechLabel color={color}>
                <Icon />
-               <p>{label}</p>
-               <LabelTooltip className='label-tooltip'>{label}</LabelTooltip>
+               <p>{label[locale as keyof typeof label]}</p>
+               <LabelTooltip className='label-tooltip'>{label[locale as keyof typeof label]}</LabelTooltip>
             </TechLabel>
 
             <TechProgress>

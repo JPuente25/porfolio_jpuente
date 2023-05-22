@@ -3,8 +3,10 @@ import { Project } from '@/types';
 const projects: Project[] = [
    {
       name: 'Movix',
-      description:
-         'Movix is a web app to get movies and TV show reviews, releases, recommendations for the day and week and details. It uses TMDB API. The app is built on React Typescript V18.2, with main libraries like Axios, Redux Toolkit and Styled Components. It also includes unit testing with Jest.',
+      description: {
+         en: 'Movix is a web app to get movies and TV show reviews, releases, recommendations for the day and week and details. It uses TMDB API. The app is built on React Typescript V18.2, with main libraries like Axios, Redux Toolkit and Styled Components. It also includes unit testing with Jest.',
+         es: 'Movix es una aplicación web para ver reseñas, estrenos, recomendaciones para el dia y la semana y detalles de peliculas y series de TV. Usa la API de TMDB. La aplicación está construida en React Typescript V.18.2, con principales librerías como Axios, Redux Toolkit y Styled Components. Tambien incluye pruebas unitarias con Jest.',
+      },
       status: 'finished',
       site_url: 'https://jpuente25.github.io/movix/',
       repo_url: 'https://github.com/JPuente25/movix/',
@@ -26,8 +28,10 @@ const projects: Project[] = [
    },
    {
       name: 'Kings League',
-      description:
-         "Kings league is a clone web app created for educational-purposes. Since Kings League web doesn't have a public API, all the information was obtained by web scrapping and stored in a fake database. It showcases games, players, and team information from the Kings League played in Spain as of March 3rd. The app is built on React Typescript V18.2, with main libraries like Axios, Redux Toolkit and Styled Components.",
+      description: {
+         en: "Kings league is a clone web app created for educational-purposes. Since Kings League web doesn't have a public API, all the information was obtained by web scrapping and stored in a fake database. It showcases games, players, and team information from the Kings League played in Spain as of March 3rd. The app is built on React Typescript V18.2, with main libraries like Axios, Redux Toolkit and Styled Components.",
+         es: 'Kings league es una aplicación web clon creado con fines educativos. Ya que la web de la Kings League no tiene una API pública, toda la información fue obtenida mediante web scrapping y almacenada en una base de datos ficticia. Se muestran juegos, jugadores e información de los equipos de la Kings League jugada en españa al dia del 3 de Marzo de 2023. La aplicación está construida en React Typescript V18.2, con librerías principales como Axios, Redux Toolkit y Styled Components.',
+      },
       status: 'finished',
       site_url: 'https://jpuente25.github.io/cloned-kings-league/',
       repo_url: 'https://github.com/JPuente25/cloned-kings-league/',
@@ -49,8 +53,10 @@ const projects: Project[] = [
    },
    {
       name: 'Platzi Shop',
-      description:
-         'Platzi Shop is a web app to buy any article you want, with user authentication, user creation and shopping cart. It uses Platzi Fake Store API. The app is built on React Typescript V18.2, with main libraries like Axios, React Toastify and Styled Components.',
+      description: {
+         en: 'Platzi Shop is a web app to buy any article you want, with user authentication, user creation and shopping cart. It uses Platzi Fake Store API. The app is built on React Typescript V18.2, with main libraries like Axios, React Toastify and Styled Components.',
+         es: 'Platzi Shop es una aplicación web para comprar cualquier artículo que desees, con autenticación de usuario, creación de usuario y carrito de compras. Esta usa la API Platzi Fake Store. La aplicación está construida en React Typescript V18.2, con librerías principales como Axios, React Toastify y Styled Components.',
+      },
       status: 'finished',
       site_url: 'https://jpuente25.github.io/platzishop/',
       repo_url: 'https://github.com/JPuente25/platzishop/',

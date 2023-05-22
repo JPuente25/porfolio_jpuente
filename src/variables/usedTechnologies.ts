@@ -4,12 +4,19 @@ import { BsGit } from 'react-icons/bs';
 import { DiCss3 } from 'react-icons/di';
 import { GrReactjs } from 'react-icons/gr';
 import { IoLogoJavascript, IoLogoSass } from 'react-icons/io';
-import { SiCreatereactapp, SiJest, SiMui, SiStyledcomponents, SiTypescript, SiVite } from 'react-icons/si';
+import {
+   SiCreatereactapp,
+   SiJest,
+   SiMui,
+   SiStyledcomponents,
+   SiTypescript,
+   SiVite,
+} from 'react-icons/si';
 import { TbBrandNextjs, TbBrandRedux } from 'react-icons/tb';
 
 const usedTechnologies: Skill[] = [
    {
-      label: 'HTML',
+      label: { en: 'HTML', es: 'HTML' },
       icon: AiFillHtml5,
       progress: 70,
       color: '#dd4b25',
@@ -17,14 +24,14 @@ const usedTechnologies: Skill[] = [
       children: null,
    },
    {
-      label: 'CSS',
+      label: { en: 'CSS', es: 'CSS' },
       icon: DiCss3,
       progress: 75,
       color: '#2173f7',
       bgColor: '#2173f770',
       children: [
          {
-            label: 'SASS',
+            label: { en: 'SASS', es: 'SASS' },
             icon: IoLogoSass,
             progress: 25,
             color: '#C76395',
@@ -32,7 +39,7 @@ const usedTechnologies: Skill[] = [
             children: null,
          },
          {
-            label: 'Styled Components',
+            label: { en: 'Styled Components', es: 'Styled Components' },
             icon: SiStyledcomponents,
             progress: 70,
             color: '#a5518a',
@@ -40,7 +47,7 @@ const usedTechnologies: Skill[] = [
             children: null,
          },
          {
-            label: 'Material UI',
+            label: { es: 'Material UI', en: 'Material UI' },
             icon: SiMui,
             progress: 10,
             color: '#00aaf7',
@@ -50,14 +57,14 @@ const usedTechnologies: Skill[] = [
       ],
    },
    {
-      label: 'JavaScript',
+      label: { en: 'JavaScript', es: 'JavaScript' },
       icon: IoLogoJavascript,
       progress: 75,
       color: '#f7d800',
       bgColor: '#f7d80070',
       children: [
          {
-            label: 'Typescript',
+            label: { en: 'Typescript', es: 'TypeScript' },
             icon: SiTypescript,
             progress: 60,
             color: '#2f74c0',
@@ -65,14 +72,14 @@ const usedTechnologies: Skill[] = [
             children: null,
          },
          {
-            label: 'React JS',
+            label: { en: 'React JS', es: 'React JS' },
             icon: GrReactjs,
             progress: 70,
             color: '#61d4f3',
             bgColor: '#61d4f370',
             children: [
                {
-                  label: 'Next JS',
+                  label: { en: 'Next JS', es: 'Next JS' },
                   icon: TbBrandNextjs,
                   progress: 30,
                   color: '#000000',
@@ -80,7 +87,7 @@ const usedTechnologies: Skill[] = [
                   children: null,
                },
                {
-                  label: 'Vite JS',
+                  label: { en: 'Vite JS', es: 'Vite JS' },
                   icon: SiVite,
                   progress: 30,
                   color: '#7f77f7',
@@ -88,7 +95,7 @@ const usedTechnologies: Skill[] = [
                   children: null,
                },
                {
-                  label: 'Create React App',
+                  label: { en: 'Create React App', es: 'Create React App' },
                   icon: SiCreatereactapp,
                   progress: 70,
                   color: '#09cca7',
@@ -96,7 +103,7 @@ const usedTechnologies: Skill[] = [
                   children: null,
                },
                {
-                  label: 'Redux',
+                  label: { es: 'Redux', en: 'Redux' },
                   icon: TbBrandRedux,
                   progress: 50,
                   color: '#7248b6',
@@ -104,7 +111,7 @@ const usedTechnologies: Skill[] = [
                   children: null,
                },
                {
-                  label: 'Jest React',
+                  label: { en: 'Jest React', es: 'Jest React' },
                   icon: SiJest,
                   progress: 35,
                   color: '#813754',
@@ -116,14 +123,14 @@ const usedTechnologies: Skill[] = [
       ],
    },
    {
-      label: 'Git',
+      label: { en: 'Git', es: 'Git' },
       icon: BsGit,
       progress: 30,
       color: '#e84d31',
       bgColor: '#e84d3170',
       children: [
          {
-            label: 'GitHub',
+            label: { en: 'GitHub', es: 'GitHub' },
             icon: AiFillGithub,
             progress: 40,
             color: '#000000',

@@ -1,12 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const LinkContainer = styled.ul`
-   width: 70%;
+   /* width: 50%; */
    display: flex;
    align-items: center;
    justify-content: space-between;
-   
-   @media (min-width: 991px) {
+   gap: 20px;
+
+   @media (min-width: 1200px) {
+      width: 70%;
       width: auto;
       gap: 40px;
    }
@@ -18,7 +20,8 @@ export const ListItem = styled.li`
    padding: 0 5px;
    transition: color ease 0.3s;
 
-   &:hover, &.active {
+   &:hover,
+   &.active {
       background: ${({ theme }) => theme.palette.background.gold};
       background: ${({ theme }) => theme.palette.gradient.gold};
       background-clip: text;

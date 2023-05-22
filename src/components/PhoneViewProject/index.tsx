@@ -1,14 +1,13 @@
 import Image from 'next/image';
 import React from 'react';
 import { Container } from './index.styled';
-import { v4 as uuidv4 } from "uuid";
+import { v4 as uuidv4 } from 'uuid';
 
 interface Props {
    images: string[];
 }
 
-
-const PhoneViewProject = ({images}: Props) => {
+const PhoneViewProject = ({ images }: Props) => {
    return (
       <Container className='phone-view'>
          <Image
@@ -18,6 +17,7 @@ const PhoneViewProject = ({images}: Props) => {
             height={600}
             className='device phone'
             quality={100}
+            loading='eager'
          />
 
          {images.map((url, index) => (
@@ -28,6 +28,7 @@ const PhoneViewProject = ({images}: Props) => {
                height={600}
                className={`project project-${index + 1}`}
                quality={100}
+               loading='eager'
                key={uuidv4()}
             />
          ))}

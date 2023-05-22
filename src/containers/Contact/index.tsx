@@ -9,22 +9,48 @@ import {
 } from './index.styled';
 import { useContext } from 'react';
 import { Context } from '@/app/Provider';
+import { IoLogoWhatsapp } from 'react-icons/io';
+import { AiOutlineMail } from 'react-icons/ai';
+import { CiLocationOn } from 'react-icons/ci';
+import { contactInformation } from '@/variables/contactInformation';
+import SocialMedia from '@/components/SocialMedia';
+import { useI18N } from '@/app/i18n';
 
 const Contact = () => {
    const { activeLetter, submitStatus } = useContext(Context);
-   
+   const { t } = useI18N();
+
    return (
       <StyledContainer view={views.contact.label}>
-         <SocialSection></SocialSection>
+         <SocialSection>
+            <div className='contact-info'>
+               <h2>{t('CONTACT_INFORMATION')}</h2>
+               <p>{t('CONTACT_INFORMATION_TEXT')}</p>
+            </div>
+
+            <div className='contact-details'>
+               <div>
+                  <IoLogoWhatsapp />
+                  <p>{contactInformation.phoneNumber}</p>
+               </div>
+               <div>
+                  <AiOutlineMail />
+                  <p>{contactInformation.email}</p>
+               </div>
+               <div>
+                  <CiLocationOn />
+                  <p>{contactInformation.address}</p>
+               </div>
+            </div>
+
+            <SocialMedia />
+         </SocialSection>
 
          <LetterSection className={activeLetter ? 'openLetter' : 'saveLetter'}>
             <ContactMessage className='contact-msg'>
                <div>
-                  <h2>Let&apos;s talk!</h2>
-                  <p>
-                     If you are interested in hiring me, or just want to say hi, please send a
-                     letter to my mailbox.
-                  </p>
+                  <h2>{t('LETS_TALK')}</h2>
+                  <p>{t('TALK_TEXT')}</p>
                </div>
             </ContactMessage>
             <Letter />
@@ -36,9 +62,9 @@ const Contact = () => {
             }>
             <p>
                {submitStatus.sent
-                  ? 'Message sent!'
+                  ? t('MESSAGE_SENT')
                   : submitStatus.error
-                  ? 'Error sending message'
+                  ? t('ERROR_SENDING_MESSAGE')
                   : ''}
             </p>
          </AlertMessage>

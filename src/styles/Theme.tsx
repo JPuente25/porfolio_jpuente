@@ -26,6 +26,7 @@ export const theme = {
          primary: '#2d3436',
          header: '#13161b',
          footer: '#13161b',
+         opposite: '#fff',
          gold: 'rgb(163, 153, 39)',
          gold2: '#ffca30',
          cyan: '#2da7cf',
@@ -40,6 +41,7 @@ export const theme = {
          orange: 'orange',
          successGreen: '#63f763',
          errorRed: '#961e28',
+         gray: '#696969',
       },
       gradient: {
          home: 'linear-gradient(315deg, #2d3436 0%, #000000 90%)',
