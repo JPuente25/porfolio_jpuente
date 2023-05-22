@@ -7,7 +7,7 @@ export const Card = styled.article<{ bgColor: string }>`
    outline: 1px solid ${({ theme }) => theme.palette.text.opposite};
    height: min-content;
    box-shadow: ${({ theme }) => theme.palette.shadow.box};
-   transition: all ease 0.5s;
+   transition: all ease 0.3s;
    cursor: crosshair;
 
    &:hover {

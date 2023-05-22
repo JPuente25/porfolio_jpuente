@@ -7,7 +7,7 @@ import LinksList from '../LinkList';
 import MenuModal from '../MenuModal';
 import MenuModalButton from '../MenuModalButton';
 import Link from 'next/link';
-import { Container, NameLink } from './index.styled';
+import { Container, LinksSection, NameLink } from './index.styled';
 import LanguageButton from '../LanguageButton';
 
 const Header = () => {
@@ -30,9 +30,10 @@ const Header = () => {
             </div>
          </NameLink>
 
-         <LanguageButton />
-
-         <LinksList />
+         <LinksSection>
+            <LinksList />
+            <LanguageButton />
+         </LinksSection>
 
          <MenuModal />
 

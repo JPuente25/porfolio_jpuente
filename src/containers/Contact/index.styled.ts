@@ -17,7 +17,7 @@ export const StyledContainer = styled(Container)`
    }
 `;
 
-export const SocialSection = styled.section`
+export const InfoSection = styled.section`
    grid-row: 2 / 3;
    background: radial-gradient(
       circle at -0.4% 112%,

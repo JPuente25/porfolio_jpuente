@@ -8,6 +8,7 @@ import { MdWeb } from 'react-icons/md';
 import { AiFillGithub } from 'react-icons/ai';
 import { useI18N } from '@/app/i18n';
 import { useRouter } from 'next/router';
+import { useInView } from 'react-intersection-observer';
 
 interface Props {
    project: Project;
@@ -15,16 +16,24 @@ interface Props {
 }
 
 const ProjectCard = ({ project, index }: Props) => {
-   const {t} = useI18N();
-   const {locale} = useRouter();
+   const { t } = useI18N();
+   const { locale } = useRouter();
+   const { ref, inView } = useInView();
 
    return (
-      <Container app={project.key} className={`project-card ${index % 2 === 0 ? 'right' : 'left'}`}>
+      <Container
+         app={project.key}
+         className={`in-view-effects ${inView ? 'in-view' : ''}  ${
+            index % 2 === 0 ? 'right' : 'left'
+         } project-card`}
+         ref={ref}>
          <DevicesView className='devices-view'>
             <DevicesViewProject images={project.images} />
          </DevicesView>
 
-         <Information style={{ color: project.text_color }} className='information'>
+         <Information
+            style={{ color: project.text_color }}
+            className='information'>
             <Title className='title'>
                <h2>{project.name}</h2>
             </Title>

@@ -6,12 +6,18 @@ import Image from 'next/image';
 import { FiDownload } from 'react-icons/fi';
 import { PictureFrame, Profile, StyledContainer, TextAboutMe } from './index.styled';
 import { useI18N } from '@/app/i18n';
+import { useInView } from 'react-intersection-observer';
 
 const About = () => {
    const { t } = useI18N();
+   const [textRef, textInView] = useInView();
+   const [profileRef, profileInView] = useInView();
+
    return (
       <StyledContainer view={views.about.label}>
-         <TextAboutMe className='text-about-me'>
+         <TextAboutMe
+            className={`in-view-effects ${textInView ? 'in-view' : ''} text-about-me `}
+            ref={textRef}>
             <h2>{t('ABOUT_TITLE')}</h2>
             <p>
                {t('ABOUT_DESCRIPTION_1')}
@@ -42,7 +48,9 @@ const About = () => {
             <p>{t('ABOUT_DESCRIPTION_19')}</p>
          </TextAboutMe>
 
-         <Profile className='profile'>
+         <Profile
+            className={`in-view-effects ${profileInView ? 'in-view' : ''} profile`}
+            ref={profileRef}>
             <PictureFrame className='pic-frame'>
                <Image
                   src={images.profilePicture}

@@ -14,10 +14,6 @@ export const Container = styled.header`
    top: 0;
    z-index: 20;
 
-   ul.links-container {
-      display: none;
-   }
-
    menu ul.links-container {
       display: flex;
    }
@@ -28,16 +24,8 @@ export const Container = styled.header`
       left: 0;
    }
 
-   div.language {
-      display: none;
-   }
-
    @media (min-width: 900px) {
       padding: 0 40px;
-
-      ul.links-container {
-         display: flex;
-      }
 
       menu.menu-modal {
          display: none;
@@ -45,10 +33,6 @@ export const Container = styled.header`
 
       div.menu-modal-button {
          display: none;
-      }
-
-      div.language {
-         display: flex;
       }
    }
 `;
@@ -81,5 +65,15 @@ export const NameLink = styled(Link)`
       background-clip: text;
       -webkit-background-clip: text;
       color: transparent;
+   }
+`;
+
+export const LinksSection = styled.div`
+   display: none;
+   align-items: center;
+   gap: 30px;
+
+   @media (min-width: 900px) {
+      display: flex;
    }
 `;

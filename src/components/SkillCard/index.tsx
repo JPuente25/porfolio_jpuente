@@ -18,17 +18,21 @@ interface Props {
 }
 
 const SkillCard = ({ tech: { label, icon: Icon, progress, color, bgColor, children } }: Props) => {
-   const {locale} = useRouter();
+   const { locale } = useRouter();
+   const { ref, inView } = useInView();
 
    return (
       <Card
+         ref={ref}
          bgColor={bgColor}
-         className='skill-card'>
+         className={`in-view-effects ${inView ? 'in-view' : ''} skill-card`}>
          <MainTechnology>
             <TechLabel color={color}>
                <Icon />
                <p>{label[locale as keyof typeof label]}</p>
-               <LabelTooltip className='label-tooltip'>{label[locale as keyof typeof label]}</LabelTooltip>
+               <LabelTooltip className='label-tooltip'>
+                  {label[locale as keyof typeof label]}
+               </LabelTooltip>
             </TechLabel>
 
             <TechProgress>

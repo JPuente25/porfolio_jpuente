@@ -37,6 +37,18 @@ a {
 ul {
    list-style: none;
 }
+
+//Animation for Intersection Observer
+.in-view-effects {
+   opacity: 0;
+   transition: all ease 1s;
+   transform: translateY(20%);
+
+   &.in-view {
+      opacity: 1;
+      transform: translateY(0%);
+   }
+}
 `;
 
 export default GlobalStyles;

@@ -126,17 +126,18 @@ export const Profile = styled.div`
          }
       }
 
-      button {         
-         &, div {
+      button {
+         &,
+         div {
             height: 40px;
          }
 
          p {
-            font-size: ${({theme}) => theme.font.size.lg};
+            font-size: ${({ theme }) => theme.font.size.lg};
          }
 
          svg {
-            font-size: ${({theme}) => theme.font.size.x2lg};
+            font-size: ${({ theme }) => theme.font.size.x2lg};
          }
       }
    }

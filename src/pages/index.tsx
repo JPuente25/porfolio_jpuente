@@ -46,7 +46,7 @@ const Main = () => {
       //Automatic Scrolling
       const viewLabel = router.asPath.split('/#')[1] || 'home';
       automaticScroll(viewLabel);
-      console.log(router);
+      (router);
       //Setting Current View
       setCurrentView(views[viewLabel as keyof typeof views]);
 
