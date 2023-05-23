@@ -97,7 +97,7 @@ const personalSkills = [
             children: null,
          },
          {
-            label: { en: 'Empathy', es: 'Empathy' },
+            label: { en: 'Empathy', es: 'Empatía' },
             icon: RiEmpathizeFill,
             progress: 95,
             color: '#8e2b23',

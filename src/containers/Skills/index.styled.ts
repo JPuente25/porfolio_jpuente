@@ -14,7 +14,6 @@ export const StyledContainer = styled(Container)`
       text-align: center;
       margin: 15px auto;
       padding: 0px 20px;
-      color: white;
       background: url('https://i.gyazo.com/2baf248a4cf3552e2cecd33a61da2b35.png') center center
          no-repeat;
       background-size: 100% 100%;
@@ -31,9 +30,6 @@ export const StyledContainer = styled(Container)`
       h1 {
          font-size: ${({ theme }) => theme.font.size.x4lg};
       }
-   }
-
-   @media (min-width: 1200px) {
    }
 `;
 

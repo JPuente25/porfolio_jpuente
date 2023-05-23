@@ -2,13 +2,13 @@ import React from 'react';
 import DevicesViewProject from '../DevicesViewProject';
 import { Project } from '@/types';
 import Link from 'next/link';
-import { ButtonContainer, Container, DevicesView, Information, Title } from './index.styled';
 import Button from '../Button';
 import { MdWeb } from 'react-icons/md';
 import { AiFillGithub } from 'react-icons/ai';
 import { useI18N } from '@/app/i18n';
 import { useRouter } from 'next/router';
 import { useInView } from 'react-intersection-observer';
+import { ButtonContainer, Container, DevicesView, Information, Title } from './index.styled';
 
 interface Props {
    project: Project;
@@ -23,9 +23,9 @@ const ProjectCard = ({ project, index }: Props) => {
    return (
       <Container
          app={project.key}
-         className={`in-view-effects ${inView ? 'in-view' : ''}  ${
+         className={`in-view-effects ${inView ? 'in-view' : ''} ${
             index % 2 === 0 ? 'right' : 'left'
-         } project-card`}
+         }`}
          ref={ref}>
          <DevicesView className='devices-view'>
             <DevicesViewProject images={project.images} />

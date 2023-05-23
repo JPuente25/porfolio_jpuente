@@ -5,7 +5,7 @@ import { IconType } from 'react-icons/lib';
 interface Props {
    content: string;
    Icon: IconType;
-   type?: 'button' | 'submit' | 'reset';
+   type?: 'button' | 'submit';
    handleClick?: (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
    disabled?: boolean;
    className?: string;
@@ -23,7 +23,7 @@ const Button = ({
       <Container
          type={type}
          onClick={handleClick}
-         className={`${className} project-button ${disabled && 'disabled'}`}
+         className={`${className} ${disabled && 'disabled'}`}
          disabled={disabled}>
          <div className='content'>
             <p>{content}</p>

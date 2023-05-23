@@ -3,41 +3,41 @@ import { font } from '@/pages/_app';
 import images from '@/variables/images';
 import Image from 'next/image';
 import { useContext } from 'react';
+import LanguageButton from '../LanguageButton';
 import LinksList from '../LinkList';
 import MenuModal from '../MenuModal';
 import MenuModalButton from '../MenuModalButton';
-import Link from 'next/link';
 import { Container, LinksSection, NameLink } from './index.styled';
-import LanguageButton from '../LanguageButton';
 
 const Header = () => {
    const { setShowMenu } = useContext(Context);
 
    return (
       <Container className={font.className}>
-         <NameLink
-            href='/'
-            onClick={() => setShowMenu(false)}>
-            <Image
-               src={images.logo}
-               alt='jaime puente logo'
-               width={100}
-               height={100}
-            />
-            <div className='name'>
-               <span>Jaime</span>
-               <span>Puente</span>
-            </div>
-         </NameLink>
+         <div className='max1440-container'>
+            <NameLink
+               href='/'
+               onClick={() => setShowMenu(false)}>
+               <Image
+                  src={images.logo}
+                  alt='jaime puente logo'
+                  width={100}
+                  height={100}
+               />
+               <div className='name'>
+                  <p>Jaime</p>
+                  <p>Puente</p>
+               </div>
+            </NameLink>
 
-         <LinksSection>
-            <LinksList />
-            <LanguageButton />
-         </LinksSection>
+            <LinksSection> {/* Hidden on mobile  */}
+               <LinksList />
+               <LanguageButton />
+            </LinksSection>
 
-         <MenuModal />
-
-         <MenuModalButton />
+            <MenuModalButton /> {/* Shown on mobile  */}
+            <MenuModal /> {/* Shown on mobile  */}
+         </div>
       </Container>
    );
 };

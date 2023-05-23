@@ -2,19 +2,20 @@ import React, { useEffect, useState } from 'react';
 import { Container, LoaderContainer } from './index.styled';
 
 interface FirstLoaderStates {
-   visible: boolean;
+   hidden: boolean;
 }
 
 const FirstLoader = () => {
-   const [visible, setVisible] = useState<FirstLoaderStates['visible']>(true);
+   const [hidden, setHidden] = useState<FirstLoaderStates['hidden']>(false);
+
    useEffect(() => {
       setTimeout(() => {
-         setVisible(false);
+         setHidden(true);
       }, 5000);
    }, [])
 
    return (
-      <Container className={`loader ${visible ? 'visible' : 'hidden'}`}>
+      <Container className={hidden ? 'hidden' : ''}>
          <LoaderContainer>
             <div className='figure lil-blue'></div>
             <div className='figure lil-purple'></div>

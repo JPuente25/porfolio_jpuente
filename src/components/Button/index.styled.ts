@@ -7,7 +7,6 @@ export const Container = styled.button`
    padding: 0px 5px;
    border-radius: 8px;
    border: none;
-   appearance: none;
    font-family: inherit;
    background-size: 200% auto;
    box-shadow: 0 0 6px #eee;
@@ -42,8 +41,7 @@ export const Container = styled.button`
    }
 
    @media (min-width: 768px) {
-      height: 40px;
-
+      &,
       div {
          height: 40px;
       }
@@ -63,10 +61,8 @@ export const Container = styled.button`
       }
    }
 
-   
    @media (min-width: 1200px) {
-      height: 60px;
-
+      &,
       div {
          height: 60px;
       }

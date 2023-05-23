@@ -2,11 +2,10 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
    width: 280px;
-   height: auto;
+   margin: 0 auto;
    position: relative;
    contain: content;
    z-index: 1;
-   margin: 0 auto;
 
    &.saveLetter {
       div.content div.form {
@@ -163,11 +162,11 @@ export const Content = styled.div`
    margin: 0 auto;
    contain: content;
 
-   div.form-ghost {
+   div.form-placeholder {
       width: 100%;
       height: 570px; 
-      z-index: 0;
       visibility: hidden;
+      z-index: 0;
    }
 
    div.form {
@@ -179,7 +178,7 @@ export const Content = styled.div`
    }
 
    @media (min-width: 440px) {
-      div.form-ghost {
+      div.form-placeholder {
          height: 675px; 
       }
 
@@ -189,7 +188,7 @@ export const Content = styled.div`
    }
 
    @media (min-width: 640px) {
-      div.form-ghost {
+      div.form-placeholder {
          height: 700px; 
       }
 
@@ -199,7 +198,7 @@ export const Content = styled.div`
    }
 
    @media (min-width: 768px) {
-      div.form-ghost {
+      div.form-placeholder {
          height: 600px; 
       }
 
@@ -209,7 +208,7 @@ export const Content = styled.div`
    }
 
    @media (min-width: 991px) {
-      div.form-ghost {
+      div.form-placeholder {
          height: 650px; 
       }
 
@@ -219,7 +218,7 @@ export const Content = styled.div`
    }
 
    @media (min-width: 1200px) {
-      div.form-ghost {
+      div.form-placeholder {
          height: 720px; 
       }
 
@@ -234,10 +233,9 @@ export const Content = styled.div`
 export const UpperTab = styled.div`
    position: absolute;
    left: 14.5%;
-   bottom: 15.4%; //variable segun altura de la carta y ancho de contenedor
+   bottom: 15.4%; 
    width: 70.5%;
    aspect-ratio: 1 / 1;
-   background-color: white;
    background-color: rgb(150, 30, 40);
    background: linear-gradient(
       135deg,

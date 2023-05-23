@@ -19,9 +19,11 @@ export const MediaItem = styled(Link)`
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   font-size: ${({ theme }) => theme.font.size.sm};
-   font-weight: ${({ theme }) => theme.font.weight.normal};
    transition: color 0.3s ease;
+
+   p {
+      font-size: ${({ theme }) => theme.font.size.sm};
+   }
 
    svg {
       font-size: 25px;
@@ -32,6 +34,8 @@ export const MediaItem = styled(Link)`
    }
 
    @media (min-width: 768px) {
-      font-size: ${({ theme }) => theme.font.size.md};
+      p {
+         font-size: ${({ theme }) => theme.font.size.md};
+      }
    }
 `;

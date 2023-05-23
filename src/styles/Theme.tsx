@@ -74,6 +74,7 @@ export const theme = {
       shadow: {
          primary: 'drop-shadow(0px 0px 20px #FFFFFF60)',
          box: '4px 4px 4px rgb(0, 0, 0, 0.75)',
+         opposite: '4px 4px 4px rgb(255, 255, 255, 0.75)'
       },
       boxShadow: {
          primary: '0px 0px 12px #000',

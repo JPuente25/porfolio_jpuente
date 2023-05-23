@@ -1,12 +1,5 @@
 import Letter from '@/components/Letter';
 import views from '@/variables/views';
-import {
-   AlertMessage,
-   ContactMessage,
-   LetterSection,
-   InfoSection,
-   StyledContainer,
-} from './index.styled';
 import { useContext } from 'react';
 import { Context } from '@/app/Provider';
 import { IoLogoWhatsapp } from 'react-icons/io';
@@ -16,6 +9,13 @@ import { contactInformation } from '@/variables/contactInformation';
 import SocialMedia from '@/components/SocialMedia';
 import { useI18N } from '@/app/i18n';
 import { useInView } from 'react-intersection-observer';
+import {
+   AlertMessage,
+   ContactMessage,
+   LetterSection,
+   InfoSection,
+   StyledContainer,
+} from './index.styled';
 
 const Contact = () => {
    const { activeLetter, submitStatus } = useContext(Context);

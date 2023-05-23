@@ -5,12 +5,10 @@ import styled from 'styled-components';
 
 export const StyledContainer = styled(Container)`
    div.container {
-      color: ${(props) => props.theme.palette.text.primary};
       display: grid;
       grid-template-columns: 1fr;
-      place-items: start;
-      box-shadow: ${({ theme }) => theme.palette.shadow.box};
       border-radius: 20px;
+      box-shadow: ${({ theme }) => theme.palette.shadow.box};
       contain: content;
 
       @media (min-width: 768px) {
@@ -22,22 +20,20 @@ export const StyledContainer = styled(Container)`
 ///////////////////////////////////////////////////////////////////////////////////
 
 export const TextAboutMe = styled.div`
+   width: 100%;
+   height: 100%;
+   padding: 20px;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
    gap: 20px;
-   width: 100%;
-   height: 100%;
-   padding: 20px;
-   position: relative;
    background-color: ${({ theme }) => theme.palette.transparency.green};
    backdrop-filter: blur(5px);
-   color: ${(props) => props.theme.palette.text.primary};
+   position: relative;
 
    h2 {
       font-size: ${(props) => props.theme.font.size.xlg};
       text-shadow: 0 0 3px ${({ theme }) => theme.palette.text.opposite};
-      color: ${(props) => props.theme.palette.text.primary};
    }
 
    p {
@@ -45,7 +41,6 @@ export const TextAboutMe = styled.div`
    }
 
    strong {
-      color: ${(props) => props.theme.palette.text.cyan3};
       color: ${(props) => props.theme.palette.text.gold};
    }
 
@@ -83,12 +78,12 @@ export const Profile = styled.div`
    width: 100%;
    display: grid;
    place-items: center;
-   position: relative;
    padding: 15px;
    gap: 20px;
-   contain: content;
    background-color: ${({ theme }) => theme.palette.transparency.green};
    background-image: ${({ theme }) => theme.palette.gradient.green2};
+   position: relative;
+   contain: content;
 
    div.social-media {
       gap: 15px;
@@ -100,7 +95,7 @@ export const Profile = styled.div`
    }
 
    button {
-      background-image: linear-gradient(to right, #606c88 0%, #3f4c6b 51%, #606c88 100%);
+      background-image: linear-gradient(to right, #606c88 0%, #3f4c6b80 51%, #606c88 100%);
       box-shadow: ${({ theme }) => theme.palette.shadow.box};
    }
 
@@ -164,21 +159,20 @@ export const Profile = styled.div`
 ///////////////////////////////////////////////////////////////////////////////////
 
 export const PictureFrame = styled.picture`
+   width: 100%;
+   max-width: 350px;
+   aspect-ratio: 1 / 1;
    background-color: grey;
    display: flex;
    align-items: center;
    justify-content: center;
    border-radius: 50%;
    border: 8px solid white;
-   contain: content;
-   width: 100%;
-   max-width: 350px;
-   aspect-ratio: 1 / 1;
    box-shadow: ${({ theme }) => theme.palette.shadow.box};
+   contain: content;
 
    img {
       width: 100%;
-
       height: auto;
    }
 

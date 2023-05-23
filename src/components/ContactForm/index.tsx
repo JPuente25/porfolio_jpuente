@@ -26,35 +26,30 @@ interface ContactFormStates {
       };
    };
    sending: boolean;
-   submitStatus: {
-      sent: boolean;
-      error: boolean;
-   };
 }
 
+const initialInputValues = {
+   name: '',
+   email: '',
+   msg: '',
+};
+
+const initialData = {
+   name: {
+      value: '',
+      error: false,
+   },
+   email: {
+      value: '',
+      error: false,
+   },
+   msg: {
+      value: '',
+      error: false,
+   },
+};
+
 const ContactForm = () => {
-   //Initial Values
-   const initialInputValues = {
-      name: '',
-      email: '',
-      msg: '',
-   };
-
-   const initialData = {
-      name: {
-         value: '',
-         error: false,
-      },
-      email: {
-         value: '',
-         error: false,
-      },
-      msg: {
-         value: '',
-         error: false,
-      },
-   };
-
    //Contexts
    const { setActiveLetter, submitStatus, setSubmitStatus } = useContext(Context);
    const { t } = useI18N();
@@ -85,7 +80,7 @@ const ContactForm = () => {
          },
       };
 
-      //Is there is any Error, the form will not be submitted
+      //If there is any Error, the form will not be submitted
       for (const key in rawData) {
          if (rawData[key as keyof typeof rawData].error) {
             noErrorInValidation = false;
@@ -162,7 +157,6 @@ const ContactForm = () => {
                <input
                   onChange={(e) => handleChange({ key: 'name', value: e.target.value })}
                   value={inputValues.name}
-                  name='name'
                   id='name'
                   type='text'
                   placeholder='Jaime Puente'
@@ -177,7 +171,6 @@ const ContactForm = () => {
                <input
                   onChange={(e) => handleChange({ key: 'email', value: e.target.value })}
                   value={inputValues.email}
-                  name='email'
                   id='email'
                   type='email'
                   placeholder={t('EMAIL_EXAMPLE')}
@@ -193,8 +186,7 @@ const ContactForm = () => {
                   onChange={(e) => handleChange({ key: 'msg', value: e.target.value })}
                   value={inputValues.msg}
                   id='msg'
-                  placeholder={t('MESSAGE_EXAMPLE')}
-                  name='msg'></textarea>
+                  placeholder={t('MESSAGE_EXAMPLE')}></textarea>
             </div>
 
             <SubmitButton

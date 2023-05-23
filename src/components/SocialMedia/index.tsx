@@ -16,31 +16,31 @@ const SocialMedia = () => {
             href={socialMediaData.facebook.url}
             target='_blank'>
             <AiOutlineFacebook />
-            <span>{socialMediaData.facebook.user}</span>
+            <p>{socialMediaData.facebook.user}</p>
          </MediaItem>
          <MediaItem
             href={socialMediaData.instagram.url}
             target='_blank'>
             <AiOutlineInstagram />
-            <span>{socialMediaData.instagram.user}</span>
+            <p>{socialMediaData.instagram.user}</p>
          </MediaItem>
          <MediaItem
             href={socialMediaData.linkedin.url}
             target='_blank'>
             <AiOutlineLinkedin />
-            <span>{socialMediaData.linkedin.user}</span>
+            <p>{socialMediaData.linkedin.user}</p>
          </MediaItem>
          <MediaItem
             href={socialMediaData.twitter.url}
             target='_blank'>
             <AiOutlineTwitter />
-            <span>{socialMediaData.twitter.user}</span>
+            <p>{socialMediaData.twitter.user}</p>
          </MediaItem>
          <MediaItem
             href={socialMediaData.github.url}
             target='_blank'>
             <AiOutlineGithub />
-            <span>{socialMediaData.github.user}</span>
+            <p>{socialMediaData.github.user}</p>
          </MediaItem>
       </Container>
    );

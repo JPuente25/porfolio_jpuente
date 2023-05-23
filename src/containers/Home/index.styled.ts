@@ -20,11 +20,10 @@ export const StyledContainer = styled(Container)`
 
 /////////////////////////////////////////////////////////////////////////////
 
-export const SectionContainer = styled.article`
+export const Section = styled.section`
    display: grid;
    grid-template-rows: repeat(3, auto);
    place-items: center;
-   max-height: 100%;
 
    @media (min-width: 600px) {
       grid-template-rows: repeat(2, auto);
@@ -79,25 +78,22 @@ export const Title = styled.div`
 export const Welcome = styled(Link)`
    width: 100%;
    max-width: 900px;
+   padding: 10px 12px;
    display: flex;
-   gap: 10px;
    align-items: center;
    justify-content: space-between;
+   gap: 10px;
    border: 1px solid ${({ theme }) => theme.palette.text.gold};
    border-radius: 4px;
-   padding: 10px 12px;
    background-color: ${({ theme }) => theme.palette.transparency.green2};
    backdrop-filter: blur(4px);
    font-weight: ${({ theme }) => theme.font.weight.bold};
-   cursor: pointer;
    box-shadow: ${({ theme }) => theme.palette.shadow.box};
+   cursor: pointer;
 
    p {
-      display: flex;
-      flex-direction: column;
       text-align: center;
       font-size: ${({ theme }) => theme.font.size.md};
-      margin: 0 auto;
       text-shadow: 0px 0px 5px ${({ theme }) => theme.palette.text.opposite};
    }
 
@@ -106,10 +102,10 @@ export const Welcome = styled(Link)`
       width: 30px;
       height: 30px;
       color: ${({ theme }) => theme.palette.text.gold};
+   }
 
-      &.arrow-left {
-         display: none;
-      }
+   &:hover {
+      box-shadow: ${({ theme }) => theme.palette.shadow.opposite};
    }
 
    @media (min-width: 480px) {

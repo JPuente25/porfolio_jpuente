@@ -12,14 +12,10 @@ export const Card = styled.article<{ bgColor: string }>`
 
    &:hover {
       transform: scale(1.05);
-
-      div.recursive-children {
-         transform: scale(calc(1 / 1.05));
-      }
    }
 `;
 
-export const MainTechnology = styled.div`
+export const MainSkill = styled.div`
    display: grid;
    grid-template-columns: 1fr 3fr;
    border-radius: 8px;
@@ -37,14 +33,13 @@ export const MainTechnology = styled.div`
    }
 `;
 
-export const TechLabel = styled.div<{ color: string }>`
+export const Label = styled.div<{ color: string }>`
    background-color: ${({ color }) => color};
    display: flex;
-   gap: 10px;
    align-items: center;
    justify-content: center;
+   gap: 10px;
    padding: 10px;
-   color: ${({ theme }) => theme.palette.text.primary};
    position: relative;
    border-radius: 8px 0px 0px 8px;
    outline: 1px solid ${({ theme }) => theme.palette.text.opposite};
@@ -57,12 +52,12 @@ export const TechLabel = styled.div<{ color: string }>`
    p {
       display: none;
       font-size: ${({ theme }) => theme.font.size.sm2};
+      font-weight: ${({ theme }) => theme.font.weight.bold};
       background: ${({ theme }) => theme.palette.transparency.tertiary};
       padding: 2px;
       width: 100%;
       border-radius: 4px;
       text-align: center;
-      font-weight: ${({ theme }) => theme.font.weight.bold};
    }
 
    &:hover {
@@ -80,7 +75,7 @@ export const TechLabel = styled.div<{ color: string }>`
       }
 
       &:hover {
-         div.tooltip {
+         div.label-tooltip {
             visibility: hidden;
          }
       }
@@ -116,7 +111,7 @@ export const TechLabel = styled.div<{ color: string }>`
    }
 `;
 
-export const TechProgress = styled.div<{}>`
+export const Progress = styled.div<{}>`
    background-color: ${({ theme }) => theme.palette.background.cardBar};
    display: flex;
    align-items: center;
@@ -141,12 +136,11 @@ export const ProgressBar = styled.div<{ progress: number; color: string }>`
       position: absolute;
       border-radius: 2.5px;
       background-color: ${({ color }) => color};
-      width: ${({ progress }) => progress}%;
+      width: ${({ progress }) => `${progress}%`};
       height: 100%;
       top: 0;
       left: 0;
       box-shadow: 0px 0px 0px 2px ${({ theme }) => theme.palette.text.primary};
-      z-index: 0;
    }
 
    @media (min-width: 480px) {

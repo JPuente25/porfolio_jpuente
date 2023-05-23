@@ -10,10 +10,19 @@ interface ProviderStates {
    showMenu: boolean;
    currentView: View;
    activeLetter: boolean;
-   submitStatus: {
-      sent: boolean;
-      error: boolean;
-   };
+   submitStatus:
+      | {
+           sent: true;
+           error: false;
+        }
+      | {
+           sent: false;
+           error: true;
+        }
+      | {
+           sent: false;
+           error: false;
+        };
 }
 
 interface ContextProps {
@@ -23,22 +32,28 @@ interface ContextProps {
    setCurrentView: React.Dispatch<React.SetStateAction<View>>;
    activeLetter: boolean;
    setActiveLetter: React.Dispatch<React.SetStateAction<boolean>>;
-   submitStatus: {
-      sent: boolean;
-      error: boolean;
-   };
+   submitStatus:
+      | {
+           sent: true;
+           error: false;
+        }
+      | {
+           sent: false;
+           error: true;
+        }
+      | {
+           sent: false;
+           error: false;
+        };
    setSubmitStatus: React.Dispatch<
-      React.SetStateAction<{
-         sent: boolean;
-         error: boolean;
-      }>
+      React.SetStateAction<ContextProps['submitStatus']>
    >;
 }
 
 const Context = React.createContext<ContextProps>({} as ContextProps);
 
 const Provider = (props: ProviderProps) => {
-   const initialSubmitStatus = {
+   const initialSubmitStatus: ContextProps['submitStatus'] = {
       sent: false,
       error: false,
    };

@@ -2,17 +2,19 @@ import styled from 'styled-components';
 
 export const StyledContainer = styled.div<{ bg: string }>`
    width: 100%;
-   margin: 0 auto;
    height: auto;
    min-height: 100vh;
    padding: 30px 20px;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
    background-color: ${(props) => props.theme.palette.background.default};
    background: url(${({ bg }) => bg}) center center no-repeat;
    background-size: cover;
    position: relative;
+
+   div.container {
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+   }
 
    @media (min-width: 768px) {
       padding: 60px 40px;

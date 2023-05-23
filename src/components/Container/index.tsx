@@ -14,14 +14,8 @@ const Container = ({ children, className, view }: Props) => {
          bg={backgrounds[view as keyof typeof backgrounds]}
          className={className}>
          <BackgroundFilter className='top' />
+         <div className='container'>{children}</div> {/*Real container*/} 
          <BackgroundFilter className='bottom' />
-
-         <div  //REAL CONTAINER
-            className='container'
-            style={{ width: '100%', maxWidth: '1440px',  margin: '0 auto' }}>
-            {children}
-         </div>
-
       </StyledContainer>
    );
 };

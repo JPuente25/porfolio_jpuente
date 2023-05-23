@@ -3,16 +3,21 @@ import styled from 'styled-components';
 
 export const Container = styled.header`
    background-color: ${({ theme }) => theme.palette.background.header};
-   height: 70px;
    width: 100%;
-   display: flex;
-   align-items: center;
-   justify-content: space-between;
    padding: 0 20px;
-   color: ${({ theme }) => theme.palette.text.primary};
    position: fixed;
    top: 0;
    z-index: 20;
+
+   div.max1440-container {
+      width: 100%;
+      max-width: 1440px;
+      height: 70px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+   }
 
    menu ul.links-container {
       display: flex;
@@ -41,13 +46,12 @@ export const NameLink = styled(Link)`
    display: flex;
    align-items: center;
    justify-content: center;
-
-   gap: 0;
    cursor: pointer;
 
    img {
       width: 60px;
-      height: 60px;
+      height: auto;
+      aspect-ratio: 1 / 1;
    }
 
    div.name {
@@ -55,12 +59,10 @@ export const NameLink = styled(Link)`
       flex-direction: column;
    }
 
-   span {
-      margin: 0;
+   p {
       line-height: 1;
       font-weight: ${({ theme }) => theme.font.weight.bold};
       font-size: ${({ theme }) => theme.font.size.lg};
-      background: ${({ theme }) => theme.palette.background.cyan};
       background: ${({ theme }) => theme.palette.gradient.cyan};
       background-clip: text;
       -webkit-background-clip: text;

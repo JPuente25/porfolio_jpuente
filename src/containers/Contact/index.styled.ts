@@ -19,16 +19,16 @@ export const StyledContainer = styled(Container)`
 
 export const InfoSection = styled.section`
    grid-row: 2 / 3;
+   width: 100%;
+   display: flex;
+   flex-direction: column;
    background: radial-gradient(
       circle at -0.4% 112%,
       rgb(102, 51, 204) 0%,
       rgb(244, 111, 111) 92.7%
    );
-   width: 100%;
    padding: 20px;
    border-radius: 35px;
-   display: flex;
-   flex-direction: column;
    box-shadow: ${({ theme }) => theme.palette.shadow.box};
    contain: content;
    position: relative;
@@ -71,7 +71,8 @@ export const InfoSection = styled.section`
       svg {
          font-size: ${({ theme }) => theme.font.size.xlg};
       }
-      span {
+
+      p {
          display: none;
       }
    }
@@ -184,9 +185,6 @@ export const InfoSection = styled.section`
          font-size: ${({ theme }) => theme.font.size.x2lg};
       }
    }
-
-   @media (min-width: 1200px) {
-   }
 `;
 
 export const LetterSection = styled.section`
@@ -245,8 +243,7 @@ export const ContactMessage = styled.div`
 
    p {
       text-align: justify;
-      font-size: ${({ theme }) => theme.font.size.md};
-      font-weight: ${({ theme }) => theme.font.weight.normal};
+      font-size: ${({ theme }) => theme.font.size.sm2};
    }
 
    @media (min-width: 440px) {
@@ -259,7 +256,7 @@ export const ContactMessage = styled.div`
       }
 
       p {
-         font-size: ${({ theme }) => theme.font.size.lg};
+         font-size: ${({ theme }) => theme.font.size.md};
       }
    }
 
@@ -274,7 +271,7 @@ export const ContactMessage = styled.div`
       }
 
       p {
-         font-size: ${({ theme }) => theme.font.size.xlg};
+         font-size: ${({ theme }) => theme.font.size.lg};
       }
    }
 
@@ -289,7 +286,7 @@ export const ContactMessage = styled.div`
       }
 
       p {
-         font-size: ${({ theme }) => theme.font.size.lg};
+         font-size: ${({ theme }) => theme.font.size.md};
       }
    }
 
@@ -310,14 +307,13 @@ export const ContactMessage = styled.div`
       }
 
       p {
-         font-size: ${({ theme }) => theme.font.size.xlg};
+         font-size: ${({ theme }) => theme.font.size.lg};
       }
    }
 `;
 
 export const AlertMessage = styled.div`
    display: none;
-   display: block;
    position: fixed;
    top: 90px;
    right: 20px;
@@ -325,10 +321,10 @@ export const AlertMessage = styled.div`
    padding: 10px 20px;
    border-radius: 10px;
    box-shadow: ${({ theme }) => theme.palette.shadow.box};
-   z-index: 2;
+   opacity: 0;
    transition: all ease-in 1s, opacity linear 0s;
    transform: translateX(calc(100% + 20px));
-   opacity: 0;
+   z-index: 2;
 
    p {
       font-weight: ${({ theme }) => theme.font.weight.bold};

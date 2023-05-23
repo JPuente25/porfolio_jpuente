@@ -7,7 +7,7 @@ export const Container = styled.section`
    align-items: center;
 `;
 
-export const CarouselItem = styled.div`
+export const PageItem = styled.div`
    width: 100%;
    height: 100%;
    flex-shrink: 0;

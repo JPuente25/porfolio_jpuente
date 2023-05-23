@@ -12,10 +12,6 @@ import {
    UpperTab,
 } from './index.styled';
 
-interface Props {}
-
-interface LetterStates {}
-
 const Letter = () => {
    const { activeLetter, setActiveLetter } = useContext(Context);
 
@@ -33,7 +29,7 @@ const Letter = () => {
             <div className='form'>
                <ContactForm />
             </div>
-            <div className='form-ghost'></div>
+            <div className='form-placeholder'></div>
          </Content>
 
          <OpenButton

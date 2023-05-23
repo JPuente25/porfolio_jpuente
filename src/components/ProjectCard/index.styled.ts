@@ -1,25 +1,5 @@
+import { appTheme } from '@/variables/appThemeColors';
 import styled from 'styled-components';
-
-const appTheme = {
-   movix: {
-      titleBackground: 'cyan',
-      backgroundColor: '#001a5790',
-      buttonBackgroundColor: '#314755',
-      buttonBackgroundImage: 'linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%)',
-   },
-   kingsLeague: {
-      titleBackground: '#FFAC1C',
-      backgroundColor: '#ffff0070',
-      buttonBackgroundColor: '#ff512f',
-      buttonBackgroundImage: 'linear-gradient(to right, #ff512f 0%, #FFAC1C 51%, #ff512f 100%)',
-   },
-   platziShop: {
-      titleBackground: '#234F1E',
-      backgroundColor: '#3CB04360',
-      buttonBackgroundColor: '#50C9C3',
-      buttonBackgroundImage: 'linear-gradient(to right, #50C9C3 0%, #96DEDA  51%, #50C9C3  100%)',
-   },
-};
 
 export const Container = styled.article<{ app: 'movix' | 'kingsLeague' | 'platziShop' }>`
    width: 100%;
@@ -39,19 +19,7 @@ export const Container = styled.article<{ app: 'movix' | 'kingsLeague' | 'platzi
       right: 0;
       border-radius: 20px;
       box-shadow: ${({ theme }) => theme.palette.shadow.box};
-      background-color: ${({ app }) => appTheme[app].backgroundColor};
-      z-index: -2;
-   }
-
-   &:before {
-      content: '';
-      width: 100%;
-      height: 20%;
-      position: absolute;
-      top: 20%;
-      right: 0;
-      border-radius: 20px 20px 0px 0px;
-      background-image: linear-gradient(to bottom, #000 60%, transparent 100%);
+      background: ${({ app }) => appTheme[app].backgroundGradientToTop};
       z-index: -2;
    }
 
@@ -59,7 +27,7 @@ export const Container = styled.article<{ app: 'movix' | 'kingsLeague' | 'platzi
       background-color: ${({ app }) => appTheme[app].titleBackground};
    }
 
-   button.project-button {
+   button {
       background-color: ${({ app }) => appTheme[app].buttonBackgroundColor};
       background-image: ${({ app }) => appTheme[app].buttonBackgroundImage};
    }
@@ -70,15 +38,7 @@ export const Container = styled.article<{ app: 'movix' | 'kingsLeague' | 'platzi
       &:after {
          width: 85%;
          height: 100%;
-      }
-
-      &:before {
-         width: 20%;
-         height: 100%;
-         top: 0;
-         left: 15%;
-         border-radius: 20px 0px 0px 20px;
-         background-image: linear-gradient(to right, #000 60%, transparent 100%);
+         background: ${({ app }) => appTheme[app].backgroundGradientToLeft};
       }
 
       &.right {
@@ -97,16 +57,7 @@ export const Container = styled.article<{ app: 'movix' | 'kingsLeague' | 'platzi
             width: 85%;
             height: 100%;
             left: 0;
-         }
-
-         &:before {
-            width: 20%;
-            height: 100%;
-            top: 0;
-            left: auto;
-            right: 15%;
-            border-radius: 0px 20px 20px 0px;
-            background-image: linear-gradient(to left, #000 60%, transparent 100%);
+            background: ${({ app }) => appTheme[app].backgroundGradientToRight};
          }
       }
    }
@@ -195,14 +146,13 @@ export const Title = styled.div`
    &:after {
       content: '';
       width: 120%;
-      height: 40%;
-      margin: 0 auto;
+      height: 50%;
       position: absolute;
       left: -10%;
-      bottom: 10%;
+      bottom: 0%;
       opacity: 0.8;
-      z-index: -1;
       border-radius: 0 20px 0 20px;
+      z-index: -1;
    }
 
    @media (min-width: 600px) {

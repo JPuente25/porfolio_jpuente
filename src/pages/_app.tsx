@@ -22,7 +22,6 @@ export default function App({ Component, pageProps }: AppProps) {
       <>
          <I18NProvider>
             <Head>
-               <title>Jaime Puente</title>
                <meta
                   name='description'
                   content='Personal Jaime Puente Portfolio'
@@ -63,16 +62,6 @@ export default function App({ Component, pageProps }: AppProps) {
                <link
                   rel='preload'
                   href={backgrounds.contact}
-                  as='image'
-               />
-               <link
-                  rel='preload'
-                  href={images.logo}
-                  as='image'
-               />
-               <link
-                  rel='preload'
-                  href={images.profilePicture}
                   as='image'
                />
             </Head>

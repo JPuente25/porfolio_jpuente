@@ -8,14 +8,16 @@ import views from '@/variables/views';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useRef } from 'react';
-import { CarouselItem, Container } from '../styles/index.styled';
+import { PageItem, Container } from '../styles/index.styled';
 import getFirstLetterUppercase from '@/utils/functions/getFirstLetterUppercase';
 import FirstLoader from '@/components/FirstLoader';
 
 const Main = () => {
    const router = useRouter();
    const { currentView, setCurrentView } = useContext(Context);
-   const carouselContainer = useRef<HTMLDivElement>(null);
+   const headTitle = `Jaime Puente - ${getFirstLetterUppercase(currentView.label)}`;
+
+   //React Referencies
    const homeRef = useRef<HTMLDivElement>(null);
    const aboutRef = useRef<HTMLDivElement>(null);
    const skillsRef = useRef<HTMLDivElement>(null);
@@ -23,18 +25,18 @@ const Main = () => {
    const contactRef = useRef<HTMLDivElement>(null);
 
    const automaticScroll = (view: string) => {
-      //Gets Location in Document of the Section selected based in 
+      //Gets Location in Document of the Section selected based in
       //the asPath from the router
-      const scrollAmmount = 
-         view === views.contact.label         
+      const scrollAmmount =
+         view === views.contact.label
             ? contactRef.current!.offsetTop
-            : view === views.about.label       
+            : view === views.about.label
             ? aboutRef.current!.offsetTop
-            : view === views.skills.label      
+            : view === views.skills.label
             ? skillsRef.current!.offsetTop
-            : view === views.projects.label      
+            : view === views.projects.label
             ? projectsRef.current!.offsetTop
-            : homeRef.current!.offsetTop;         
+            : homeRef.current!.offsetTop;
 
       window.scrollTo({
          top: scrollAmmount - 70,
@@ -46,7 +48,8 @@ const Main = () => {
       //Automatic Scrolling
       const viewLabel = router.asPath.split('/#')[1] || 'home';
       automaticScroll(viewLabel);
-      (router);
+      router;
+
       //Setting Current View
       setCurrentView(views[viewLabel as keyof typeof views]);
 
@@ -56,37 +59,31 @@ const Main = () => {
    return (
       <React.Fragment>
          <Head>
-            <title>Jaime Puente - {getFirstLetterUppercase(currentView.label)}</title>
+            <title>{headTitle}</title>
          </Head>
 
          <FirstLoader />
 
-         <Container ref={carouselContainer}>
-            <CarouselItem
-               className={currentView.label === 'home' ? 'on-screen' : ''}
-               ref={homeRef}>
+         <Container>
+            <PageItem ref={homeRef}>
                <Home />
-            </CarouselItem>
-            <CarouselItem
-               className={currentView.label === 'about' ? 'on-screen' : ''}
-               ref={aboutRef}>
+            </PageItem>
+
+            <PageItem ref={aboutRef}>
                <About />
-            </CarouselItem>
-            <CarouselItem
-               className={currentView.label === 'skills' ? 'on-screen' : ''}
-               ref={skillsRef}>
+            </PageItem>
+
+            <PageItem ref={skillsRef}>
                <Skills />
-            </CarouselItem>
-            <CarouselItem
-               className={currentView.label === 'projects' ? 'on-screen' : ''}
-               ref={projectsRef}>
+            </PageItem>
+
+            <PageItem ref={projectsRef}>
                <Projects />
-            </CarouselItem>
-            <CarouselItem
-               className={currentView.label === 'contact' ? 'on-screen' : ''}
-               ref={contactRef}>
+            </PageItem>
+            
+            <PageItem ref={contactRef}>
                <Contact />
-            </CarouselItem>
+            </PageItem>
          </Container>
       </React.Fragment>
    );

@@ -3,21 +3,21 @@ import { v4 as uuidv4 } from 'uuid';
 import {
    Card,
    LabelTooltip,
-   MainTechnology,
+   MainSkill,
    ProgressBar,
    ProgressTooltip,
    RecursiveChildren,
-   TechLabel,
-   TechProgress,
+   Label,
+   Progress,
 } from './index.styled';
 import { useInView } from 'react-intersection-observer';
 import { useRouter } from 'next/router';
 
 interface Props {
-   tech: Skill;
+   skill: Skill;
 }
 
-const SkillCard = ({ tech: { label, icon: Icon, progress, color, bgColor, children } }: Props) => {
+const SkillCard = ({ skill: { label, icon: Icon, progress, color, bgColor, children } }: Props) => {
    const { locale } = useRouter();
    const { ref, inView } = useInView();
 
@@ -26,16 +26,16 @@ const SkillCard = ({ tech: { label, icon: Icon, progress, color, bgColor, childr
          ref={ref}
          bgColor={bgColor}
          className={`in-view-effects ${inView ? 'in-view' : ''} skill-card`}>
-         <MainTechnology>
-            <TechLabel color={color}>
+         <MainSkill>
+            <Label color={color}>
                <Icon />
                <p>{label[locale as keyof typeof label]}</p>
                <LabelTooltip className='label-tooltip'>
                   {label[locale as keyof typeof label]}
                </LabelTooltip>
-            </TechLabel>
+            </Label>
 
-            <TechProgress>
+            <Progress>
                <ProgressBar
                   progress={progress}
                   color={color}>
@@ -43,14 +43,14 @@ const SkillCard = ({ tech: { label, icon: Icon, progress, color, bgColor, childr
                      <ProgressTooltip className='progress-tooltip'>{progress}%</ProgressTooltip>
                   </div>
                </ProgressBar>
-            </TechProgress>
-         </MainTechnology>
+            </Progress>
+         </MainSkill>
 
          {children && (
             <RecursiveChildren className='recursive-children'>
-               {children.map((childTech) => (
+               {children.map((itemSkill) => (
                   <SkillCard
-                     tech={childTech}
+                     skill={itemSkill}
                      key={uuidv4()}
                   />
                ))}

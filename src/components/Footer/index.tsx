@@ -1,9 +1,9 @@
 import { font } from '@/pages/_app';
 import { CiLocationOn } from 'react-icons/ci';
 import SocialMedia from '../SocialMedia';
-import { Container, Copyright, Location } from './index.styled';
 import { contactInformation } from '@/variables/contactInformation';
 import { useI18N } from '@/app/i18n';
+import { Container, Copyright, Location } from './index.styled';
 
 const Footer = () => {
    const {t} = useI18N();

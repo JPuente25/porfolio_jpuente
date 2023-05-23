@@ -4,9 +4,9 @@ import images from '@/variables/images';
 import views from '@/variables/views';
 import Image from 'next/image';
 import { FiDownload } from 'react-icons/fi';
-import { PictureFrame, Profile, StyledContainer, TextAboutMe } from './index.styled';
 import { useI18N } from '@/app/i18n';
 import { useInView } from 'react-intersection-observer';
+import { PictureFrame, Profile, StyledContainer, TextAboutMe } from './index.styled';
 
 const About = () => {
    const { t } = useI18N();

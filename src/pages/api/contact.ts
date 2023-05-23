@@ -21,8 +21,10 @@ export default function (req: any, res: any) {
       to: 'jpcontreras28@gmail.com',
       subject: `Message From ${req.body.name.value}`,
       text: req.body.msg.value + ' | Sent from: ' + req.body.email.value,
-      html: `<div>${req.body.msg.value}</div><p>Sent from:
-     ${req.body.email.value}</p>`,
+      html: `<div>
+               <h3>${req.body.msg.value}</h3>
+            </div>
+            <p>Sent from: ${req.body.email.value}</p>`,
    };
 
    transporter.sendMail(mailData, function (err: any, info: any) {

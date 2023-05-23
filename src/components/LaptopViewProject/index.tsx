@@ -7,8 +7,6 @@ interface Props {
    images: string[];
 }
 
-interface LaptopViewProjectStates {}
-
 const LaptopViewProject = ({ images }: Props) => {
    return (
       <Container className='laptop-view'>

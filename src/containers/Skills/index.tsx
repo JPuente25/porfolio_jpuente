@@ -5,8 +5,8 @@ import usedTechnologies from '@/variables/usedTechnologies';
 import views from '@/variables/views';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { v4 as uuidv4 } from 'uuid';
-import { PersonalSkills, SkillsContainer, StyledContainer, Technologies } from './index.styled';
 import { useI18N } from '@/app/i18n';
+import { PersonalSkills, SkillsContainer, StyledContainer, Technologies } from './index.styled';
 
 const Skills = () => {
    const {t} = useI18N();
@@ -21,7 +21,7 @@ const Skills = () => {
                <Masonry gutter='30px'>
                   {usedTechnologies.map((skill: Skill) => (
                      <SkillCard
-                        tech={skill}
+                        skill={skill}
                         key={uuidv4()}
                      />
                   ))}
@@ -35,7 +35,7 @@ const Skills = () => {
             <SkillsContainer>
                {personalSkills.map((skill: Skill) => (
                   <SkillCard
-                     tech={skill}
+                     skill={skill}
                      key={uuidv4()}
                   />
                ))}

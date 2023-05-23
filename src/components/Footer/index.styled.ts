@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styled from 'styled-components';
 
 export const Container = styled.footer`
@@ -9,29 +8,29 @@ export const Container = styled.footer`
    align-items: center;
    justify-content: center;
    padding: 20px;
-   color: ${({ theme }) => theme.palette.text.primary};
-
-   @media (min-width: 480px) {
-      height: 220px;
-   }
-
-   @media (min-width: 768px) {
-      height: 220px;
-   }
 `;
 
 export const Location = styled.div`
    display: flex;
    align-items: center;
-   font-size: ${({ theme }) => theme.font.size.sm};
    padding: 15px 0;
+   gap: 10px;
 
    svg {
-      font-size: 25px;
+      font-size: ${({ theme }) => theme.font.size.lg};
+   }
+
+   p {
+      font-size: ${({ theme }) => theme.font.size.sm};
    }
 
    @media (min-width: 768px) {
-      font-size: ${({ theme }) => theme.font.size.md};
+      svg {
+         font-size: ${({ theme }) => theme.font.size.x2lg};
+      }
+      p {
+         font-size: ${({ theme }) => theme.font.size.md};
+      }
    }
 `;
 

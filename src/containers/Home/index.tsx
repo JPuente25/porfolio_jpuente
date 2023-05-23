@@ -3,8 +3,8 @@ import BuildingPicture from '@/components/BuildingPicture';
 import TypingSwitchBox from '@/components/TypingSwitchBox';
 import views from '@/variables/views';
 import { BsArrowDownCircle } from 'react-icons/bs';
-import { SectionContainer, StyledContainer, Title, Welcome } from './index.styled';
 import { useInView } from 'react-intersection-observer';
+import { Section, StyledContainer, Title, Welcome } from './index.styled';
 
 const Home = () => {
    const { t } = useI18N();
@@ -15,7 +15,7 @@ const Home = () => {
       <StyledContainer view={views.home.label}>
          <TypingSwitchBox />
 
-         <SectionContainer>
+         <Section>
             <Title
                className={`in-view-effects ${titleInView ? 'in-view' : ''} 'title'`}
                ref={titleRef}>
@@ -36,7 +36,7 @@ const Home = () => {
                <p>{t('WELCOME_TO_MY_PORTFOLIO')}</p>
                <BsArrowDownCircle />
             </Welcome>
-         </SectionContainer>
+         </Section>
       </StyledContainer>
    );
 };
