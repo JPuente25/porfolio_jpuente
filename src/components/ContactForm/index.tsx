@@ -3,8 +3,9 @@ import { emailIsValid } from '@/utils/functions/emailIsValid';
 import { textIsValid } from '@/utils/functions/textIsValid';
 import React, { useContext, useEffect, useState } from 'react';
 import { FaRegPaperPlane } from 'react-icons/fa';
-import { Container, FormHeader, Formulary, SubmitButton } from './index.styled';
 import { useI18N } from '@/app/i18n';
+import { IoMdCloseCircleOutline } from 'react-icons/io';
+import { Container, FormHeader, Formulary, SubmitButton } from './index.styled';
 interface ContactFormStates {
    inputValues: {
       name: string;
@@ -141,6 +142,11 @@ const ContactForm = () => {
 
    return (
       <Container>
+         <IoMdCloseCircleOutline
+            className='close-form'
+            onClick={() => setActiveLetter(false)}
+         />
+
          <FormHeader>
             <div className='icon-box'>
                <FaRegPaperPlane />

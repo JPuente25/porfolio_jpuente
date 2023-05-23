@@ -71,5 +71,7 @@
    "VALID_EMAIL_TEXT": "Debe ser un correo válido",
    "MESSAGE_SENT": "Mensaje enviado!",
    "ERROR_SENDING_MESSAGE": "Error enviando el mensaje",
+   "404_MSG": "Vaya! Página no encontrada",
+   "GO_HOME": "Ve al inicio",
    "ALL_RIGHTS_RESERVED": "Todos los derechos reservados."
 }

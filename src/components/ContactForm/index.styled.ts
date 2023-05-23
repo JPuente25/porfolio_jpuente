@@ -14,6 +14,20 @@ export const Container = styled.article`
    position: relative;
    contain: content;
 
+   svg.close-form {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: ${({ theme }) => theme.font.size.xlg};
+      transition: all ease 0.3s;
+      cursor: pointer;
+
+      &:hover {
+         transform: scale(1.2);
+         color: ${({ theme }) => theme.palette.text.red};
+      }
+   }
+
    &:after {
       content: '';
       width: 400%; //varies

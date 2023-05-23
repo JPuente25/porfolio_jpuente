@@ -71,5 +71,7 @@
    "VALID_EMAIL_TEXT": "Must be a valid e-mail",
    "MESSAGE_SENT": "Message sent!",
    "ERROR_SENDING_MESSAGE": "Error sending the message!",
+   "404_MSG": "Oops! Page not found",
+   "GO_HOME": "Go home",
    "ALL_RIGHTS_RESERVED": "All rights reserved."
 }

@@ -20,7 +20,7 @@ export const theme = {
          cyan: '#43cffd',
          cyan2: '#5defff',
          cyan3: '#114a61',
-         red: 'red',
+         red: '#961e28',
       },
       background: {
          primary: '#2d3436',
@@ -58,6 +58,7 @@ export const theme = {
          textBox: 'linear-gradient(to right, #243b55, #141e30)',
          webkitTextBox:  '-webkit-linear-gradient(to right, #243b55, #141e30)',
          darkBlue: 'linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%)',
+         darkBlue2: 'linear-gradient(112.1deg, rgb(32, 38, 57) 11.4%, rgb(63, 76, 119) 70.2%)',
          red: 'linear-gradient(90.3deg, rgb(255, 255, 255) 3%, rgb(235, 158, 98) 34.6%, rgb(177, 10, 10) 63.7%, rgb(0, 0, 0) 102%)',
          green: 'linear-gradient(-225deg, #DFFFCD 0%, #90F9C4 48%, #39F3BB 100%)',
          green2: 'linear-gradient(to bottom, transparent 0%,  #39F3BB 30%, #000000 100%)',
@@ -93,6 +94,8 @@ export const theme = {
          x4lg: '56px',
          x5lg: '70px',
          x6lg: '84px',
+         x7lg: '100px',
+         superxlg: '200px'
       },
       weight: {
          thin: '100',
