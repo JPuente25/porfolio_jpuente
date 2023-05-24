@@ -1,15 +1,18 @@
+import { useI18N } from '@/app/i18n';
 import Button from '@/components/Button';
 import SocialMedia from '@/components/SocialMedia';
-import images from '@/variables/images';
+import { personalData } from '@/variables/personal';
 import views from '@/variables/views';
 import Image from 'next/image';
-import { FiDownload } from 'react-icons/fi';
-import { useI18N } from '@/app/i18n';
+import { AiFillFileText } from 'react-icons/ai';
 import { useInView } from 'react-intersection-observer';
 import { PictureFrame, Profile, StyledContainer, TextAboutMe } from './index.styled';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 const About = () => {
    const { t } = useI18N();
+   const { locale } = useRouter();
    const [textRef, textInView] = useInView();
    const [profileRef, profileInView] = useInView();
 
@@ -53,17 +56,20 @@ const About = () => {
             ref={profileRef}>
             <PictureFrame className='pic-frame'>
                <Image
-                  src={images.profilePicture}
+                  src={personalData.profilePicture}
                   alt='profile jaime puente'
                   width={300}
                   height={300}
                />
             </PictureFrame>
             <SocialMedia />
-            <Button
-               content={t('MY_RESUME')}
-               Icon={FiDownload}
-            />
+
+            <Link href={personalData.resumeUrl[locale as keyof typeof personalData.resumeUrl]} target='_blank'>
+               <Button
+                  content={t('MY_RESUME')}
+                  Icon={AiFillFileText}
+               />
+            </Link>
          </Profile>
       </StyledContainer>
    );

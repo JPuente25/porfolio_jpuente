@@ -1,5 +1,4 @@
-import React from 'react';
-import { Container, MediaItem } from './index.styled';
+import { personalData } from '@/variables/personal';
 import {
    AiOutlineFacebook,
    AiOutlineGithub,
@@ -7,40 +6,40 @@ import {
    AiOutlineLinkedin,
    AiOutlineTwitter,
 } from 'react-icons/ai';
-import socialMediaData from '@/variables/socialMedia';
+import { Container, MediaItem } from './index.styled';
 
 const SocialMedia = () => {
    return (
       <Container className='social-media'>
          <MediaItem
-            href={socialMediaData.facebook.url}
+            href={personalData.socialMedia.facebook.url}
             target='_blank'>
             <AiOutlineFacebook />
-            <p>{socialMediaData.facebook.user}</p>
+            <p>{personalData.socialMedia.facebook.user}</p>
          </MediaItem>
          <MediaItem
-            href={socialMediaData.instagram.url}
+            href={personalData.socialMedia.instagram.url}
             target='_blank'>
             <AiOutlineInstagram />
-            <p>{socialMediaData.instagram.user}</p>
+            <p>{personalData.socialMedia.instagram.user}</p>
          </MediaItem>
          <MediaItem
-            href={socialMediaData.linkedin.url}
+            href={personalData.socialMedia.linkedin.url}
             target='_blank'>
             <AiOutlineLinkedin />
-            <p>{socialMediaData.linkedin.user}</p>
+            <p>{personalData.socialMedia.linkedin.user}</p>
          </MediaItem>
          <MediaItem
-            href={socialMediaData.twitter.url}
+            href={personalData.socialMedia.twitter.url}
             target='_blank'>
             <AiOutlineTwitter />
-            <p>{socialMediaData.twitter.user}</p>
+            <p>{personalData.socialMedia.twitter.user}</p>
          </MediaItem>
          <MediaItem
-            href={socialMediaData.github.url}
+            href={personalData.socialMedia.github.url}
             target='_blank'>
             <AiOutlineGithub />
-            <p>{socialMediaData.github.user}</p>
+            <p>{personalData.socialMedia.github.user}</p>
          </MediaItem>
       </Container>
    );

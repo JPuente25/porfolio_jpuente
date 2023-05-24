@@ -1,6 +1,6 @@
 import { Context } from '@/app/Provider';
 import { font } from '@/pages/_app';
-import images from '@/variables/images';
+import { personalData } from '@/variables/personal';
 import Image from 'next/image';
 import { useContext } from 'react';
 import LanguageButton from '../LanguageButton';
@@ -19,7 +19,7 @@ const Header = () => {
                href='/'
                onClick={() => setShowMenu(false)}>
                <Image
-                  src={images.logo}
+                  src={personalData.logo}
                   alt='jaime puente logo'
                   width={100}
                   height={100}

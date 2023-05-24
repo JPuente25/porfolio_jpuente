@@ -1,14 +1,14 @@
 import { Provider } from '@/app/Provider';
+import { I18NProvider } from '@/app/i18n';
 import Theme from '@/styles/Theme';
 import GlobalStyles from '@/styles/globalStyles';
 import backgrounds from '@/variables/backgrounds';
-import images from '@/variables/images';
+import { personalData } from '@/variables/personal';
 import type { AppProps } from 'next/app';
 import { Poppins } from 'next/font/google';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
-import { I18NProvider } from '@/app/i18n';
 
 export const font = Poppins({
    weight: ['400', '700'],
@@ -32,7 +32,7 @@ export default function App({ Component, pageProps }: AppProps) {
                />
                <link
                   rel='icon'
-                  href={images.logo}
+                  href={personalData.logo}
                />
                <link
                   rel='preload'

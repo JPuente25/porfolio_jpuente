@@ -95,6 +95,7 @@ export const Profile = styled.div`
    }
 
    button {
+      min-width: 120px;
       background-image: linear-gradient(to right, #606c88 0%, #3f4c6b80 51%, #606c88 100%);
       box-shadow: ${({ theme }) => theme.palette.shadow.box};
    }

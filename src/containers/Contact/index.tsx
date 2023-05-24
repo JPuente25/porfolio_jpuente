@@ -1,19 +1,19 @@
+import { Context } from '@/app/Provider';
+import { useI18N } from '@/app/i18n';
 import Letter from '@/components/Letter';
+import SocialMedia from '@/components/SocialMedia';
+import { personalData } from '@/variables/personal';
 import views from '@/variables/views';
 import { useContext } from 'react';
-import { Context } from '@/app/Provider';
-import { IoLogoWhatsapp } from 'react-icons/io';
 import { AiOutlineMail } from 'react-icons/ai';
 import { CiLocationOn } from 'react-icons/ci';
-import { contactInformation } from '@/variables/contactInformation';
-import SocialMedia from '@/components/SocialMedia';
-import { useI18N } from '@/app/i18n';
+import { IoLogoWhatsapp } from 'react-icons/io';
 import { useInView } from 'react-intersection-observer';
 import {
    AlertMessage,
    ContactMessage,
-   LetterSection,
    InfoSection,
+   LetterSection,
    StyledContainer,
 } from './index.styled';
 
@@ -36,15 +36,15 @@ const Contact = () => {
             <div className='contact-details'>
                <div>
                   <IoLogoWhatsapp />
-                  <p>{contactInformation.phoneNumber}</p>
+                  <p>{personalData.contactInformation.phoneNumber}</p>
                </div>
                <div>
                   <AiOutlineMail />
-                  <p>{contactInformation.email}</p>
+                  <p>{personalData.contactInformation.email}</p>
                </div>
                <div>
                   <CiLocationOn />
-                  <p>{contactInformation.address}</p>
+                  <p>{personalData.contactInformation.address}</p>
                </div>
             </div>
 
