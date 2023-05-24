@@ -9,6 +9,7 @@ import { Poppins } from 'next/font/google';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import Header from '../components/Header';
+import { Analytics } from '@vercel/analytics/react';
 
 export const font = Poppins({
    weight: ['400', '700'],
@@ -71,6 +72,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   <Header />
                   <main className={font.className}>
                      <Component {...pageProps} />
+                     <Analytics />
                   </main>
                   <Footer />
                </Theme>
