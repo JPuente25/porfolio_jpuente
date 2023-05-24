@@ -6,14 +6,14 @@ export default function (req: any, res: any) {
       port: 465,
       host: 'smtp.gmail.com',
       auth: {
-         user: process.env.EMAIL_USER,
-         pass: process.env.EMAIL_PASSWORD,
+         user: process.env.NEXT_PUBLIC_EMAIL_USER,
+         pass: process.env.NEXT_PUBLIC_EMAIL_PASSWORD,
       },
       secure: true,
       tls: {
          // do not fail on invalid certs
-         rejectUnauthorized: false
-     },
+         rejectUnauthorized: false,
+      },
    });
 
    const mailData = {
@@ -30,9 +30,8 @@ export default function (req: any, res: any) {
    transporter.sendMail(mailData, function (err: any, info: any) {
       if (err) {
          res.status(400).send('Something went wrong');
-      }
-      else {
+      } else {
          res.status(200).send('Email sent!');
-      };
+      }
    });
 }
