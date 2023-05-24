@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Container } from './index.styled';
+import { Container } from '../../styles/pages/404/index.styled';
 import { useI18N } from '@/app/i18n';
 
 

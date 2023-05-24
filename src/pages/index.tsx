@@ -8,7 +8,7 @@ import views from '@/variables/views';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useRef } from 'react';
-import { PageItem, Container } from '../styles/index.styled';
+import { PageItem, Container } from '../styles/pages/index.styled';
 import getFirstLetterUppercase from '@/utils/functions/getFirstLetterUppercase';
 import FirstLoader from '@/components/FirstLoader';
 
