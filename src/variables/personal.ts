@@ -30,6 +30,6 @@ export const personalData = {
    logo: 'https://i.gyazo.com/90b98183a9db1d156bcf9c886fd9dd3f.webp',
    resumeUrl: {
       es: 'https://drive.google.com/file/d/1x71L_lOZYjWJdfPBctHEuRwmqZmNuUYh/view?usp=sharing',
-      en: 'https://drive.google.com/file/d/1Wodr0Fi6h1SGGX0IKCGfhaEdZ5bahCN-/view?usp=sharing',
+      en: 'https://drive.google.com/file/d/11CxcewAszHIIROrvROLxZ4k-6M-8yFlE/view?usp=sharing',
    },
 };
