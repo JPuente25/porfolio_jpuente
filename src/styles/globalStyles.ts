@@ -12,12 +12,15 @@ const GlobalStyles = createGlobalStyle`
   scrollbar-width: 0;
 }
 
+html{
+   font-size: 62.5%;
+}
+
 html, body, #__next, main{
    width: 100%;
    padding: 0;
    margin: 0;
    color: white;
-   /* overflow-x: hidden; */
 
   &:not(main) {
     height: 100%;

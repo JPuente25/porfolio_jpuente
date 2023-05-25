@@ -138,7 +138,7 @@ export const FormHeader = styled.div`
       margin-bottom: 10px;
 
       svg {
-         font-size: 30px;
+         font-size: ${({ theme }) => theme.font.size.x2lg};
       }
    }
 
@@ -154,11 +154,11 @@ export const FormHeader = styled.div`
 
    @media (min-width: 640px) {
       div.icon-box {
-         width: 70px;
-         height: 70px;
+         width: 80px;
+         height: 80px;
 
          svg {
-            font-size: 50px;
+            font-size: ${({ theme }) => theme.font.size.x4lg};
          }
       }
       h2 {

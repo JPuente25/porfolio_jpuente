@@ -84,18 +84,18 @@ export const theme = {
    },
    font: {
       size: {
-         sm: '12px',
-         sm2: '14px',
-         md: '16px',
-         lg: '20px',
-         xlg: '24px',
-         x2lg: '30px',
-         x3lg: '42px',
-         x4lg: '56px',
-         x5lg: '70px',
-         x6lg: '84px',
-         x7lg: '100px',
-         superxlg: '200px'
+         sm: '1.2rem',
+         sm2: '1.4rem',
+         md: '1.6rem',
+         lg: '2.0rem',
+         xlg: '2.4rem',
+         x2lg: '3.0rem',
+         x3lg: '4.2rem',
+         x4lg: '5.6rem',
+         x5lg: '7.0rem',
+         x6lg: '8.4rem',
+         x7lg: '10.0rem',
+         superxlg: '20.0rem'
       },
       weight: {
          thin: '100',

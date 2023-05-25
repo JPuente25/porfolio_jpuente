@@ -26,7 +26,7 @@ export const MediaItem = styled(Link)`
    }
 
    svg {
-      font-size: 25px;
+      font-size: ${({ theme }) => theme.font.size.xlg};
    }
 
    &:hover {

@@ -32,25 +32,25 @@ export const TextAboutMe = styled.div`
    position: relative;
 
    h2 {
-      font-size: ${(props) => props.theme.font.size.xlg};
+      font-size: ${({theme}) => theme.font.size.xlg};
       text-shadow: 0 0 3px ${({ theme }) => theme.palette.text.opposite};
    }
 
    p {
-      font-size: ${(props) => props.theme.font.size.sm2};
+      font-size: ${({theme}) => theme.font.size.sm2};
    }
 
    strong {
-      color: ${(props) => props.theme.palette.text.gold};
+      color: ${({theme}) => theme.palette.text.gold};
    }
 
    @media (min-width: 480px) {
       h2 {
-         font-size: ${(props) => props.theme.font.size.x2lg};
+         font-size: ${({theme}) => theme.font.size.x2lg};
       }
 
       p {
-         font-size: ${(props) => props.theme.font.size.md};
+         font-size: ${({theme}) => theme.font.size.md};
       }
    }
 
@@ -60,13 +60,13 @@ export const TextAboutMe = styled.div`
 
    @media (min-width: 991px) {
       p {
-         font-size: ${(props) => props.theme.font.size.lg};
+         font-size: ${({theme}) => theme.font.size.lg};
       }
    }
 
    @media (min-width: 1200px) {
       h2 {
-         font-size: ${(props) => props.theme.font.size.x3lg};
+         font-size: ${({theme}) => theme.font.size.x3lg};
       }
    }
 `;

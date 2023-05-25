@@ -62,65 +62,6 @@ export const BuildingImg = styled.img`
    }
 `;
 
-export const AboutMe = styled(Link)`
-   position: absolute;
-   background-color: red;
-   width: 30%;
-   height: 24.2%;
-   top: 28.2%;
-   right: 16.2%;
-   transform: rotateZ(30deg) rotateY(10deg) skew(30deg);
-   background-image: url(${backgrounds.about});
-   background-size: cover;
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   white-space: nowrap;
-   cursor: pointer;
-
-   h3 {
-      font-size: 16px;
-
-      @media (min-width: 400px) {
-         font-size: 20px;
-      }
-      @media (min-width: 480px) {
-         font-size: 24px;
-      }
-      @media (min-width: 600px) {
-         font-size: 30px;
-      }
-      @media (min-width: 768px) {
-         font-size: 18px;
-      }
-      @media (min-width: 991px) {
-         font-size: 24px;
-      }
-      @media (min-width: 1350px) {
-         font-size: 30px;
-      }
-   }
-
-   div {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      background-color: #000;
-      opacity: 0.6;
-      transition: all 0.3s;
-
-      &:hover {
-         opacity: 0;
-         animation: ${handPointer} 2s 1;
-      }
-   }
-
-   @media (min-width: 600px) {
-      height: 24.4%;
-      top: 28.4%;
-   }
-`;
-
 export const CloudOneImg = styled.img`
    position: absolute;
 

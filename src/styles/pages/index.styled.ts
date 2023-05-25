@@ -35,7 +35,7 @@ export const PassSlide = styled.div`
    }
 
    p {
-      font-size: 14px;
+      font-size: ${({ theme }) => theme.font.size.sm2};
       font-weight: ${({ theme }) => theme.font.weight.bold};
    }
 
