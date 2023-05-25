@@ -1,6 +1,5 @@
-import React from 'react';
-import { AboutMe, BuildingImg, CloudOneImg, CloudTwoImg, Picture, Sun } from './index.styled';
 import { useInView } from 'react-intersection-observer';
+import { BuildingImg, CloudOneImg, CloudTwoImg, Picture, Sun } from './index.styled';
 
 const BuildingPicture = () => {
    const {ref, inView} = useInView();
