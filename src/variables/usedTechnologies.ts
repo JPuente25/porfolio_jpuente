@@ -64,7 +64,7 @@ const usedTechnologies: Skill[] = [
       bgColor: '#f7d80070',
       children: [
          {
-            label: { en: 'Typescript', es: 'TypeScript' },
+            label: { en: 'TypeScript', es: 'TypeScript' },
             icon: SiTypescript,
             progress: 60,
             color: '#2f74c0',
