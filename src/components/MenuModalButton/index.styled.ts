@@ -8,7 +8,7 @@ export const Container = styled.div`
    justify-content: center;
    cursor: pointer;
 
-   div {
+   div.menu-modal-button {
       background-color: white;
       height: 2px;
       width: 20px;

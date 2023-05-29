@@ -81,7 +81,6 @@ export const Profile = styled.div`
    padding: 15px;
    gap: 20px;
    background-color: ${({ theme }) => theme.palette.transparency.green};
-   background-image: ${({ theme }) => theme.palette.gradient.green2};
    position: relative;
    contain: content;
 
@@ -141,7 +140,6 @@ export const Profile = styled.div`
    @media (min-width: 768px) {
       grid-template-columns: auto;
       grid-template-rows: repeat(3, auto);
-      background-image: ${({ theme }) => theme.palette.gradient.green3};
       padding: 30px;
 
       &:before {

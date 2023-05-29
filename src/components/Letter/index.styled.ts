@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+export const letterSpeed = 0.5; //higher is slower 
+
 export const Container = styled.div`
    width: 280px;
    margin: 0 auto;
@@ -9,28 +11,29 @@ export const Container = styled.div`
 
    &.saveLetter {
       div.content div.form {
-         transition: all ease-in-out 2s;
+         transition: z-index ease-in-out ${letterSpeed * 2}s, bottom ease-in-out ${letterSpeed * 2}s;
          bottom: -38%; 
          z-index: 0;
       }
+
       div.up {
-         transition: transform ease-in-out 2s 2.5s, z-index 100ms 2s;
+         transition: transform ease-in-out ${letterSpeed * 2}s ${letterSpeed * 2.5}s, z-index 100ms ${letterSpeed * 2}s;
          z-index: 3;
          transform: rotate3d(1, -0.414, 0, 180deg);
       }
 
       div.left {
-         transition: z-index 100ms 2s;
+         transition: z-index 100ms ${letterSpeed * 2}s;
          z-index: 2;
       }
 
       div.right {
-         transition: z-index 100ms 2s;
+         transition: z-index 100ms ${letterSpeed * 2}s;
          z-index: 1;
       }
 
       div.openButton {
-         transition: all ease 1s 4.5s, z-index 100ms 4.5s, background-color 0.5s ease;
+         transition: opacity ease ${letterSpeed}s ${letterSpeed * 4.5}s, z-index 100ms ${letterSpeed * 4.5}s, background-color ${letterSpeed * 0.5}s ease;
          opacity: 1;
          z-index: 4;
       }
@@ -38,29 +41,29 @@ export const Container = styled.div`
 
    &.openLetter {
       div.content div.form {
-         transition: all ease-in-out 2s 2.5s;
+         transition: z-index ease-in-out ${letterSpeed * 2}s ${letterSpeed * 2.5}s, bottom ease-in-out ${letterSpeed * 2}s ${letterSpeed * 2.5}s;
          bottom: 27%; 
          z-index: 1;
       }
 
       div.up {
-         transition: all ease-in-out 2s, z-index step-start 100ms 2s;
+         transition: transform ease-in-out ${letterSpeed * 2}s, z-index step-start 100ms ${letterSpeed * 2}s;
          z-index: 0;
          transform: rotateZ(45deg);
       }
 
       div.left {
-         transition: z-index 100ms 2s;
+         transition: z-index 100ms ${letterSpeed * 2}s;
          z-index: 3;
       }
 
       div.right {
-         transition: z-index 100ms 2s;
+         transition: z-index 100ms ${letterSpeed * 2}s;
          z-index: 2;
       }
 
       div.openButton {
-         transition: all ease 1s, z-index 100ms 1s, background-color 0.5s ease;
+         transition: opacity ease ${letterSpeed}s, z-index 100ms ${letterSpeed}s, background-color ${letterSpeed * 0.5}s ease;
          opacity: 0;
          z-index: 0;
       }
@@ -246,7 +249,7 @@ export const UpperTab = styled.div`
       transparent 100%
    );
    border-radius: 15% 0 0 0;
-   transition: all ease-in-out 2s 2.5s;
+   /* transition: all ease-in-out 2s 2.5s; */
 
    @media (min-width: 440px) {
       bottom: 18.5%;

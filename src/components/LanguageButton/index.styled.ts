@@ -19,18 +19,15 @@ export const ContainerSelector = styled.div`
          font-size: ${({ theme }) => theme.font.size.md};
          display: flex;
          align-items: center;
-         color: ${({ theme }) => theme.palette.background.gray};
-         grid-row: 1 / 2;
          transition: all ease 0.3s;
          cursor: pointer;
 
          &.selected {
-            color: inherit;
-            grid-column: 1 / 2;
+            color: ${({ theme }) => theme.palette.text.gold};
          }
       }
 
-      p:not(.selected) {
+      p:not(:first-child) {
          &:before {
             content: '';
             width: 2px;

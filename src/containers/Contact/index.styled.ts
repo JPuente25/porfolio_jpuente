@@ -1,4 +1,5 @@
 import Container from '@/components/Container';
+import { letterSpeed } from '@/components/Letter/index.styled';
 import styled from 'styled-components';
 
 export const StyledContainer = styled(Container)`
@@ -193,24 +194,24 @@ export const LetterSection = styled.section`
 
    &.openLetter {
       div.contact-msg {
-         transition: all ease-in-out 1s;
+         transition: opacity ease-in-out ${letterSpeed}s;
          opacity: 0;
       }
 
       div.letter {
-         transition: all ease-in-out 1s;
+         transition: transform ease-in-out ${letterSpeed}s;
          transform: translateY(0%);
       }
    }
 
    &.saveLetter {
       div.contact-msg {
-         transition: all ease-in-out 1s 2.5s;
+         transition: opacity ease-in-out ${letterSpeed}s ${letterSpeed * 2.5}s;
          opacity: 1;
       }
 
       div.letter {
-         transition: all ease-in-out 1s 2.5s;
+         transition: transform ease-in-out ${letterSpeed}s ${letterSpeed * 2.5}s;
          transform: translateY(-20%);
       }
    }

@@ -9,7 +9,8 @@ import { useI18N } from '@/app/i18n';
 import { PersonalSkills, SkillsContainer, StyledContainer, Technologies } from './index.styled';
 
 const Skills = () => {
-   const {t} = useI18N();
+   const { t } = useI18N();
+
    return (
       <StyledContainer view={views.skills.label}>
          <Technologies>
