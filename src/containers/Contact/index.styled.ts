@@ -329,6 +329,7 @@ export const AlertMessage = styled.div`
 
    p {
       font-weight: ${({ theme }) => theme.font.weight.bold};
+      font-size: 1.6rem;
    }
 
    &.error {
