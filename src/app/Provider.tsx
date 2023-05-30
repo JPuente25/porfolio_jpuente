@@ -7,7 +7,6 @@ interface ProviderProps {
 }
 
 interface ProviderStates {
-   showMenu: boolean;
    currentView: View;
    activeLetter: boolean;
    submitStatus:
@@ -26,8 +25,6 @@ interface ProviderStates {
 }
 
 interface ContextProps {
-   showMenu: boolean;
-   setShowMenu: React.Dispatch<React.SetStateAction<boolean>>;
    currentView: View;
    setCurrentView: React.Dispatch<React.SetStateAction<View>>;
    activeLetter: boolean;
@@ -45,9 +42,7 @@ interface ContextProps {
            sent: false;
            error: false;
         };
-   setSubmitStatus: React.Dispatch<
-      React.SetStateAction<ContextProps['submitStatus']>
-   >;
+   setSubmitStatus: React.Dispatch<React.SetStateAction<ContextProps['submitStatus']>>;
 }
 
 const Context = React.createContext<ContextProps>({} as ContextProps);
@@ -58,17 +53,14 @@ const Provider = (props: ProviderProps) => {
       error: false,
    };
 
-   const [showMenu, setShowMenu] = useState<ProviderStates['showMenu']>(false);
    const [currentView, setCurrentView] = useState<ProviderStates['currentView']>(views['home']);
-   const [activeLetter, setActiveLetter] = useState<ProviderStates['showMenu']>(false);
+   const [activeLetter, setActiveLetter] = useState<ProviderStates['activeLetter']>(false);
    const [submitStatus, setSubmitStatus] =
       useState<ProviderStates['submitStatus']>(initialSubmitStatus);
 
    return (
       <Context.Provider
          value={{
-            showMenu,
-            setShowMenu,
             currentView,
             setCurrentView,
             activeLetter,

@@ -2,15 +2,24 @@ import { Context } from '@/app/Provider';
 import { font } from '@/pages/_app';
 import { personalData } from '@/variables/personal';
 import Image from 'next/image';
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 import LanguageButton from '../LanguageButton';
 import LinksList from '../LinkList';
 import MenuModal from '../MenuModal';
 import MenuModalButton from '../MenuModalButton';
 import { Container, LinksSection, NameLink } from './index.styled';
 
+type HeaderStates = {
+   showMenu: boolean;
+};
+
 const Header = () => {
-   const { setShowMenu } = useContext(Context);
+   const [showMenu, setShowMenu] = useState<HeaderStates['showMenu']>(false);
+
+   const triggerShowMenu = (payload: boolean) => {
+      setShowMenu(payload);
+   };
+   // const { setShowMenu } = useContext(Context);
 
    return (
       <Container className={font.className}>
@@ -29,14 +38,22 @@ const Header = () => {
                   <p>Puente</p>
                </div>
             </NameLink>
-
-            <LinksSection> {/* Hidden on mobile  */}
+            <LinksSection>
+               {' '}
+               {/* Hidden on mobile  */}
                <LinksList />
                <LanguageButton />
             </LinksSection>
-
-            <MenuModalButton /> {/* Shown on mobile  */}
-            <MenuModal /> {/* Shown on mobile  */}
+            <MenuModalButton
+               showMenu={showMenu}
+               setShowMenu={triggerShowMenu}
+            />{' '}
+            {/* Shown on mobile  */}
+            <MenuModal
+               showMenu={showMenu}
+               setShowMenu={triggerShowMenu}
+            />{' '}
+            {/* Shown on mobile  */}
          </div>
       </Container>
    );

@@ -4,11 +4,15 @@ import { Context } from '@/app/Provider';
 import LanguageButton from '../LanguageButton';
 import { Container } from './index.styled';
 
-const MenuModal = () => {
-   const { showMenu, setShowMenu } = useContext(Context);
+type MenuModalProps = {
+   showMenu: boolean;
+   setShowMenu: (payload: boolean) => void;
+}
+
+const MenuModal = ({showMenu, setShowMenu}: MenuModalProps) => {
    const tagsOutOfModal = /\bli\b|\ba\b|\bul\b|\bmenu\b|menu-modal-button/; //Regex for exact matches: "li" | "a" | "ul" | "menu" | "menu-modal-button"
    const tagsLinksModal = /\bli\b|\ba\b/;
-   const tagsModalButton = /menu-modal-button/; //Regex for partial matches: "menu-modal-button"
+   const tagsModalButton = /menu-button/; //Regex for partial matches: "menu-modal-button"
 
    const handleClick = useCallback(
       (e: MouseEvent | React.MouseEvent<HTMLElement, MouseEvent>) => {
