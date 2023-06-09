@@ -1,56 +1,52 @@
-import Container from '@/components/Container';
 import styled from 'styled-components';
 
-///////////////////////////////////////////////////////////////////////////////////
+export const AboutContainer = styled.article`
+   width: 100%;
+   min-height: 100%;
+   display: grid;
+   grid-template-columns: 1fr;
+   background-color: ${({ theme }) => theme.palette.transparency.cyan};
+   box-shadow: ${({ theme }) => theme.palette.shadow.box};
+   object-fit: cover;
+   border-radius: 20px;
 
-export const StyledContainer = styled(Container)`
-   div.container {
-      display: grid;
-      grid-template-columns: 1fr;
-      border-radius: 20px;
-      box-shadow: ${({ theme }) => theme.palette.shadow.box};
-      contain: content;
-
-      @media (min-width: 768px) {
-         grid-template-columns: 2fr 1fr;
-      }
+   @media (min-width: 768px) {
+      grid-template-columns: 2fr 1fr;
    }
 `;
 
 ///////////////////////////////////////////////////////////////////////////////////
 
 export const TextAboutMe = styled.div`
-   width: 100%;
-   height: 100%;
-   padding: 20px;
    display: flex;
    flex-direction: column;
    justify-content: space-between;
    gap: 20px;
-   background-color: ${({ theme }) => theme.palette.transparency.green};
-   backdrop-filter: blur(5px);
+   padding: 20px;
    position: relative;
+   border-radius: 20px;
 
    h2 {
-      font-size: ${({theme}) => theme.font.size.xlg};
+      font-size: ${({ theme }) => theme.font.size.xlg};
       text-shadow: 0 0 3px ${({ theme }) => theme.palette.text.opposite};
    }
 
    p {
-      font-size: ${({theme}) => theme.font.size.sm2};
+      font-size: ${({ theme }) => theme.font.size.sm2};
+      text-wrap: balance;
    }
 
    strong {
-      color: ${({theme}) => theme.palette.text.gold};
+      color: ${({ theme }) => theme.palette.text.gold};
    }
 
    @media (min-width: 480px) {
       h2 {
-         font-size: ${({theme}) => theme.font.size.x2lg};
+         font-size: ${({ theme }) => theme.font.size.x2lg};
       }
 
       p {
-         font-size: ${({theme}) => theme.font.size.md};
+         font-size: ${({ theme }) => theme.font.size.md};
       }
    }
 
@@ -60,13 +56,13 @@ export const TextAboutMe = styled.div`
 
    @media (min-width: 991px) {
       p {
-         font-size: ${({theme}) => theme.font.size.lg};
+         font-size: ${({ theme }) => theme.font.size.lg};
       }
    }
 
    @media (min-width: 1200px) {
       h2 {
-         font-size: ${({theme}) => theme.font.size.x3lg};
+         font-size: ${({ theme }) => theme.font.size.x3lg};
       }
    }
 `;
@@ -80,45 +76,40 @@ export const Profile = styled.div`
    place-items: center;
    padding: 15px;
    gap: 20px;
-   background-color: ${({ theme }) => theme.palette.transparency.green};
    position: relative;
    contain: content;
+   border-radius: 20px;
 
    div.social-media {
-      gap: 15px;
+      width: 100%;
+      justify-content: space-evenly;
 
       svg {
          width: 30px;
          height: 30px;
       }
+
+      p {
+         display: none;
+      }
    }
 
-   button {
-      min-width: 120px;
-      background-image: linear-gradient(to right, #606c88 0%, #3f4c6b80 51%, #606c88 100%);
-      box-shadow: ${({ theme }) => theme.palette.shadow.box};
+   a.resume {
+      width: 100%;
+
+      button {
+         background-image: linear-gradient(to right, #606c88 0%, #3f4c6b80 51%, #606c88 100%);
+      }
    }
 
    @media (min-width: 480px) {
       grid-template-columns: repeat(2, 1fr);
-
-      div.social-media {
-         gap: 10px;
-
-         svg {
-            width: 25px;
-            height: 25px;
-         }
-      }
    }
 
    @media (min-width: 600px) {
-      div.social-media {
-         gap: 20px;
-         svg {
-            width: 40px;
-            height: 40px;
-         }
+      div.social-media svg {
+         width: 40px;
+         height: 40px;
       }
 
       button {
@@ -141,17 +132,6 @@ export const Profile = styled.div`
       grid-template-columns: auto;
       grid-template-rows: repeat(3, auto);
       padding: 30px;
-
-      &:before {
-         height: 30%;
-         width: 100%;
-         left: revert;
-      }
-
-      div.social-media svg {
-         height: 30px;
-         width: 30px;
-      }
    }
 `;
 

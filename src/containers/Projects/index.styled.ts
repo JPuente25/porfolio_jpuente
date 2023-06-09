@@ -1,28 +1,13 @@
 import styled from 'styled-components';
 
 export const Title = styled.h1`
-   width: min-content;
    width: 100%;
+   padding: 10px;
    text-align: center;
-   color: ${({ theme }) => theme.palette.text.primary};
-   position: relative;
-   z-index: 0;
-   white-space: nowrap;
-   margin: 20px auto;
-   font-size: ${({ theme }) => theme.font.size.x1lg};
+   font-size: ${({ theme }) => theme.font.size.xlg};
    text-shadow: 0px 0px 5px ${({ theme }) => theme.palette.text.opposite};
-
-   &:after {
-      content: '';
-      display: block;
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      bottom: 0;
-      z-index: -1;
-      border-radius: 0 20px 0 20px;
-      background: ${({ theme }) => theme.palette.gradient.gold};
-   }
+   border-radius: 0 20px 0 20px;
+   background: ${({ theme }) => theme.palette.gradient.gold};
 
    @media (min-width: 480px) {
       margin: 30px auto;
@@ -40,5 +25,25 @@ export const Title = styled.h1`
 
    @media (min-width: 1200px) {
       font-size: ${({ theme }) => theme.font.size.x4lg};
+   }
+`;
+
+export const ProjectsContainer = styled.div`
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 20px 0px;
+   gap: 60px;
+
+   @media (min-width: 480px) {
+      gap: 80px;
+   }
+
+   @media (min-width: 768px) {
+      gap: 100px;
+   }
+
+   @media (min-width: 1200px) {
+      gap: 120px;
    }
 `;

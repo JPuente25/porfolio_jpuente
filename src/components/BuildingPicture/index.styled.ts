@@ -1,17 +1,5 @@
-import backgrounds from '@/variables/backgrounds';
-import Link from 'next/link';
+import Image from 'next/image';
 import styled, { keyframes } from 'styled-components';
-
-export const handPointer = keyframes`
-   0% {
-      opacity: 0.6;
-   }
-
-   50% {
-      opacity: 0;
-      box-shadow: 0px 0px 4px 30px white;
-   }
-`;
 
 const cloudMovement = (x: string, y: string) => keyframes`
    0%, 100% {
@@ -36,10 +24,12 @@ const sunEffect = keyframes`
 `;
 
 export const Picture = styled.picture`
-   width: auto;
-   max-height: 300px;
+   width: 100%;
+   max-width: 500px;
+   aspect-ratio: 96 / 89;
    position: relative;
    flex-shrink: 0;
+   margin: 0 auto;
 
    @media (min-width: 600px) {
       width: 100%;
@@ -49,24 +39,24 @@ export const Picture = styled.picture`
    }
 `;
 
-export const BuildingImg = styled.img`
-   width: auto;
-   max-height: 300px;
-   max-width: 100%;
+export const BuildingImg = styled(Image)`
+   width: 100%;
+   height: auto;
 
    @media (min-width: 600px) {
       width: 100%;
-      max-height: 100%;
-      height: auto;
       max-width: 500px;
+      height: auto;
+      max-height: 100%;
    }
 `;
 
-export const CloudOneImg = styled.img`
+export const CloudOneImg = styled(Image)`
    position: absolute;
 
    &.cloud-1-1 {
       width: 10%;
+      height: auto;
       top: 5%;
       left: 5%;
       animation: ${() => cloudMovement('-60%', '60%')} 12s linear infinite;
@@ -74,6 +64,7 @@ export const CloudOneImg = styled.img`
 
    &.cloud-1-2 {
       width: 7.5%;
+      height: auto;
       top: 17.5%;
       left: 12.5%;
       animation: ${() => cloudMovement('-100%', '100%')} 7s linear infinite 1s;
@@ -81,17 +72,19 @@ export const CloudOneImg = styled.img`
 
    &.cloud-1-3 {
       width: 5%;
+      height: auto;
       top: 5%;
       left: 37%;
       animation: ${() => cloudMovement('-100%', '100%')} 7s linear infinite 2s;
    }
 `;
 
-export const CloudTwoImg = styled.img`
+export const CloudTwoImg = styled(Image)`
    position: absolute;
 
    &.cloud-2-1 {
       width: 10%;
+      height: auto;
       top: 35%;
       right: 0%;
       animation: ${() => cloudMovement('-60%', '-60%')} 7s linear infinite;
@@ -99,6 +92,7 @@ export const CloudTwoImg = styled.img`
 
    &.cloud-2-2 {
       width: 12.5%;
+      height: auto;
       top: 17.5%;
       right: 12.5%;
       animation: ${() => cloudMovement('-60%', '-60%')} 7s linear infinite 1s;
@@ -106,6 +100,7 @@ export const CloudTwoImg = styled.img`
 
    &.cloud-2-3 {
       width: 5%;
+      height: auto;
       top: 15%;
       right: 10%;
       animation: ${() => cloudMovement('-300%', '-300%')} 20s linear infinite 2s;

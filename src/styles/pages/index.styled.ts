@@ -5,6 +5,11 @@ export const Container = styled.section`
    display: flex;
    flex-direction: column;
    align-items: center;
+   padding: 20px;
+
+   @media (min-width: 768px) {
+      padding: 40px;
+   }
 `;
 
 export const PageItem = styled.div`

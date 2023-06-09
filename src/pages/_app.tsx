@@ -25,45 +25,11 @@ export default function App({ Component, pageProps }: AppProps) {
             <Head>
                <meta
                   name='description'
-                  content='Personal Jaime Puente Portfolio'
+                  content='Jaime Puente Portfolio'
                />
                <meta
                   name='viewport'
                   content='width=device-width, initial-scale=1'
-               />
-               <link
-                  rel='icon'
-                  href={personalData.logo}
-               />
-               <link
-                  rel='preload'
-                  href={'https://i.gyazo.com/24167cf916456a9f951915cacd858ed0.png'}
-                  as='image'
-               />
-               <link
-                  rel='preload'
-                  href={backgrounds.home}
-                  as='image'
-               />
-               <link
-                  rel='preload'
-                  href={backgrounds.about}
-                  as='image'
-               />
-               <link
-                  rel='preload'
-                  href={backgrounds.skills}
-                  as='image'
-               />
-               <link
-                  rel='preload'
-                  href={backgrounds.projects}
-                  as='image'
-               />
-               <link
-                  rel='preload'
-                  href={backgrounds.contact}
-                  as='image'
                />
             </Head>
             <Provider>

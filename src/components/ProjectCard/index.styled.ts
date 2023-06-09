@@ -5,7 +5,6 @@ export const Container = styled.article<{ app: 'movix' | 'kingsLeague' | 'platzi
    width: 100%;
    display: grid;
    gap: 30px;
-   margin: 20px auto;
    padding: 20px;
    position: relative;
    z-index: 0;
@@ -32,7 +31,7 @@ export const Container = styled.article<{ app: 'movix' | 'kingsLeague' | 'platzi
       background-image: ${({ app }) => appTheme[app].buttonBackgroundImage};
    }
 
-   @media (min-width: 480px) {
+   @media (min-width: 600px) {
       grid-template-columns: 2fr 3fr;
 
       &:after {
@@ -80,7 +79,6 @@ export const Information = styled.div`
    align-items: center;
    justify-content: space-between;
    z-index: 1;
-   font-size: ${({ theme }) => theme.font.size.sm2};
 
    p:not(div.content p, div.icon p) {
       font-size: ${({ theme }) => theme.font.size.sm2};
@@ -114,7 +112,7 @@ export const Information = styled.div`
       }
    }
 
-   @media (min-width: 600px) {
+   @media (min-width: 480px) {
       p:not(div.content p, div.icon p) {
          font-size: ${({ theme }) => theme.font.size.md};
          margin-bottom: 30px;
@@ -155,7 +153,7 @@ export const Title = styled.div`
       z-index: -1;
    }
 
-   @media (min-width: 600px) {
+   @media (min-width: 480px) {
       h2 {
          font-size: ${({ theme }) => theme.font.size.x2lg};
       }

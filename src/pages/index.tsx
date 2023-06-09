@@ -10,7 +10,6 @@ import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useRef } from 'react';
 import { PageItem, Container } from '../styles/pages/index.styled';
 import getFirstLetterUppercase from '@/utils/functions/getFirstLetterUppercase';
-import FirstLoader from '@/components/FirstLoader';
 
 const Main = () => {
    const router = useRouter();
@@ -61,8 +60,6 @@ const Main = () => {
          <Head>
             <title>{headTitle}</title>
          </Head>
-
-         <FirstLoader />
 
          <Container>
             <PageItem ref={homeRef}>

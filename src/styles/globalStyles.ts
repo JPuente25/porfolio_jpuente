@@ -21,16 +21,15 @@ html, body, #__next, main{
    padding: 0;
    margin: 0;
    color: white;
-
-  &:not(main) {
-    height: 100%;
-  }
 }
+
+body {
+   background: linear-gradient(90deg, rgb(36, 45, 57) 11.2%, rgb(16, 37, 60) 51.2%, rgb(0, 0, 0) 98.6%);
+};
 
 ::-webkit-scrollbar {
    display: none;
 }
-
 
 a {
   color: inherit;

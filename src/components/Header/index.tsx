@@ -1,8 +1,7 @@
-import { Context } from '@/app/Provider';
 import { font } from '@/pages/_app';
 import { personalData } from '@/variables/personal';
 import Image from 'next/image';
-import { useContext, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import LanguageButton from '../LanguageButton';
 import LinksList from '../LinkList';
 import MenuModal from '../MenuModal';
@@ -11,18 +10,37 @@ import { Container, LinksSection, NameLink } from './index.styled';
 
 type HeaderStates = {
    showMenu: boolean;
+   showHeader: boolean;
+   lastScroll: number;
 };
 
 const Header = () => {
    const [showMenu, setShowMenu] = useState<HeaderStates['showMenu']>(false);
+   const [showHeader, setShowHeader] = useState<HeaderStates['showHeader']>(true);
+   const [lastScroll, setLastScroll] = useState<HeaderStates['lastScroll']>(0);
 
    const triggerShowMenu = (payload: boolean) => {
       setShowMenu(payload);
    };
-   // const { setShowMenu } = useContext(Context);
+
+   const handleScroll = useCallback(() => {
+      if (window.scrollY < 300 || window.scrollY < lastScroll) {
+         setShowHeader(true);
+      } else if (window.scrollY > lastScroll) {
+         setShowHeader(false);
+      }
+      setLastScroll(window.scrollY);
+   }, [lastScroll]);
+
+   useEffect(() => {
+      window.addEventListener('scroll', handleScroll);
+      return () => {
+         window.removeEventListener('scroll', handleScroll);
+      };
+   }, [lastScroll, handleScroll]);
 
    return (
-      <Container className={font.className}>
+      <Container className={`${font.className} ${showHeader ? '' : 'hide'}`}>
          <div className='max1440-container'>
             <NameLink
                href='/'
@@ -32,6 +50,7 @@ const Header = () => {
                   alt='jaime puente logo'
                   width={100}
                   height={100}
+                  loading={undefined}
                />
                <div className='name'>
                   <p>Jaime</p>
@@ -39,7 +58,6 @@ const Header = () => {
                </div>
             </NameLink>
             <LinksSection>
-               {' '}
                {/* Hidden on mobile  */}
                <LinksList />
                <LanguageButton />
@@ -47,12 +65,12 @@ const Header = () => {
             <MenuModalButton
                showMenu={showMenu}
                setShowMenu={triggerShowMenu}
-            />{' '}
+            />
             {/* Shown on mobile  */}
             <MenuModal
                showMenu={showMenu}
                setShowMenu={triggerShowMenu}
-            />{' '}
+            />
             {/* Shown on mobile  */}
          </div>
       </Container>

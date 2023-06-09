@@ -9,7 +9,7 @@ export const Container = styled.button`
    border: none;
    font-family: inherit;
    background-size: 200% auto;
-   box-shadow: 0 0 6px #eee;
+   box-shadow: ${({ theme }) => theme.palette.shadow.box};
    color: ${({ theme }) => theme.palette.text.primary};
    font-weight: bold;
    transition: 0.5s;

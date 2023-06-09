@@ -248,8 +248,6 @@ export const SubmitButton = styled(Button)`
    height: 30px;
    background-image: linear-gradient(to right, #ff512f 0%, #f09819 51%, #ff512f 100%);
    align-self: center;
-   box-shadow: ${({ theme }) => theme.palette.shadow.box};
-
 
    div {
       p {

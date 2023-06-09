@@ -1,13 +1,11 @@
-import Container from '@/components/Container';
+import Container from '@/containers/Container';
 import styled from 'styled-components';
 
 export const StyledContainer = styled(Container)`
-   div.container {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 60px;
-   }
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 60px;
 
    h1 {
       font-size: ${({ theme }) => theme.font.size.x2lg};

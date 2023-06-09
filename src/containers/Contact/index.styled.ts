@@ -1,20 +1,22 @@
-import Container from '@/components/Container';
+import Container from '@/containers/Container';
 import { letterSpeed } from '@/components/Letter/index.styled';
 import styled from 'styled-components';
 
 export const StyledContainer = styled(Container)`
-   div.container {
-      width: 100%;
-      place-content: center;
-      display: grid;
-      grid-template-rows: repeat(2, auto);
-      gap: 20px;
+   width: 100%;
+   place-content: center;
+   display: grid;
+   grid-template-rows: repeat(2, auto);
+   gap: 20px;
 
-      @media (min-width: 768px) {
-         grid-template-rows: 1fr;
-         grid-template-columns: 1fr 1fr;
-         gap: 20px;
-      }
+   &:after {
+      display: none;
+   }
+
+   @media (min-width: 768px) {
+      grid-template-rows: 1fr;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
    }
 `;
 

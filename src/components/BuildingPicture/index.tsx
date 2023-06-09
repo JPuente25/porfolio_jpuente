@@ -2,44 +2,62 @@ import { useInView } from 'react-intersection-observer';
 import { BuildingImg, CloudOneImg, CloudTwoImg, Picture, Sun } from './index.styled';
 
 const BuildingPicture = () => {
-   const {ref, inView} = useInView();
+   const { ref, inView } = useInView();
    return (
-      <Picture ref={ref} className={`in-view-effects ${inView ? 'in-view' : ''}`}> 
+      <Picture
+         ref={ref}
+         className={`in-view-effects ${inView ? 'in-view' : ''}`}>
          <BuildingImg
             src='https://i.gyazo.com/4b6239879d8f63a3d3f780435091d70b.webp'
             alt='building'
+            width={500}
+            height={500}
+            quality={100}
+            priority={true}
          />
 
          <CloudOneImg
             className='cloud-1-1'
             src='https://i.gyazo.com/e004080406bd019e361f33b7a1051768.webp'
             alt='cloud'
+            width={50}
+            height={50}
          />
          <CloudOneImg
             className='cloud-1-2'
             src='https://i.gyazo.com/e004080406bd019e361f33b7a1051768.webp'
             alt='cloud'
+            width={50}
+            height={50}
          />
          <CloudOneImg
             className='cloud-1-3'
             src='https://i.gyazo.com/e004080406bd019e361f33b7a1051768.webp'
             alt='cloud'
+            width={50}
+            height={50}
          />
 
          <CloudTwoImg
             className='cloud-2-1'
             src='https://i.gyazo.com/c5fb1bbff8784c5c5c5d7445d9e674c0.webp'
             alt='cloud'
+            width={50}
+            height={50}
          />
          <CloudTwoImg
             className='cloud-2-2'
             src='https://i.gyazo.com/c5fb1bbff8784c5c5c5d7445d9e674c0.webp'
             alt='cloud'
+            width={50}
+            height={50}
          />
          <CloudTwoImg
             className='cloud-2-3'
             src='https://i.gyazo.com/c5fb1bbff8784c5c5c5d7445d9e674c0.webp'
             alt='cloud'
+            width={50}
+            height={50}
          />
 
          <Sun>

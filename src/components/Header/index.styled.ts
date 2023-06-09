@@ -5,9 +5,14 @@ export const Container = styled.header`
    background-color: ${({ theme }) => theme.palette.background.header};
    width: 100%;
    padding: 0 20px;
-   position: fixed;
-   top: 0;
+   position: sticky;
+   top: 0px;
    z-index: 20;
+   transition: top 0.5s ease-in-out;
+
+   &.hide {
+      top: -70px;
+   }
 
    div.max1440-container {
       width: 100%;

@@ -71,6 +71,7 @@ export const theme = {
          green: 'rgba(37, 96, 37, 0.5)',
          green2: 'rgba(54, 164, 178, 0.5)',
          blue: 'rgba(0, 0, 255, 0.25)',
+         cyan: 'rgba(0, 206, 209, 0.2)'
       },
       shadow: {
          primary: 'drop-shadow(0px 0px 20px #FFFFFF60)',
