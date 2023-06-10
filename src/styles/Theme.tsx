@@ -35,7 +35,7 @@ export const theme = {
          cardLabel: '#100c08',
          cardBg: '#A9A9A9',
          tooltip: '#282828',
-         tooltip2: '#d4d4d4',
+         tooltip2: '#7a7a7a',
          darkBlue: '#04152d',
          green: '#B0FC38',
          orange: 'orange',

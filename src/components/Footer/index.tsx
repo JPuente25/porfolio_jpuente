@@ -3,7 +3,7 @@ import { CiLocationOn } from 'react-icons/ci';
 import SocialMedia from '../SocialMedia';
 import { useI18N } from '@/app/i18n';
 import { Container, Copyright, Location } from './index.styled';
-import { personalData } from '@/variables/personal';
+import { data } from '@/data/data.json';
 
 const Footer = () => {
    const { t } = useI18N();
@@ -16,7 +16,7 @@ const Footer = () => {
 
          <Location>
             <CiLocationOn />
-            <p>{personalData.contactInformation.address}</p>
+            <p>{data.personal.contactInformation.address}</p>
          </Location>
 
          <Copyright>

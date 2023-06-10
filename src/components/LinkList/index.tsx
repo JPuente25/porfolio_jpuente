@@ -1,18 +1,18 @@
 import { Context } from '@/app/Provider';
 import Link from 'next/link';
 import { useContext } from 'react';
-import views from '@/variables/views';
+import {data} from '@/data/data.json';
 import { useI18N } from '@/app/i18n';
 import { LinkContainer, ListItem } from './index.styled';
 
 const LinksList = () => {
    const { currentView } = useContext(Context);
    const { t } = useI18N();
-   const homeIsActive = currentView.label === views.home.label;
-   const aboutIsActive = currentView.label === views.about.label;
-   const skillsIsActive = currentView.label === views.skills.label;
-   const projectsIsActive = currentView.label === views.projects.label;
-   const contactIsActive = currentView.label === views.contact.label;
+   const homeIsActive = currentView.label === data.portfolio.views.home.label;
+   const aboutIsActive = currentView.label === data.portfolio.views.about.label;
+   const skillsIsActive = currentView.label === data.portfolio.views.skills.label;
+   const projectsIsActive = currentView.label === data.portfolio.views.projects.label;
+   const contactIsActive = currentView.label === data.portfolio.views.contact.label;
 
    return (
       <LinkContainer className='links-container'>

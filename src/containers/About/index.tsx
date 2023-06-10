@@ -1,26 +1,21 @@
 import { useI18N } from '@/app/i18n';
 import Button from '@/components/Button';
 import SocialMedia from '@/components/SocialMedia';
-import { personalData } from '@/variables/personal';
-import views from '@/variables/views';
 import Image from 'next/image';
-import { AiFillFileText } from 'react-icons/ai';
-import { useInView } from 'react-intersection-observer';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { AboutContainer, PictureFrame, Profile, TextAboutMe } from './index.styled';
+import { AiFillFileText } from 'react-icons/ai';
+import { data } from '../../data/data.json';
 import Container from '../Container';
+import { AboutContainer, PictureFrame, Profile, TextAboutMe } from './index.styled';
 
 const About = () => {
    const { t } = useI18N();
    const { locale } = useRouter();
-   const [ref, inView] = useInView();
 
    return (
       <Container>
-         <AboutContainer
-            className={`in-view-effects ${inView ? 'in-view' : ''}`}
-            ref={ref}>
+         <AboutContainer>
             <TextAboutMe>
                <h2>{t('ABOUT_TITLE')}</h2>
                <p>
@@ -55,7 +50,7 @@ const About = () => {
             <Profile>
                <PictureFrame className='pic-frame'>
                   <Image
-                     src={personalData.profilePicture}
+                     src={data.personal.profilePicture}
                      alt='profile jaime puente'
                      width={300}
                      height={300}
@@ -65,7 +60,7 @@ const About = () => {
 
                <Link
                   className='resume'
-                  href={personalData.resumeUrl[locale as keyof typeof personalData.resumeUrl]}
+                  href={data.personal.resumeUrl[locale as keyof typeof data.personal.resumeUrl]}
                   target='_blank'>
                   <Button
                      content={t('MY_RESUME')}

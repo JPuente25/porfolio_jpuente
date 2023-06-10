@@ -1,7 +1,7 @@
-import { appTheme } from '@/variables/appThemeColors';
+import { CardTheme } from '@/types';
 import styled from 'styled-components';
 
-export const Container = styled.article<{ app: 'movix' | 'kingsLeague' | 'platziShop' }>`
+export const Container = styled.article<{ cardTheme: CardTheme }>`
    width: 100%;
    display: grid;
    gap: 30px;
@@ -18,17 +18,17 @@ export const Container = styled.article<{ app: 'movix' | 'kingsLeague' | 'platzi
       right: 0;
       border-radius: 20px;
       box-shadow: ${({ theme }) => theme.palette.shadow.box};
-      background: ${({ app }) => appTheme[app].backgroundGradientToTop};
+      background: ${({ cardTheme }) => cardTheme.backgroundGradientToTop};
       z-index: -2;
    }
 
    div.title:after {
-      background-color: ${({ app }) => appTheme[app].titleBackground};
+      background-color: ${({ cardTheme }) => cardTheme.titleBackground};
    }
 
    button {
-      background-color: ${({ app }) => appTheme[app].buttonBackgroundColor};
-      background-image: ${({ app }) => appTheme[app].buttonBackgroundImage};
+      background-color: ${({ cardTheme }) => cardTheme.buttonBackgroundColor};
+      background-image: ${({ cardTheme }) => cardTheme.buttonBackgroundImage};
    }
 
    @media (min-width: 600px) {
@@ -37,7 +37,7 @@ export const Container = styled.article<{ app: 'movix' | 'kingsLeague' | 'platzi
       &:after {
          width: 85%;
          height: 100%;
-         background: ${({ app }) => appTheme[app].backgroundGradientToLeft};
+         background: ${({ cardTheme }) => cardTheme.backgroundGradientToLeft};
       }
 
       &.right {
@@ -56,7 +56,7 @@ export const Container = styled.article<{ app: 'movix' | 'kingsLeague' | 'platzi
             width: 85%;
             height: 100%;
             left: 0;
-            background: ${({ app }) => appTheme[app].backgroundGradientToRight};
+            background: ${({ cardTheme }) => cardTheme.backgroundGradientToRight};
          }
       }
    }

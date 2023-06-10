@@ -1,5 +1,5 @@
 import { View } from '@/types';
-import views from '@/variables/views';
+import { data } from '@/data/data.json';
 import React, { useState } from 'react';
 
 interface ProviderProps {
@@ -53,7 +53,9 @@ const Provider = (props: ProviderProps) => {
       error: false,
    };
 
-   const [currentView, setCurrentView] = useState<ProviderStates['currentView']>(views['home']);
+   const [currentView, setCurrentView] = useState<ProviderStates['currentView']>(
+      data.portfolio.views['home']
+   );
    const [activeLetter, setActiveLetter] = useState<ProviderStates['activeLetter']>(false);
    const [submitStatus, setSubmitStatus] =
       useState<ProviderStates['submitStatus']>(initialSubmitStatus);

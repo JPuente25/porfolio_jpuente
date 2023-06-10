@@ -2,11 +2,8 @@ import { useInView } from 'react-intersection-observer';
 import { BuildingImg, CloudOneImg, CloudTwoImg, Picture, Sun } from './index.styled';
 
 const BuildingPicture = () => {
-   const { ref, inView } = useInView();
    return (
-      <Picture
-         ref={ref}
-         className={`in-view-effects ${inView ? 'in-view' : ''}`}>
+      <Picture>
          <BuildingImg
             src='https://i.gyazo.com/4b6239879d8f63a3d3f780435091d70b.webp'
             alt='building'

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 /////////////////////////////////////////////////////////////////////////////
 
 export const StyledContainer = styled(Container)`
-   min-height: calc(100vh - 60px);
+   min-height: calc(100vh - 70px);
    display: grid;
    grid-template-rows: repeat(2, auto);
    gap: 60px;
@@ -15,6 +15,16 @@ export const StyledContainer = styled(Container)`
       grid-template-rows: auto;
       grid-template-columns: repeat(2, 1fr);
       gap: 20px;
+   }
+`;
+
+export const Information = styled.section`
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+
+   button {
+      background-image: linear-gradient(to right, #77a1d3 0%, #79cbca 51%, #77a1d3 100%);
    }
 `;
 

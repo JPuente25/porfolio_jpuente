@@ -1,13 +1,13 @@
-import React from 'react';
-import DevicesViewProject from '../DevicesViewProject';
+import { useI18N } from '@/app/i18n';
 import { Project } from '@/types';
 import Link from 'next/link';
-import Button from '../Button';
-import { MdWeb } from 'react-icons/md';
-import { AiFillGithub } from 'react-icons/ai';
-import { useI18N } from '@/app/i18n';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
+import { AiFillGithub } from 'react-icons/ai';
+import { MdWeb } from 'react-icons/md';
 import { useInView } from 'react-intersection-observer';
+import Button from '../Button';
+import DevicesViewProject from '../DevicesViewProject';
 import { ButtonContainer, Container, DevicesView, Information, Title } from './index.styled';
 
 interface Props {
@@ -15,15 +15,24 @@ interface Props {
    index: number;
 }
 
+type ProjectCardStates = {
+   shouldAnimate: boolean;
+}
+
 const ProjectCard = ({ project, index }: Props) => {
+   const [shouldAnimate, setShouldAnimate] = useState<ProjectCardStates['shouldAnimate']>(true);
    const { t } = useI18N();
    const { locale } = useRouter();
-   const { ref, inView } = useInView();
+   const [ref, inView] = useInView();
+
+   if (inView && shouldAnimate) {
+      setShouldAnimate(false);
+   }
 
    return (
       <Container
-         app={project.key}
-         className={`in-view-effects ${inView ? 'in-view' : ''} ${
+         cardTheme={project.card_theme}
+         className={`in-view-effects ${shouldAnimate ? '' : 'in-view'} ${
             index % 2 === 0 ? 'right' : 'left'
          }`}
          ref={ref}>

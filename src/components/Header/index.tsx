@@ -1,5 +1,5 @@
 import { font } from '@/pages/_app';
-import { personalData } from '@/variables/personal';
+import { data } from '@/data/data.json';
 import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
 import LanguageButton from '../LanguageButton';
@@ -46,7 +46,7 @@ const Header = () => {
                href='/'
                onClick={() => setShowMenu(false)}>
                <Image
-                  src={personalData.logo}
+                  src={data.personal.logo}
                   alt='jaime puente logo'
                   width={100}
                   height={100}

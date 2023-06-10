@@ -1,49 +1,40 @@
-import SkillCard from '@/components/SkillCard';
-import { Skill } from '@/types';
-import personalSkills from '@/variables/personalSkills';
-import usedTechnologies from '@/variables/usedTechnologies';
-import views from '@/variables/views';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
-import { v4 as uuidv4 } from 'uuid';
 import { useI18N } from '@/app/i18n';
-import { PersonalSkills, SkillsContainer, StyledContainer, Technologies } from './index.styled';
+import TechCard from '@/components/TechCard';
+import { data } from '@/data/data.json';
+import { Tech } from '@/types';
+import { v4 as uuidv4 } from 'uuid';
+import { BasicStack, StyledContainer as Container, Stack, TechStack, Title } from './index.styled';
 
-const Skills = () => {
+const Techs = () => {
    const { t } = useI18N();
 
    return (
-      <StyledContainer view={views.skills.label}>
-         <Technologies>
-            <h1>{t('TECHNOLOGIES_I_KNOW')}</h1>
-
-            <ResponsiveMasonry
-               columnsCountBreakPoints={{ 0: 1, 991: 2 }}
-               style={{ width: '100%' }}>
-               <Masonry gutter='30px'>
-                  {usedTechnologies.map((skill: Skill) => (
-                     <SkillCard
-                        skill={skill}
-                        key={uuidv4()}
-                     />
-                  ))}
-               </Masonry>
-            </ResponsiveMasonry>
-         </Technologies>
-
-         <PersonalSkills>
-            <h1>{t('PERSONAL_SKILLS')}</h1>
-
-            <SkillsContainer>
-               {personalSkills.map((skill: Skill) => (
-                  <SkillCard
-                     skill={skill}
+      <Container>
+         <TechStack>
+            <Title>{t('TECH_STACK')}</Title>
+            <Stack>
+               {data.personal.tech_stack.map((tech: Tech) => (
+                  <TechCard
+                     tech={tech}
                      key={uuidv4()}
                   />
                ))}
-            </SkillsContainer>
-         </PersonalSkills>
-      </StyledContainer>
+            </Stack>
+         </TechStack>
+
+         <BasicStack>
+            <Title>{t('BASICS')}</Title>
+            <Stack>
+               {data.personal.basic_stack.map((tech: Tech) => (
+                  <TechCard
+                     tech={tech}
+                     key={uuidv4()}
+                  />
+               ))}
+            </Stack>
+         </BasicStack>
+      </Container>
    );
 };
 
-export default Skills;
+export default Techs;

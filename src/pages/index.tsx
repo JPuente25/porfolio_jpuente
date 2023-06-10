@@ -4,7 +4,7 @@ import Contact from '@/containers/Contact';
 import Home from '@/containers/Home';
 import Projects from '@/containers/Projects';
 import Skills from '@/containers/Skills';
-import views from '@/variables/views';
+import { data } from '@/data/data.json';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React, { useContext, useEffect, useRef } from 'react';
@@ -27,13 +27,13 @@ const Main = () => {
       //Gets Location in Document of the Section selected based in
       //the asPath from the router
       const scrollAmmount =
-         view === views.contact.label
+         view === data.portfolio.views.contact.label
             ? contactRef.current!.offsetTop
-            : view === views.about.label
+            : view === data.portfolio.views.about.label
             ? aboutRef.current!.offsetTop
-            : view === views.skills.label
+            : view === data.portfolio.views.skills.label
             ? skillsRef.current!.offsetTop
-            : view === views.projects.label
+            : view === data.portfolio.views.projects.label
             ? projectsRef.current!.offsetTop
             : homeRef.current!.offsetTop;
 
@@ -50,7 +50,7 @@ const Main = () => {
       router;
 
       //Setting Current View
-      setCurrentView(views[viewLabel as keyof typeof views]);
+      setCurrentView(data.portfolio.views[viewLabel as keyof typeof data.portfolio.views]);
 
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [router.asPath]);
@@ -77,7 +77,7 @@ const Main = () => {
             <PageItem ref={projectsRef}>
                <Projects />
             </PageItem>
-            
+
             <PageItem ref={contactRef}>
                <Contact />
             </PageItem>

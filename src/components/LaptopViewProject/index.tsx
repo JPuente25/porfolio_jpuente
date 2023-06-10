@@ -17,7 +17,7 @@ const LaptopViewProject = ({ images }: Props) => {
             height={600}
             className='device laptop'
             quality={100}
-            loading='eager'
+            loading={undefined}
          />
 
          {images.map((url, index) => (
@@ -28,7 +28,7 @@ const LaptopViewProject = ({ images }: Props) => {
                height={600}
                className={`project project-${index + 1}`}
                quality={100}
-               loading='eager'
+               loading={undefined}
                key={uuidv4()}
             />
          ))}

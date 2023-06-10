@@ -1,4 +1,4 @@
-import { IconType } from "react-icons/lib";
+import { IconType } from 'react-icons/lib';
 
 export type View = {
    id: number;
@@ -12,18 +12,20 @@ export type ViewList = {
    skills: View;
    projects: View;
    contact: View;
-}
+};
 
-export type Skill = {
-   label: {
-      en: string;
-      es: string;
-   };
-   icon: IconType;
-   progress: number;
-   color: string;
-   bgColor: string;
-   children: Tech[] | null;
+export type Tech = {
+   label: string;
+   icon: string;
+};
+
+export type CardTheme = {
+   titleBackground: string;
+   backgroundGradientToTop: string;
+   backgroundGradientToRight: string;
+   backgroundGradientToLeft: string;
+   buttonBackgroundColor: string;
+   buttonBackgroundImage: string;
 };
 
 export type Project = {
@@ -32,7 +34,7 @@ export type Project = {
       es: string;
       en: string;
    };
-   status: 'finished' | 'in-progress' | 'not-started';
+   status: string;
    site_url: string;
    repo_url: string;
    background_color: string;
@@ -41,5 +43,6 @@ export type Project = {
       desktop: string[];
       mobile: string[];
    };
-   key: 'movix' | 'kingsLeague' | 'platziShop';
-}
+   key: string;
+   card_theme: CardTheme;
+};

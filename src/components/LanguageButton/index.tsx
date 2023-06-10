@@ -1,4 +1,4 @@
-import { localeList } from '@/variables/localeList';
+import { data } from '@/data/data.json';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { MdLanguage } from 'react-icons/md';
@@ -7,10 +7,10 @@ import { ContainerSelector } from './index.styled';
 
 const LanguageButton = () => {
    const router = useRouter();
-   const selectedLocale = localeList.find((item) => item.locale === router.locale);
+   const selectedLocale = data.portfolio.locales.find((item) => item.locale === router.locale);
 
    const handleClick = (e: React.MouseEvent<HTMLParagraphElement, MouseEvent>) => {
-      const localeToChange = localeList.find(
+      const localeToChange = data.portfolio.locales.find(
          (item) => item.label === (e.target as HTMLParagraphElement).textContent
       );
       router.push('/', '/', { locale: localeToChange?.locale || 'en' });
@@ -19,7 +19,7 @@ const LanguageButton = () => {
       <ContainerSelector className='language'>
          <MdLanguage />
          <div>
-            {localeList.map((item) => (
+            {data.portfolio.locales.map((item) => (
                <p
                   className={selectedLocale?.label === item.label ? 'selected' : ''}
                   onClick={handleClick}
