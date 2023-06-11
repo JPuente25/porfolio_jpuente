@@ -41,22 +41,16 @@ export const Picture = styled.picture`
 
 export const BuildingImg = styled(Image)`
    width: 100%;
+   max-width: 500px;
    height: auto;
-
-   @media (min-width: 600px) {
-      width: 100%;
-      max-width: 500px;
-      height: auto;
-      max-height: 100%;
-   }
 `;
 
 export const CloudOneImg = styled(Image)`
    position: absolute;
+   height: auto;
 
    &.cloud-1-1 {
       width: 10%;
-      height: auto;
       top: 5%;
       left: 5%;
       animation: ${() => cloudMovement('-60%', '60%')} 12s linear infinite;
@@ -64,7 +58,6 @@ export const CloudOneImg = styled(Image)`
 
    &.cloud-1-2 {
       width: 7.5%;
-      height: auto;
       top: 17.5%;
       left: 12.5%;
       animation: ${() => cloudMovement('-100%', '100%')} 7s linear infinite 1s;
@@ -72,7 +65,6 @@ export const CloudOneImg = styled(Image)`
 
    &.cloud-1-3 {
       width: 5%;
-      height: auto;
       top: 5%;
       left: 37%;
       animation: ${() => cloudMovement('-100%', '100%')} 7s linear infinite 2s;
@@ -81,10 +73,10 @@ export const CloudOneImg = styled(Image)`
 
 export const CloudTwoImg = styled(Image)`
    position: absolute;
+   height: auto;
 
    &.cloud-2-1 {
       width: 10%;
-      height: auto;
       top: 35%;
       right: 0%;
       animation: ${() => cloudMovement('-60%', '-60%')} 7s linear infinite;
@@ -92,7 +84,6 @@ export const CloudTwoImg = styled(Image)`
 
    &.cloud-2-2 {
       width: 12.5%;
-      height: auto;
       top: 17.5%;
       right: 12.5%;
       animation: ${() => cloudMovement('-60%', '-60%')} 7s linear infinite 1s;
@@ -100,7 +91,6 @@ export const CloudTwoImg = styled(Image)`
 
    &.cloud-2-3 {
       width: 5%;
-      height: auto;
       top: 15%;
       right: 10%;
       animation: ${() => cloudMovement('-300%', '-300%')} 20s linear infinite 2s;
