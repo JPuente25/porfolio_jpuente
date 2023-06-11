@@ -28,6 +28,7 @@ export default function App({ Component, pageProps }: AppProps) {
                   name='viewport'
                   content='width=device-width, initial-scale=1'
                />
+               <title>Jaime Puente</title>
             </Head>
             <Theme>
                <GlobalStyles />
