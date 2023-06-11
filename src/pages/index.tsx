@@ -1,20 +1,15 @@
-import { Context } from '@/app/Provider';
 import About from '@/containers/About';
 import Contact from '@/containers/Contact';
 import Home from '@/containers/Home';
 import Projects from '@/containers/Projects';
 import Skills from '@/containers/Skills';
 import { data } from '@/data/data.json';
-import Head from 'next/head';
 import { useRouter } from 'next/router';
-import React, { useContext, useEffect, useRef } from 'react';
-import { PageItem, Container } from '../styles/pages/index.styled';
-import getFirstLetterUppercase from '@/utils/functions/getFirstLetterUppercase';
+import { useEffect, useRef } from 'react';
+import { Container, PageItem } from '../styles/pages/index.styled';
 
 const Main = () => {
    const router = useRouter();
-   const { currentView, setCurrentView } = useContext(Context);
-   const headTitle = `Jaime Puente - ${getFirstLetterUppercase(currentView.label)}`;
 
    //React Referencies
    const homeRef = useRef<HTMLDivElement>(null);
@@ -27,13 +22,13 @@ const Main = () => {
       //Gets Location in Document of the Section selected based in
       //the asPath from the router
       const scrollAmmount =
-         view === data.portfolio.views.contact.label
+         view === data.portfolio.views.contact.label.toLowerCase()
             ? contactRef.current!.offsetTop
-            : view === data.portfolio.views.about.label
+            : view === data.portfolio.views.about.label.toLowerCase()
             ? aboutRef.current!.offsetTop
-            : view === data.portfolio.views.skills.label
+            : view === data.portfolio.views.skills.label.toLowerCase()
             ? skillsRef.current!.offsetTop
-            : view === data.portfolio.views.projects.label
+            : view === data.portfolio.views.projects.label.toLowerCase()
             ? projectsRef.current!.offsetTop
             : homeRef.current!.offsetTop;
 
@@ -44,45 +39,37 @@ const Main = () => {
    };
 
    useEffect(() => {
-      //Automatic Scrolling
-      const viewLabel = router.asPath.split('/#')[1] || 'home';
+      const viewLabel = router.asPath.split('#')[1] || 'home';
+      window.document.title = `Jaime Puente - ${
+         data.portfolio.views[viewLabel as keyof typeof data.portfolio.views].label
+      }`;
+
       automaticScroll(viewLabel);
-      router;
-
-      //Setting Current View
-      setCurrentView(data.portfolio.views[viewLabel as keyof typeof data.portfolio.views]);
-
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [router.asPath]);
 
    return (
-      <React.Fragment>
-         <Head>
-            <title>{headTitle}</title>
-         </Head>
+      <Container>
+         <PageItem ref={homeRef}>
+            <Home />
+         </PageItem>
 
-         <Container>
-            <PageItem ref={homeRef}>
-               <Home />
-            </PageItem>
+         <PageItem ref={aboutRef}>
+            <About />
+         </PageItem>
 
-            <PageItem ref={aboutRef}>
-               <About />
-            </PageItem>
+         <PageItem ref={skillsRef}>
+            <Skills />
+         </PageItem>
 
-            <PageItem ref={skillsRef}>
-               <Skills />
-            </PageItem>
+         <PageItem ref={projectsRef}>
+            <Projects />
+         </PageItem>
 
-            <PageItem ref={projectsRef}>
-               <Projects />
-            </PageItem>
-
-            <PageItem ref={contactRef}>
-               <Contact />
-            </PageItem>
-         </Container>
-      </React.Fragment>
+         <PageItem ref={contactRef}>
+            <Contact />
+         </PageItem>
+      </Container>
    );
 };
 

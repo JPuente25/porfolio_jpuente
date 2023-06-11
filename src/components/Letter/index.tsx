@@ -1,5 +1,5 @@
-import { Context } from '@/app/Provider';
-import { useContext } from 'react';
+import { ContactStates } from '@/containers/Contact';
+import { useState } from 'react';
 import { FaRegPaperPlane } from 'react-icons/fa';
 import ContactForm from '../ContactForm';
 import {
@@ -12,11 +12,20 @@ import {
    UpperTab,
 } from './index.styled';
 
-const Letter = () => {
-   const { activeLetter, setActiveLetter } = useContext(Context);
+type LetterProps = {
+   submit: ContactStates['submit'];
+   setSubmit: (payload: ContactStates['submit']) => void;
+}
+
+type LetterStates = {
+   activeLetter: boolean;
+};
+
+const Letter = ({submit, setSubmit}: LetterProps) => {
+   const [activeLetter, setActiveLetter] = useState<LetterStates['activeLetter']>(false);
 
    return (
-      <Container className={`${activeLetter ? 'openLetter' : 'saveLetter'} letter`}>
+      <Container className={`${activeLetter ? 'opened' : 'closed'} letter`}>
          <Background className='background'></Background>
 
          <UpperTab className='up'></UpperTab>
@@ -27,7 +36,7 @@ const Letter = () => {
 
          <Content className='content'>
             <div className='form'>
-               <ContactForm />
+               <ContactForm closeLetter={() => setActiveLetter(false)} submit={submit} setSubmit={setSubmit}/>
             </div>
             <div className='form-placeholder'></div>
          </Content>

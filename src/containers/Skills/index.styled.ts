@@ -32,7 +32,7 @@ export const Title = styled.h1`
 
 export const TechStack = styled.article`
    width: 100%;
-   padding: 0 10px;
+   padding: 10px;
    overflow: hidden;
 `;
 

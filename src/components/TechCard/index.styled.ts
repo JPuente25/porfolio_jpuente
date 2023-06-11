@@ -8,6 +8,7 @@ export const Card = styled.article`
    border-radius: 8px;
    background-color: #74ebd5;
    background-image: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);
+   box-shadow: ${({ theme }) => theme.palette.shadow.box2};
    position: relative;
 
    &:hover div.label-tooltip {

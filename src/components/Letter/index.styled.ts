@@ -9,7 +9,7 @@ export const Container = styled.div`
    contain: content;
    z-index: 1;
 
-   &.saveLetter {
+   &.closed {
       div.content div.form {
          transition: z-index ease-in-out ${letterSpeed * 2}s, bottom ease-in-out ${letterSpeed * 2}s;
          bottom: -38%; 
@@ -39,7 +39,7 @@ export const Container = styled.div`
       }
    }
 
-   &.openLetter {
+   &.opened {
       div.content div.form {
          transition: z-index ease-in-out ${letterSpeed * 2}s ${letterSpeed * 2.5}s, bottom ease-in-out ${letterSpeed * 2}s ${letterSpeed * 2.5}s;
          bottom: 27%; 
@@ -72,13 +72,13 @@ export const Container = styled.div`
    @media (min-width: 440px) {
       width: 400px;
 
-      &.saveLetter {
+      &.closed {
          div.content div.form {
             bottom: -30%; 
          }
       }
 
-      &.openLetter {
+      &.opened {
          div.content div.form {
             bottom: 33%; 
          }
@@ -88,7 +88,7 @@ export const Container = styled.div`
    @media (min-width: 640px) {
       width: 600px;
 
-      &.saveLetter {
+      &.closed {
          div.content div.form {
             bottom: -40%; 
          }
@@ -98,7 +98,7 @@ export const Container = styled.div`
          }
       }
 
-      &.openLetter {
+      &.opened {
          div.content div.form {
             bottom: 27%; 
          }
@@ -112,13 +112,13 @@ export const Container = styled.div`
    @media (min-width: 768px) {
       width: 324px;
 
-      &.saveLetter {
+      &.closed {
          div.content div.form {
             bottom: -63%; 
          }
       }
 
-      &.openLetter {
+      &.opened {
          div.content div.form {
             bottom: 16%; 
          }
@@ -128,13 +128,13 @@ export const Container = styled.div`
    @media (min-width: 991px) {
       width: 440px;
 
-      &.saveLetter {
+      &.closed {
          div.content div.form {
             bottom: -53%; 
          }
       }
 
-      &.openLetter {
+      &.opened {
          div.content div.form {
             bottom: 22%; 
          }
@@ -144,13 +144,13 @@ export const Container = styled.div`
    @media (min-width: 1200px) {
       width: 540px;
 
-      &.saveLetter {
+      &.closed {
          div.content div.form {
             bottom: -50%; 
          }
       }
 
-      &.openLetter {
+      &.opened {
          div.content div.form {
             bottom: 24%; 
          }

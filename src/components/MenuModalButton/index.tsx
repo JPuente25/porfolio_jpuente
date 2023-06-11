@@ -1,6 +1,4 @@
-import React, { useContext } from 'react';
 import { Container } from './index.styled';
-import { Context } from '@/app/Provider';
 
 type MenuModalButtonProps = {
    showMenu: boolean;

@@ -194,7 +194,7 @@ export const LetterSection = styled.section`
    width: 100%;
    position: relative;
 
-   &.openLetter {
+   &:has(div.letter.opened) {
       div.contact-msg {
          transition: opacity ease-in-out ${letterSpeed}s;
          opacity: 0;
@@ -206,7 +206,7 @@ export const LetterSection = styled.section`
       }
    }
 
-   &.saveLetter {
+   &:has(div.letter.closed) {
       div.contact-msg {
          transition: opacity ease-in-out ${letterSpeed}s ${letterSpeed * 2.5}s;
          opacity: 1;

@@ -1,7 +1,7 @@
+import { useRouter } from "next/router";
 import { createContext, useCallback, useContext } from "react";
 import en from './../translations/en.json';
 import es from './../translations/es.json';
-import { useRouter } from "next/router";
 
 interface ContextProps {
    t: (key: string) => string;

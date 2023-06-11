@@ -1,7 +1,6 @@
-import React, { useCallback, useContext, useEffect } from 'react';
-import LinksList from '../LinkList';
-import { Context } from '@/app/Provider';
+import React, { useCallback, useEffect } from 'react';
 import LanguageButton from '../LanguageButton';
+import LinksList from '../LinkList';
 import { Container } from './index.styled';
 
 type MenuModalProps = {

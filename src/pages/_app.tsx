@@ -1,4 +1,3 @@
-import { Provider } from '@/app/Provider';
 import { I18NProvider } from '@/app/i18n';
 import Theme from '@/styles/Theme';
 import GlobalStyles from '@/styles/globalStyles';
@@ -30,17 +29,15 @@ export default function App({ Component, pageProps }: AppProps) {
                   content='width=device-width, initial-scale=1'
                />
             </Head>
-            <Provider>
-               <Theme>
-                  <GlobalStyles />
-                  <Header />
-                  <main className={font.className}>
-                     <Component {...pageProps} />
-                     <Analytics />
-                  </main>
-                  <Footer />
-               </Theme>
-            </Provider>
+            <Theme>
+               <GlobalStyles />
+               <Header />
+               <main className={font.className}>
+                  <Component {...pageProps} />
+                  <Analytics />
+               </main>
+               <Footer />
+            </Theme>
          </I18NProvider>
       </>
    );

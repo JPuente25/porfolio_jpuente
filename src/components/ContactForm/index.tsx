@@ -1,12 +1,19 @@
-import { Context } from '@/app/Provider';
+import { useI18N } from '@/app/i18n';
+import { ContactStates } from '@/containers/Contact';
 import { emailIsValid } from '@/utils/functions/emailIsValid';
 import { textIsValid } from '@/utils/functions/textIsValid';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { FaRegPaperPlane } from 'react-icons/fa';
-import { useI18N } from '@/app/i18n';
 import { IoMdCloseCircleOutline } from 'react-icons/io';
 import { Container, FormHeader, Formulary, SubmitButton } from './index.styled';
-interface ContactFormStates {
+
+type ContactFormProps = {
+   closeLetter: () => void;
+   submit: ContactStates['submit'];
+   setSubmit: (payload: ContactStates['submit']) => void;
+};
+
+type ContactFormStates = {
    inputValues: {
       name: string;
       email: string;
@@ -27,7 +34,7 @@ interface ContactFormStates {
       };
    };
    sending: boolean;
-}
+};
 
 const initialInputValues = {
    name: '',
@@ -50,9 +57,8 @@ const initialData = {
    },
 };
 
-const ContactForm = () => {
-   //Contexts
-   const { setActiveLetter, submitStatus, setSubmitStatus } = useContext(Context);
+const ContactForm = ({ closeLetter, submit, setSubmit }: ContactFormProps) => {
+   //Context
    const { t } = useI18N();
 
    //States
@@ -100,16 +106,16 @@ const ContactForm = () => {
             body: JSON.stringify(rawData),
          }).then((res) => {
             if (res.status === 200) {
-               setActiveLetter(false);
+               closeLetter();
                setInputValues(initialInputValues);
                setSending(false);
-               setSubmitStatus({
+               setSubmit({
                   sent: true,
                   error: false,
                });
             } else {
                setSending(false);
-               setSubmitStatus({
+               setSubmit({
                   sent: false,
                   error: true,
                });
@@ -130,21 +136,21 @@ const ContactForm = () => {
    //Effects
    useEffect(() => {
       setTimeout(() => {
-         if (submitStatus.sent || submitStatus.error) {
-            setSubmitStatus({
+         if (submit.sent || submit.error) {
+            setSubmit({
                sent: false,
                error: false,
             });
          }
       }, 5000);
       // eslint-disable-next-line react-hooks/exhaustive-deps
-   }, [submitStatus]);
+   }, [submit]);
 
    return (
       <Container>
          <IoMdCloseCircleOutline
             className='close-form'
-            onClick={() => setActiveLetter(false)}
+            onClick={closeLetter}
          />
 
          <FormHeader>

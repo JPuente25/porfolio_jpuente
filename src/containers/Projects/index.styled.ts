@@ -2,17 +2,15 @@ import styled from 'styled-components';
 
 export const Title = styled.h1`
    text-align: center;
-   font-size: ${({ theme }) => theme.font.size.xlg};
+   font-size: ${({ theme }) => theme.font.size.x2lg};
+   margin-bottom: 20px;
 
    @media (min-width: 480px) {
-      font-size: ${({ theme }) => theme.font.size.x2lg};
-   }
-
-   @media (min-width: 600px) {
       font-size: ${({ theme }) => theme.font.size.x3lg};
+      margin-bottom: 50px;
    }
 
-   @media (min-width: 1200px) {
+   @media (min-width: 991px) {
       font-size: ${({ theme }) => theme.font.size.x4lg};
    }
 `;
