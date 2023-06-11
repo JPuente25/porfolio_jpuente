@@ -54,6 +54,8 @@ const About = () => {
                      alt='profile jaime puente'
                      width={300}
                      height={300}
+                     quality={100}
+                     sizes='(max-width: 480px) 200px, (max-width: 768px) 320px, (max-width: 991px) 200px, 320px'
                   />
                </PictureFrame>
                <SocialMedia />
@@ -61,6 +63,7 @@ const About = () => {
                <Link
                   className='resume'
                   href={data.personal.resumeUrl[locale as keyof typeof data.personal.resumeUrl]}
+                  aria-label="See my resume"
                   target='_blank'>
                   <Button
                      content={t('MY_RESUME')}

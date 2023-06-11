@@ -50,7 +50,7 @@ const Header = () => {
                   alt='jaime puente logo'
                   width={100}
                   height={100}
-                  loading={undefined}
+                  priority={true}
                />
                <div className='name'>
                   <p>Jaime</p>

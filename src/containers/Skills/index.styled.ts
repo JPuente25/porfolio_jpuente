@@ -32,10 +32,8 @@ export const Title = styled.h1`
 
 export const TechStack = styled.article`
    width: 100%;
-`;
-
-export const BasicStack = styled.article`
-   width: 100%;
+   padding: 0 10px;
+   overflow: hidden;
 `;
 
 export const Stack = styled.div`

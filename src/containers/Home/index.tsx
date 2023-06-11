@@ -23,6 +23,7 @@ const Home = () => {
             <Link
                className='resume'
                href={data.personal.resumeUrl[locale as keyof typeof data.personal.resumeUrl]}
+               aria-label="See my resume"
                target='_blank'>
                <Button
                   content={t('CHECK_MY_RESUME')}

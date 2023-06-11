@@ -17,23 +17,23 @@ const LinksList = () => {
    return (
       <LinkContainer className='links-container'>
          <ListItem className={homeIsActive ? 'active' : ''}>
-            <Link href='/'>{t('HOME')}</Link>
+            <Link href='/' aria-label='Go home section'>{t('HOME')}</Link>
          </ListItem>
 
          <ListItem className={aboutIsActive ? 'active' : ''}>
-            <Link href='/#about'>{t('ABOUT')}</Link>
+            <Link href='/#about' aria-label='Go about section'>{t('ABOUT')}</Link>
          </ListItem>
 
          <ListItem className={skillsIsActive ? 'active' : ''}>
-            <Link href='/#skills'>{t('SKILLS')}</Link>
+            <Link href='/#skills' aria-label='Go skills section'>{t('SKILLS')}</Link>
          </ListItem>
 
          <ListItem className={projectsIsActive ? 'active' : ''}>
-            <Link href='/#projects'>{t('PROJECTS')}</Link>
+            <Link href='/#projects' aria-label='Go projects section'>{t('PROJECTS')}</Link>
          </ListItem>
 
          <ListItem className={contactIsActive ? 'active' : ''}>
-            <Link href='/#contact'>{t('CONTACT')}</Link>
+            <Link href='/#contact' aria-label='Go contact section'>{t('CONTACT')}</Link>
          </ListItem>
       </LinkContainer>
    );

@@ -9,6 +9,7 @@ const BuildingPicture = () => {
             alt='building'
             width={500}
             height={500}
+            sizes='(max-width: 600px) 100vw, (max-width: 1100px) 50vw, 500px'
             quality={100}
             priority={true}
          />
@@ -19,6 +20,7 @@ const BuildingPicture = () => {
             alt='cloud'
             width={50}
             height={50}
+            sizes='(max-width: 348px) 30px, 50px'
          />
          <CloudOneImg
             className='cloud-1-2'
@@ -26,6 +28,7 @@ const BuildingPicture = () => {
             alt='cloud'
             width={50}
             height={50}
+            sizes='(max-width: 348px) 30px, 50px'
          />
          <CloudOneImg
             className='cloud-1-3'
@@ -33,6 +36,7 @@ const BuildingPicture = () => {
             alt='cloud'
             width={50}
             height={50}
+            sizes='(max-width: 348px) 30px, 50px'
          />
 
          <CloudTwoImg
@@ -41,6 +45,7 @@ const BuildingPicture = () => {
             alt='cloud'
             width={50}
             height={50}
+            sizes='(max-width: 348px) 30px, 50px'
          />
          <CloudTwoImg
             className='cloud-2-2'
@@ -48,6 +53,7 @@ const BuildingPicture = () => {
             alt='cloud'
             width={50}
             height={50}
+            sizes='(max-width: 348px) 30px, 50px'
          />
          <CloudTwoImg
             className='cloud-2-3'
@@ -55,6 +61,7 @@ const BuildingPicture = () => {
             alt='cloud'
             width={50}
             height={50}
+            sizes='(max-width: 348px) 30px, 50px'
          />
 
          <Sun>

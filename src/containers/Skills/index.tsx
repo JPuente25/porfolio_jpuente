@@ -3,7 +3,7 @@ import TechCard from '@/components/TechCard';
 import { data } from '@/data/data.json';
 import { Tech } from '@/types';
 import { v4 as uuidv4 } from 'uuid';
-import { BasicStack, StyledContainer as Container, Stack, TechStack, Title } from './index.styled';
+import { StyledContainer as Container, Stack, TechStack, Title } from './index.styled';
 
 const Techs = () => {
    const { t } = useI18N();
@@ -22,7 +22,7 @@ const Techs = () => {
             </Stack>
          </TechStack>
 
-         <BasicStack>
+         <TechStack>
             <Title>{t('BASICS')}</Title>
             <Stack>
                {data.personal.basic_stack.map((tech: Tech) => (
@@ -32,7 +32,7 @@ const Techs = () => {
                   />
                ))}
             </Stack>
-         </BasicStack>
+         </TechStack>
       </Container>
    );
 };

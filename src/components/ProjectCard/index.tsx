@@ -60,6 +60,7 @@ const ProjectCard = ({ project, index }: Props) => {
             <ButtonContainer>
                <Link
                   href={project.site_url}
+                  aria-label={`Go to ${project.name} website`}
                   target='_blank'>
                   <Button
                      content={t('GO_TO_WEBSITE')}
@@ -69,6 +70,7 @@ const ProjectCard = ({ project, index }: Props) => {
 
                <Link
                   href={project.repo_url}
+                  aria-label={`Go to ${project.name} github repository`}
                   target='_blank'>
                   <Button
                      content={t('GITHUB_REPO')}

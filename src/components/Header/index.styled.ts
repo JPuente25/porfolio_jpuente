@@ -56,7 +56,7 @@ export const NameLink = styled(Link)`
    img {
       width: 60px;
       height: auto;
-      aspect-ratio: 1 / 1;
+      aspect-ratio: 256 / 241;
    }
 
    div.name {

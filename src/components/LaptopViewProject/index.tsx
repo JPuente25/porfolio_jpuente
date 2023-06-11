@@ -15,6 +15,7 @@ const LaptopViewProject = ({ images }: Props) => {
             alt='laptop'
             width={600}
             height={600}
+            sizes='(max-width: 600px) 65vw, 33vw'
             className='device laptop'
             quality={100}
             loading={undefined}
@@ -26,6 +27,7 @@ const LaptopViewProject = ({ images }: Props) => {
                alt='movix'
                width={600}
                height={600}
+               sizes='(max-width: 600px) 50vw, 25vw'
                className={`project project-${index + 1}`}
                quality={100}
                loading={undefined}

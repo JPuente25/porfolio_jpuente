@@ -33,7 +33,6 @@ export const TextAboutMe = styled.div`
 
    p {
       font-size: ${({ theme }) => theme.font.size.sm2};
-      text-wrap: balance;
    }
 
    strong {

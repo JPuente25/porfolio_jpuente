@@ -15,6 +15,7 @@ const PhoneViewProject = ({ images }: Props) => {
             alt='phone'
             width={600}
             height={600}
+            sizes='(max-width: 600px) 17vw, 7vw'
             className='device phone'
             quality={100}
             loading={undefined}
@@ -26,6 +27,7 @@ const PhoneViewProject = ({ images }: Props) => {
                alt='movix'
                width={600}
                height={600}
+               sizes='(max-width: 600px) 17vw, 7vw'
                className={`project project-${index + 1}`}
                quality={100}
                loading={undefined}
