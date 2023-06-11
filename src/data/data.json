@@ -1,264 +1,261 @@
 {
-   "data": {
-      "projects": [
-         {
-            "name": "Movix",
-            "description": {
-               "en": "Movix is a web app to get movies and TV show reviews, releases, recommendations for the day and week and details. It uses TMDB API. The app is built on React Typescript V18.2, with main libraries like Axios, Redux Toolkit and Styled Components. It also includes unit testing with Jest.",
-               "es": "Movix es una aplicación web para ver reseñas, estrenos, recomendaciones para el dia y la semana y detalles de peliculas y series de TV. Usa la API de TMDB. La aplicación está construida en React Typescript V.18.2, con principales librerías como Axios, Redux Toolkit y Styled Components. Tambien incluye pruebas unitarias con Jest."
-            },
-            "status": "finished",
-            "site_url": "https://jpuente25.github.io/movix/",
-            "repo_url": "https://github.com/JPuente25/movix/",
-            "background_color": "#04152d60",
-            "text_color": "#fff",
-            "images": {
-               "desktop": [
-                  "https://i.gyazo.com/21563e14d56ff84f94ddfddc04228c33.jpg",
-                  "https://i.gyazo.com/89c611e91323b3618ebacc0b72c44787.jpg",
-                  "https://i.gyazo.com/74fbf23d30c3345c03f8a6dc2564ed7d.jpg"
-               ],
-               "mobile": [
-                  "https://i.gyazo.com/47112bb31034613bcf8f8072ac012ea4.jpg",
-                  "https://i.gyazo.com/2cab015527504900d28cfdd8440a7d07.jpg",
-                  "https://i.gyazo.com/1ae086a5430856b957e012fde8942c5e.jpg"
-               ]
-            },
-            "key": "movix",
-            "card_theme": {
-               "titleBackground": "cyan",
-               "backgroundGradientToTop": "linear-gradient(to top, #2b769c70 0%, #2b769c70 70%, #2b769c 100%)",
-               "backgroundGradientToRight": "linear-gradient(to right, #2b769c70 0%, #2b769c70 70%, #2b769c 100%)",
-               "backgroundGradientToLeft": "linear-gradient(to left, #2b769c70 0%, #2b769c70 70%, #2b769c 100%)",
-               "buttonBackgroundColor": "#314755",
-               "buttonBackgroundImage": "linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%)"
-            }
+   "projects": [
+      {
+         "name": "Movix",
+         "description": {
+            "en": "Movix is a web app to get movies and TV show reviews, releases, recommendations for the day and week and details. It uses TMDB API. The app is built on React Typescript V18.2, with main libraries like Axios, Redux Toolkit and Styled Components. It also includes unit testing with Jest.",
+            "es": "Movix es una aplicación web para ver reseñas, estrenos, recomendaciones para el dia y la semana y detalles de peliculas y series de TV. Usa la API de TMDB. La aplicación está construida en React Typescript V.18.2, con principales librerías como Axios, Redux Toolkit y Styled Components. Tambien incluye pruebas unitarias con Jest."
          },
-         {
-            "name": "Kings League",
-            "description": {
-               "en": "Kings league is a clone web app created for educational-purposes. Since Kings League web doesn't have a public API, all the information was obtained by web scrapping and stored in a fake database. It showcases games, players, and team information from the Kings League played in Spain as of March 3rd. The app is built on React Typescript V18.2, with main libraries like Axios, Redux Toolkit and Styled Components.",
-               "es": "Kings league es una aplicación web clon creado con fines educativos. Ya que la web de la Kings League no tiene una API pública, toda la información fue obtenida mediante web scrapping y almacenada en una base de datos ficticia. Se muestran juegos, jugadores e información de los equipos de la Kings League jugada en españa al dia del 3 de Marzo de 2023. La aplicación está construida en React Typescript V18.2, con librerías principales como Axios, Redux Toolkit y Styled Components."
-            },
-            "status": "finished",
-            "site_url": "https://jpuente25.github.io/cloned-kings-league/",
-            "repo_url": "https://github.com/JPuente25/cloned-kings-league/",
-            "background_color": "#04152d60",
-            "text_color": "#fff",
-            "images": {
-               "desktop": [
-                  "https://i.gyazo.com/6e628bc2df9ff6e7b79ec607b43eebe7.jpg",
-                  "https://i.gyazo.com/71bdbf0c643eca0dbc0107aad5be7749.jp",
-                  "https://i.gyazo.com/000ed7c29895b73025439845abb57d23.jpg"
-               ],
-               "mobile": [
-                  "https://i.gyazo.com/7b5a6009a5e22239890eac5ead76012e.jpg",
-                  "https://i.gyazo.com/77a39d9fb271dd661a398e50b669b854.jpg",
-                  "https://i.gyazo.com/1850480ad2eb185cf4c3e7352d2a47bf.jpg"
-               ]
-            },
-            "key": "kingsLeague",
-            "card_theme": {
-               "titleBackground": "#FFAC1C",
-               "backgroundGradientToTop": "linear-gradient(to top, #ffa41d70 0%, #ffa41d70 70%, #ffa41d 100%)",
-               "backgroundGradientToRight": "linear-gradient(to right, #ffa41d70 0%, #ffa41d70 70%, #ffa41d 100%)",
-               "backgroundGradientToLeft": "linear-gradient(to left, #ffa41d70 0%, #ffa41d70 70%, #ffa41d 100%)",
-               "buttonBackgroundColor": "#ff512f",
-               "buttonBackgroundImage": "linear-gradient(to right, #ff512f 0%, #FFAC1C 51%, #ff512f 100%)"
-            }
+         "status": "finished",
+         "site_url": "https://jpuente25.github.io/movix/",
+         "repo_url": "https://github.com/JPuente25/movix/",
+         "background_color": "#04152d60",
+         "text_color": "#fff",
+         "images": {
+            "desktop": [
+               "https://i.gyazo.com/21563e14d56ff84f94ddfddc04228c33.jpg",
+               "https://i.gyazo.com/89c611e91323b3618ebacc0b72c44787.jpg",
+               "https://i.gyazo.com/74fbf23d30c3345c03f8a6dc2564ed7d.jpg"
+            ],
+            "mobile": [
+               "https://i.gyazo.com/47112bb31034613bcf8f8072ac012ea4.jpg",
+               "https://i.gyazo.com/2cab015527504900d28cfdd8440a7d07.jpg",
+               "https://i.gyazo.com/1ae086a5430856b957e012fde8942c5e.jpg"
+            ]
          },
-         {
-            "name": "Platzi Shop",
-            "description": {
-               "en": "Platzi Shop is a web app to buy any article you want, with user authentication, user creation and shopping cart. It uses Platzi Fake Store API. The app is built on React Typescript V18.2, with main libraries like Axios, React Toastify and Styled Components.",
-               "es": "Platzi Shop es una aplicación web para comprar cualquier artículo que desees, con autenticación de usuario, creación de usuario y carrito de compras. Esta usa la API Platzi Fake Store. La aplicación está construida en React Typescript V18.2, con librerías principales como Axios, React Toastify y Styled Components."
-            },
-            "status": "finished",
-            "site_url": "https://jpuente25.github.io/platzishop/",
-            "repo_url": "https://github.com/JPuente25/platzishop/",
-            "background_color": "#04152d60",
-            "text_color": "#fff",
-            "images": {
-               "desktop": [
-                  "https://i.gyazo.com/574dc892f0c6e58c7c461168cfdfd0e7.jpg",
-                  "https://i.gyazo.com/704fe636e9c50d20eb1a77a2258ba966.jpg",
-                  "https://i.gyazo.com/551413aee903ee3e75d4e60c5dd4d507.jpg"
-               ],
-               "mobile": [
-                  "https://i.gyazo.com/e5b615d90fbd8d796bb4c7af5bec0f30.jpg",
-                  "https://i.gyazo.com/7cdb2a8a75bf2ab60f40a3ae52eb08b0.jpg",
-                  "https://i.gyazo.com/086f2ba6283758eeaf5886e6d97dd87b.jpg"
-               ]
-            },
-            "key": "platziShop",
-            "card_theme": {
-               "titleBackground": "#234F1E",
-               "backgroundGradientToTop": "linear-gradient(to top, #3CB04360 0%, #3CB04360 70%, #3CB043 100%)",
-               "backgroundGradientToRight": "linear-gradient(to right, #3CB04360 0%, #3CB04360 70%, #3CB043 100%)",
-               "backgroundGradientToLeft": "linear-gradient(to left, #3CB04360 0%, #3CB04360 70%, #3CB043 100%)",
-               "buttonBackgroundColor": "#50C9C3",
-               "buttonBackgroundImage": "linear-gradient(to right, #50C9C3 0%, #96DEDA  51%, #50C9C3  100%)"
-            }
-         }
-      ],
-      "portfolio": {
-         "locales": [
-            {
-               "label": "ENG",
-               "locale": "en"
-            },
-            {
-               "label": "ESP",
-               "locale": "es"
-            }
-         ],
-         "views": {
-            "home": {
-               "id": 0,
-               "path": "/",
-               "label": "Home"
-            },
-            "about": {
-               "id": 1,
-               "path": "/#about",
-               "label": "About"
-            },
-            "skills": {
-               "id": 2,
-               "path": "/#skills",
-               "label": "Skills"
-            },
-            "projects": {
-               "id": 3,
-               "path": "/#projects",
-               "label": "Projects"
-            },
-            "contact": {
-               "id": 4,
-               "path": "/#contact",
-               "label": "Contact"
-            }
+         "key": "movix",
+         "card_theme": {
+            "titleBackground": "cyan",
+            "backgroundGradientToTop": "linear-gradient(to top, #2b769c70 0%, #2b769c70 70%, #2b769c 100%)",
+            "backgroundGradientToRight": "linear-gradient(to right, #2b769c70 0%, #2b769c70 70%, #2b769c 100%)",
+            "backgroundGradientToLeft": "linear-gradient(to left, #2b769c70 0%, #2b769c70 70%, #2b769c 100%)",
+            "buttonBackgroundColor": "#314755",
+            "buttonBackgroundImage": "linear-gradient(to right, #314755 0%, #26a0da 51%, #314755 100%)"
          }
       },
-      "personal": {
-         "contactInformation": {
-            "phoneNumber": "+58 412-1680085",
-            "email": "jpcontreras28@gmail.com",
-            "address": "Maracaibo, Zulia. Venezuela"
+      {
+         "name": "Kings League",
+         "description": {
+            "en": "Kings league is a clone web app created for educational-purposes. Since Kings League web doesn't have a public API, all the information was obtained by web scrapping and stored in a fake database. It showcases games, players, and team information from the Kings League played in Spain as of March 3rd. The app is built on React Typescript V18.2, with main libraries like Axios, Redux Toolkit and Styled Components.",
+            "es": "Kings league es una aplicación web clon creado con fines educativos. Ya que la web de la Kings League no tiene una API pública, toda la información fue obtenida mediante web scrapping y almacenada en una base de datos ficticia. Se muestran juegos, jugadores e información de los equipos de la Kings League jugada en españa al dia del 3 de Marzo de 2023. La aplicación está construida en React Typescript V18.2, con librerías principales como Axios, Redux Toolkit y Styled Components."
          },
-         "socialMedia": {
-            "facebook": {
-               "user": "PuenteJ",
-               "url": "https://www.facebook.com/PuenteJ/"
-            },
-            "instagram": {
-               "user": "Jpuentee_",
-               "url": "https://www.instagram.com/jpuentee_/"
-            },
-            "linkedin": {
-               "user": "JPuente25",
-               "url": "https://www.linkedin.com/in/jpuente25/"
-            },
-            "twitter": {
-               "user": "jpuentee_",
-               "url": "https://twitter.com/JPuentee_"
-            },
-            "github": {
-               "user": "JPuente25",
-               "url": "https://github.com/JPuente25"
-            }
+         "status": "finished",
+         "site_url": "https://jpuente25.github.io/cloned-kings-league/",
+         "repo_url": "https://github.com/JPuente25/cloned-kings-league/",
+         "background_color": "#04152d60",
+         "text_color": "#fff",
+         "images": {
+            "desktop": [
+               "https://i.gyazo.com/6e628bc2df9ff6e7b79ec607b43eebe7.jpg",
+               "https://i.gyazo.com/71bdbf0c643eca0dbc0107aad5be7749.jp",
+               "https://i.gyazo.com/000ed7c29895b73025439845abb57d23.jpg"
+            ],
+            "mobile": [
+               "https://i.gyazo.com/7b5a6009a5e22239890eac5ead76012e.jpg",
+               "https://i.gyazo.com/77a39d9fb271dd661a398e50b669b854.jpg",
+               "https://i.gyazo.com/1850480ad2eb185cf4c3e7352d2a47bf.jpg"
+            ]
          },
-         "profilePicture": "https://i.gyazo.com/7d4a6c11d3232b270275b1b65dcbedeb.jpg",
-         "logo": "https://i.gyazo.com/90b98183a9db1d156bcf9c886fd9dd3f.webp",
-         "resumeUrl": {
-            "es": "https://drive.google.com/file/d/1x71L_lOZYjWJdfPBctHEuRwmqZmNuUYh/view?usp=sharing",
-            "en": "https://drive.google.com/file/d/11CxcewAszHIIROrvROLxZ4k-6M-8yFlE/view?usp=sharing"
+         "key": "kingsLeague",
+         "card_theme": {
+            "titleBackground": "#FFAC1C",
+            "backgroundGradientToTop": "linear-gradient(to top, #ffa41d70 0%, #ffa41d70 70%, #ffa41d 100%)",
+            "backgroundGradientToRight": "linear-gradient(to right, #ffa41d70 0%, #ffa41d70 70%, #ffa41d 100%)",
+            "backgroundGradientToLeft": "linear-gradient(to left, #ffa41d70 0%, #ffa41d70 70%, #ffa41d 100%)",
+            "buttonBackgroundColor": "#ff512f",
+            "buttonBackgroundImage": "linear-gradient(to right, #ff512f 0%, #FFAC1C 51%, #ff512f 100%)"
+         }
+      },
+      {
+         "name": "Platzi Shop",
+         "description": {
+            "en": "Platzi Shop is a web app to buy any article you want, with user authentication, user creation and shopping cart. It uses Platzi Fake Store API. The app is built on React Typescript V18.2, with main libraries like Axios, React Toastify and Styled Components.",
+            "es": "Platzi Shop es una aplicación web para comprar cualquier artículo que desees, con autenticación de usuario, creación de usuario y carrito de compras. Esta usa la API Platzi Fake Store. La aplicación está construida en React Typescript V18.2, con librerías principales como Axios, React Toastify y Styled Components."
          },
-         "tech_stack": [
-            {
-               "label": "HTML",
-               "icon": "https://www.svgrepo.com/show/452228/html-5.svg"
-            },
-            {
-               "label": "CSS",
-               "icon": "https://www.svgrepo.com/show/452185/css-3.svg"
-            },
-            {
-               "label": "Sass",
-               "icon": "https://www.svgrepo.com/show/374061/sass.svg"
-            },
-            {
-               "label": "Styled-Components",
-               "icon": "https://www.svgrepo.com/show/374104/styled.svg"
-            },
-            {
-               "label": "Material UI",
-               "icon": "https://www.svgrepo.com/show/354048/material-ui.svg"
-            },
-            {
-               "label": "JavaScript",
-               "icon": "https://www.svgrepo.com/show/353925/javascript.svg"
-            },
-            {
-               "label": "TypeScript",
-               "icon": "https://www.svgrepo.com/show/354478/typescript-icon.svg"
-            },
-            {
-               "label": "React.js",
-               "icon": "https://www.svgrepo.com/show/354259/react.svg"
-            },
-            {
-               "label": "Next.js",
-               "icon": "https://www.svgrepo.com/show/354113/nextjs-icon.svg"
-            },
-            {
-               "label": "Create-React-App",
-               "icon": "https://cdn.worldvectorlogo.com/logos/create-react-app.svg"
-            },
-            {
-               "label": "Vite",
-               "icon": "https://www.svgrepo.com/show/354521/vitejs.svg"
-            },
-            {
-               "label": "Redux Toolkit",
-               "icon": "https://www.svgrepo.com/show/354274/redux.svg"
-            },
-            {
-               "label": "Jest",
-               "icon": "https://www.svgrepo.com/show/353930/jest.svg"
-            },
-            {
-               "label": "Git",
-               "icon": "https://www.svgrepo.com/show/452210/git.svg"
-            },
-            {
-               "label": "GitHub",
-               "icon": "https://www.svgrepo.com/show/512317/github-142.svg"
-            }
-         ],
-         "basic_stack": [
-            {
-               "label": "MySQL",
-               "icon": "https://www.svgrepo.com/show/354099/mysql.svg"
-            },
-            {
-               "label": "Node.js",
-               "icon": "https://www.svgrepo.com/show/303658/nodejs-1-logo.svg"
-            },
-            {
-               "label": "PHP",
-               "icon": "https://www.svgrepo.com/show/373966/php.svg"
-            },
-            {
-               "label": "Bootstrap",
-               "icon": "https://www.svgrepo.com/show/353498/bootstrap.svg"
-            },
-            {
-               "label": "Tailwind CSS",
-               "icon": "https://www.svgrepo.com/show/374118/tailwind.svg"
-            }
-
-         ]
+         "status": "finished",
+         "site_url": "https://jpuente25.github.io/platzishop/",
+         "repo_url": "https://github.com/JPuente25/platzishop/",
+         "background_color": "#04152d60",
+         "text_color": "#fff",
+         "images": {
+            "desktop": [
+               "https://i.gyazo.com/574dc892f0c6e58c7c461168cfdfd0e7.jpg",
+               "https://i.gyazo.com/704fe636e9c50d20eb1a77a2258ba966.jpg",
+               "https://i.gyazo.com/551413aee903ee3e75d4e60c5dd4d507.jpg"
+            ],
+            "mobile": [
+               "https://i.gyazo.com/e5b615d90fbd8d796bb4c7af5bec0f30.jpg",
+               "https://i.gyazo.com/7cdb2a8a75bf2ab60f40a3ae52eb08b0.jpg",
+               "https://i.gyazo.com/086f2ba6283758eeaf5886e6d97dd87b.jpg"
+            ]
+         },
+         "key": "platziShop",
+         "card_theme": {
+            "titleBackground": "#234F1E",
+            "backgroundGradientToTop": "linear-gradient(to top, #3CB04360 0%, #3CB04360 70%, #3CB043 100%)",
+            "backgroundGradientToRight": "linear-gradient(to right, #3CB04360 0%, #3CB04360 70%, #3CB043 100%)",
+            "backgroundGradientToLeft": "linear-gradient(to left, #3CB04360 0%, #3CB04360 70%, #3CB043 100%)",
+            "buttonBackgroundColor": "#50C9C3",
+            "buttonBackgroundImage": "linear-gradient(to right, #50C9C3 0%, #96DEDA  51%, #50C9C3  100%)"
+         }
       }
+   ],
+   "portfolio": {
+      "locales": [
+         {
+            "label": "ENG",
+            "locale": "en"
+         },
+         {
+            "label": "ESP",
+            "locale": "es"
+         }
+      ],
+      "views": {
+         "home": {
+            "id": 0,
+            "path": "/",
+            "label": "Home"
+         },
+         "about": {
+            "id": 1,
+            "path": "/#about",
+            "label": "About"
+         },
+         "skills": {
+            "id": 2,
+            "path": "/#skills",
+            "label": "Skills"
+         },
+         "projects": {
+            "id": 3,
+            "path": "/#projects",
+            "label": "Projects"
+         },
+         "contact": {
+            "id": 4,
+            "path": "/#contact",
+            "label": "Contact"
+         }
+      }
+   },
+   "personal": {
+      "contactInformation": {
+         "phoneNumber": "+58 412-1680085",
+         "email": "jpcontreras28@gmail.com",
+         "address": "Maracaibo, Zulia. Venezuela"
+      },
+      "socialMedia": {
+         "facebook": {
+            "user": "PuenteJ",
+            "url": "https://www.facebook.com/PuenteJ/"
+         },
+         "instagram": {
+            "user": "Jpuentee_",
+            "url": "https://www.instagram.com/jpuentee_/"
+         },
+         "linkedin": {
+            "user": "JPuente25",
+            "url": "https://www.linkedin.com/in/jpuente25/"
+         },
+         "twitter": {
+            "user": "jpuentee_",
+            "url": "https://twitter.com/JPuentee_"
+         },
+         "github": {
+            "user": "JPuente25",
+            "url": "https://github.com/JPuente25"
+         }
+      },
+      "profilePicture": "https://i.gyazo.com/7d4a6c11d3232b270275b1b65dcbedeb.jpg",
+      "logo": "https://i.gyazo.com/90b98183a9db1d156bcf9c886fd9dd3f.webp",
+      "resumeUrl": {
+         "es": "https://drive.google.com/file/d/1x71L_lOZYjWJdfPBctHEuRwmqZmNuUYh/view?usp=sharing",
+         "en": "https://drive.google.com/file/d/11CxcewAszHIIROrvROLxZ4k-6M-8yFlE/view?usp=sharing"
+      },
+      "tech_stack": [
+         {
+            "label": "HTML",
+            "icon": "https://www.svgrepo.com/show/452228/html-5.svg"
+         },
+         {
+            "label": "CSS",
+            "icon": "https://www.svgrepo.com/show/452185/css-3.svg"
+         },
+         {
+            "label": "Sass",
+            "icon": "https://www.svgrepo.com/show/374061/sass.svg"
+         },
+         {
+            "label": "Styled-Components",
+            "icon": "https://www.svgrepo.com/show/374104/styled.svg"
+         },
+         {
+            "label": "Material UI",
+            "icon": "https://www.svgrepo.com/show/354048/material-ui.svg"
+         },
+         {
+            "label": "JavaScript",
+            "icon": "https://www.svgrepo.com/show/353925/javascript.svg"
+         },
+         {
+            "label": "TypeScript",
+            "icon": "https://www.svgrepo.com/show/354478/typescript-icon.svg"
+         },
+         {
+            "label": "React.js",
+            "icon": "https://www.svgrepo.com/show/354259/react.svg"
+         },
+         {
+            "label": "Next.js",
+            "icon": "https://www.svgrepo.com/show/354113/nextjs-icon.svg"
+         },
+         {
+            "label": "Create-React-App",
+            "icon": "https://cdn.worldvectorlogo.com/logos/create-react-app.svg"
+         },
+         {
+            "label": "Vite",
+            "icon": "https://www.svgrepo.com/show/354521/vitejs.svg"
+         },
+         {
+            "label": "Redux Toolkit",
+            "icon": "https://www.svgrepo.com/show/354274/redux.svg"
+         },
+         {
+            "label": "Jest",
+            "icon": "https://www.svgrepo.com/show/353930/jest.svg"
+         },
+         {
+            "label": "Git",
+            "icon": "https://www.svgrepo.com/show/452210/git.svg"
+         },
+         {
+            "label": "GitHub",
+            "icon": "https://www.svgrepo.com/show/512317/github-142.svg"
+         }
+      ],
+      "basic_stack": [
+         {
+            "label": "MySQL",
+            "icon": "https://www.svgrepo.com/show/354099/mysql.svg"
+         },
+         {
+            "label": "Node.js",
+            "icon": "https://www.svgrepo.com/show/303658/nodejs-1-logo.svg"
+         },
+         {
+            "label": "PHP",
+            "icon": "https://www.svgrepo.com/show/373966/php.svg"
+         },
+         {
+            "label": "Bootstrap",
+            "icon": "https://www.svgrepo.com/show/353498/bootstrap.svg"
+         },
+         {
+            "label": "Tailwind CSS",
+            "icon": "https://www.svgrepo.com/show/374118/tailwind.svg"
+         }
+      ]
    }
 }

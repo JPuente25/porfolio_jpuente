@@ -1,4 +1,4 @@
-import { data } from '@/data/data.json';
+import data from '@/data/data.json';
 import { useRouter } from 'next/router';
 import React from 'react';
 import { MdLanguage } from 'react-icons/md';

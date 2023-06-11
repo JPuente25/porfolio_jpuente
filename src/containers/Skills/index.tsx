@@ -1,6 +1,6 @@
 import { useI18N } from '@/app/i18n';
 import TechCard from '@/components/TechCard';
-import { data } from '@/data/data.json';
+import data from '@/data/data.json';
 import { Tech } from '@/types';
 import { v4 as uuidv4 } from 'uuid';
 import { StyledContainer as Container, Stack, TechStack, Title } from './index.styled';

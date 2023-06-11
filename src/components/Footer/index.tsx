@@ -3,7 +3,7 @@ import { CiLocationOn } from 'react-icons/ci';
 import SocialMedia from '../SocialMedia';
 import { useI18N } from '@/app/i18n';
 import { Container, Copyright, Location } from './index.styled';
-import { data } from '@/data/data.json';
+import data from '@/data/data.json';
 
 const Footer = () => {
    const { t } = useI18N();

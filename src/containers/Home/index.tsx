@@ -4,7 +4,7 @@ import Button from '@/components/Button';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { AiFillFileText } from 'react-icons/ai';
-import { data } from '../../data/data.json';
+import data from '../../data/data.json';
 import { Information, StyledContainer as Container, Title } from './index.styled';
 
 const Home = () => {

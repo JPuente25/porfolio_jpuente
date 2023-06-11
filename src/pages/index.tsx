@@ -3,7 +3,7 @@ import Contact from '@/containers/Contact';
 import Home from '@/containers/Home';
 import Projects from '@/containers/Projects';
 import Skills from '@/containers/Skills';
-import { data } from '@/data/data.json';
+import data from '@/data/data.json';
 import { useRouter } from 'next/router';
 import { useEffect, useRef } from 'react';
 import { Container, PageItem } from '../styles/pages/index.styled';

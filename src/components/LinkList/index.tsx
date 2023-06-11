@@ -1,5 +1,5 @@
 import { useI18N } from '@/app/i18n';
-import { data } from '@/data/data.json';
+import data from '@/data/data.json';
 import { View } from '@/types';
 import Link from 'next/link';
 import { useState } from 'react';

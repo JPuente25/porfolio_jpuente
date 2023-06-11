@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { AiOutlineMail } from 'react-icons/ai';
 import { CiLocationOn } from 'react-icons/ci';
 import { IoLogoWhatsapp } from 'react-icons/io';
-import { data } from '../../data/data.json';
+import data from '../../data/data.json';
 import {
    AlertMessage,
    ContactMessage,
