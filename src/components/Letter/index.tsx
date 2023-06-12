@@ -21,7 +21,7 @@ type LetterStates = {
    activeLetter: boolean;
 };
 
-const Letter = ({submit, setSubmit}: LetterProps) => {
+const Letter = (props: LetterProps) => {
    const [activeLetter, setActiveLetter] = useState<LetterStates['activeLetter']>(false);
 
    return (
@@ -36,7 +36,7 @@ const Letter = ({submit, setSubmit}: LetterProps) => {
 
          <Content className='content'>
             <div className='form'>
-               <ContactForm closeLetter={() => setActiveLetter(false)} submit={submit} setSubmit={setSubmit}/>
+               <ContactForm closeLetter={() => setActiveLetter(false)} {...props}/>
             </div>
             <div className='form-placeholder'></div>
          </Content>

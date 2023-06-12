@@ -12,7 +12,7 @@ export const Container = styled.article`
    color: ${({ theme }) => theme.palette.text.opposite};
    z-index: 0;
    position: relative;
-   contain: content;
+   overflow: hidden;
 
    svg.close-form {
       position: absolute;

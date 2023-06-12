@@ -36,7 +36,7 @@ export const Container = styled.div`
    aspect-ratio: 1.54 / 1;
    position: relative;
    z-index: 1;
-   contain: content;
+   overflow: hidden;
 
    img.device {
       position: absolute;

@@ -6,7 +6,7 @@ export const Container = styled.div`
    width: 280px;
    margin: 0 auto;
    position: relative;
-   contain: content;
+   overflow: hidden;
    z-index: 1;
 
    &.closed {

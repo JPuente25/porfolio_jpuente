@@ -9,7 +9,7 @@ import data from '../../data/data.json';
 import {
    AlertMessage,
    ContactMessage,
-   StyledContainer as Container,
+   Container,
    InfoSection,
    LetterSection,
 } from './index.styled';
@@ -36,6 +36,13 @@ const Contact = () => {
 
    return (
       <Container>
+         <AlertMessage
+            className={submit.sent ? 'visible sent' : submit.error ? 'visible error' : ''}>
+            <p>
+               {submit.sent ? t('MESSAGE_SENT') : submit.error ? t('ERROR_SENDING_MESSAGE') : ''}
+            </p>
+         </AlertMessage>
+         
          <InfoSection>
             <div className='contact-info'>
                <h2>{t('CONTACT_INFORMATION')}</h2>
@@ -72,13 +79,6 @@ const Contact = () => {
                setSubmit={(payload: typeof submit) => setSubmit(payload)}
             />
          </LetterSection>
-
-         <AlertMessage
-            className={submit.sent ? 'visible sent' : submit.error ? 'visible error' : ''}>
-            <p>
-               {submit.sent ? t('MESSAGE_SENT') : submit.error ? t('ERROR_SENDING_MESSAGE') : ''}
-            </p>
-         </AlertMessage>
       </Container>
    );
 };

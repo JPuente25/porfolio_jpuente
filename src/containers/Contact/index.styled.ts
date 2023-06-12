@@ -1,17 +1,15 @@
-import Container from '@/containers/Container';
 import { letterSpeed } from '@/components/Letter/index.styled';
 import styled from 'styled-components';
 
-export const StyledContainer = styled(Container)`
+export const Container = styled.div`
    width: 100%;
-   place-content: center;
+   max-width: 1440px;
+   margin: 0 auto;
+   padding: 60px 0px;
    display: grid;
    grid-template-rows: repeat(2, auto);
+   place-content: center;
    gap: 20px;
-
-   &:after {
-      display: none;
-   }
 
    @media (min-width: 768px) {
       grid-template-rows: 1fr;
@@ -33,10 +31,11 @@ export const InfoSection = styled.section`
    padding: 20px;
    border-radius: 35px;
    box-shadow: ${({ theme }) => theme.palette.shadow.box};
-   contain: content;
+   overflow: hidden;
    position: relative;
 
    div.contact-info {
+      z-index: 1;
       h2 {
          text-align: center;
          font-size: ${({ theme }) => theme.font.size.xlg};
@@ -54,6 +53,7 @@ export const InfoSection = styled.section`
       flex-direction: column;
       gap: 20px;
       margin-bottom: 50px;
+      z-index: 1;
 
       div {
          display: flex;
@@ -70,6 +70,7 @@ export const InfoSection = styled.section`
       width: 60%;
       justify-content: flex-start;
       gap: 10px;
+      z-index: 1;
 
       svg {
          font-size: ${({ theme }) => theme.font.size.xlg};
@@ -91,7 +92,6 @@ export const InfoSection = styled.section`
       bottom: 0;
       right: 0;
       transform: translate(50%, 50%);
-      z-index: -1;
    }
 
    &:after {
@@ -104,7 +104,6 @@ export const InfoSection = styled.section`
       position: absolute;
       bottom: 35%;
       right: 5%;
-      z-index: -1;
    }
 
    @media (min-width: 480px) {
@@ -316,7 +315,6 @@ export const ContactMessage = styled.div`
 `;
 
 export const AlertMessage = styled.div`
-   display: none;
    position: fixed;
    top: 90px;
    right: 20px;
@@ -325,8 +323,8 @@ export const AlertMessage = styled.div`
    border-radius: 10px;
    box-shadow: ${({ theme }) => theme.palette.shadow.box};
    opacity: 0;
-   transition: all ease-in 1s, opacity linear 0s;
    transform: translateX(calc(100% + 20px));
+   transition: transform ease-in 1s, opacity 0s;
    z-index: 2;
 
    p {
@@ -339,9 +337,8 @@ export const AlertMessage = styled.div`
    }
 
    &.visible {
-      transition: all ease-in 1s;
-      display: block;
       transform: translateX(0%);
       opacity: 1;
+      transition: transform ease-in 1s, opacity ease-in 1s;
    }
 `;

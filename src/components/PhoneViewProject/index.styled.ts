@@ -32,12 +32,12 @@ const scrollingPage = keyframes`
 export const Container = styled.div`
    display: flex;
    width: 100%;
+   height: min-content;
    aspect-ratio: 1 / 1.9;
    position: relative;
    z-index: 1;
-   contain: content;
+   overflow: hidden;
    border-radius: 13%;
-   height: min-content;
 
    img.device {
       position: absolute;

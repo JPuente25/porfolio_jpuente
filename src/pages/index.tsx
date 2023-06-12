@@ -5,11 +5,17 @@ import Projects from '@/containers/Projects';
 import Skills from '@/containers/Skills';
 import data from '@/data/data.json';
 import { useRouter } from 'next/router';
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Container, PageItem } from '../styles/pages/index.styled';
+import Head from 'next/head';
+
+type MainStates = {
+   docTitle: string;
+};
 
 const Main = () => {
    const router = useRouter();
+   const [docTitle, setDocTitle] = useState<MainStates['docTitle']>('Jaime Puente');
 
    //React Referencies
    const homeRef = useRef<HTMLDivElement>(null);
@@ -40,36 +46,44 @@ const Main = () => {
 
    useEffect(() => {
       const viewLabel = router.asPath.split('#')[1] || 'home';
-      window.document.title = `Jaime Puente - ${
-         data.portfolio.views[viewLabel as keyof typeof data.portfolio.views].label
-      }`;
+      setDocTitle(
+         `Jaime Puente - ${
+            data.portfolio.views[viewLabel as keyof typeof data.portfolio.views].label
+         }`
+      );
 
       automaticScroll(viewLabel);
       // eslint-disable-next-line react-hooks/exhaustive-deps
    }, [router.asPath]);
 
    return (
-      <Container>
-         <PageItem ref={homeRef}>
-            <Home />
-         </PageItem>
+      <>
+         <Head>
+            <title>{docTitle}</title>
+         </Head>
+         
+         <Container>
+            <PageItem ref={homeRef}>
+               <Home />
+            </PageItem>
 
-         <PageItem ref={aboutRef}>
-            <About />
-         </PageItem>
+            <PageItem ref={aboutRef}>
+               <About />
+            </PageItem>
 
-         <PageItem ref={skillsRef}>
-            <Skills />
-         </PageItem>
+            <PageItem ref={skillsRef}>
+               <Skills />
+            </PageItem>
 
-         <PageItem ref={projectsRef}>
-            <Projects />
-         </PageItem>
+            <PageItem ref={projectsRef}>
+               <Projects />
+            </PageItem>
 
-         <PageItem ref={contactRef}>
-            <Contact />
-         </PageItem>
-      </Container>
+            <PageItem ref={contactRef}>
+               <Contact />
+            </PageItem>
+         </Container>
+      </>
    );
 };
 

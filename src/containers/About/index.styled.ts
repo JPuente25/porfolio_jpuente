@@ -76,7 +76,7 @@ export const Profile = styled.div`
    padding: 15px;
    gap: 20px;
    position: relative;
-   contain: content;
+   overflow: hidden;
    border-radius: 20px;
 
    div.social-media {
@@ -147,7 +147,7 @@ export const PictureFrame = styled.picture`
    border-radius: 50%;
    border: 8px solid white;
    box-shadow: ${({ theme }) => theme.palette.shadow.box};
-   contain: content;
+   overflow: hidden;
 
    img {
       width: 100%;
